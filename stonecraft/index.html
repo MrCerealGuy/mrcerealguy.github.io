@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+	
+	<head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stonecraft is an infinite-world block adventure game.">
+	
+
+    <title>Stonecraft</title>
+
+	<link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+    <link href="./css/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/stonecraft.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="./css/prettify.css">
+	<link rel="shortcut icon" href="./gfx/favicon.png"/>
+	
+	<style type="text/css">.fancybox-margin{margin-right:14px;} .thumbnail{padding:0px !important; width: 308px !important;}</style>
+	
+	</head>
+<body>
+
+<div id="header">
+    <div id="header-bg">
+        <div class="container">
+            <div class="jumbotron">
+                <h1><img src="./gfx/header_stonecraft.png" alt="Stonecraft"><br>
+                    <small>an infinite-world block adventure game.</small>
+                </h1>
+
+                <p class="lead">by Andreas "MrCerealGuy" Zahnleiter<br />inspired by Minecraft</p>
+
+                <p class="buttons">
+                    <a class="btn btn-primary btn-lg" role="button" href="#download">Download</a>
+                    <a class="btn btn-default btn-lg" role="button" href="/stonecraft/html/gallery.html">Gallery</a>
+					<a class="btn btn-default btn-lg" role="button" href="/stonecraft/html/server.html">Server</a>
+					<a class="btn btn-default btn-lg" role="button" href="https://github.com/MrCerealGuy/Stonecraft" target="_blank">Github</a>
+                    <a class="btn btn-default btn-lg" role="button" href="wiki">Wiki</a>
+                    <a class="btn btn-default btn-lg" role="button" href="#faq">FAQ</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="content">
+    <a id="dirt"></a>
+
+    <div class="section section-dirt">
+        <div class="container">
+            <div class="jumbotron">
+                <div class="row">
+					<h2>Stonecraft has many features</h2>
+					
+                    <div class="col-lg-4">
+                        <div class="thumbnail">
+                            <a href="./gfx/screenshot.png" class="fancybox" rel="screenshots"><img src="./gfx/screenshots.png" alt="screenshot"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        
+                        <ul style="line-height:1.6;">
+                            <li>Ability to walk around, dig, and build in a near-infinite voxel world</li>
+							<li>Crafting of items from raw materials</li>
+							<li>Fast and able to run on old and slow hardware</li>
+							<li>Multiplayer support via servers hosted by users</li>
+							<li>Beautiful lightning-fast map generator</li>
+							<li>Uses open voxel game engine 'Minetest'</li>
+							<li>You can use community mods and texture packs</li>
+							<li>It's free and open-source</li>
+                        </ul>
+                    </div>
+                </div>
+				<div class="row" style="margin-top:25px;">
+					
+				</div>
+				<div class="row">
+					<div class="col-lg-4">
+						<p>Please support Stonecraft with a donation.</p>
+					</div>
+					
+					<div class="col-lg-8">
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="LCKTDAYQC6FPL">
+							<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+							<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+						</form>
+
+					</div>
+				</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-md-4">
+                    <div class="thumbnail">
+                        <a href="./gfx/gallery/screenshot_20161128_144746.png" class="fancybox" rel="screenshots"><img src="./gfx/gallery/small/screenshot_20161128_144746.png" alt="screenshot+2"></a>
+                    </div>
+                    <div class="caption text-center">Play with friends</div>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <div class="thumbnail">
+                        <a href="./gfx/gallery/screenshot_20160605_150723.png" class="fancybox" rel="screenshots"><img src="./gfx/gallery/small/screenshot_20160605_150723.png" alt="screenshot+2"></a>
+                    </div>
+                    <div class="caption text-center">Explore the underworld</div>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <div class="thumbnail">
+                        <a href="./gfx/gallery/screenshot_20161128_141100.png" class="fancybox" rel="screenshots"><img src="./gfx/gallery/small/screenshot_20161128_141100.png" alt="screenshot+1"></a>
+                    </div>
+                    <div class="caption text-center">Go into the wild</div>
+                </div>
+				
+				
+            </div>
+			<div class="row" style="margin-top:25px;">
+					
+			</div>
+			<div class="row">
+				<p>
+					Please <a href="/stonecraft/html/gallery.html">visit the gallery</a> to see more screenshots from Stonecraft!
+				</p>
+			</div>
+        </div>
+		
+		<a name="news"></a>
+        <div class="container">
+			<h2>News</h2>
+			
+			<br style="clear:left;" />
+			
+			<p>
+				<b>Feb. 11, 2017</b> - Stonecraft v1.0.9-alpha released!
+			</p>
+			
+			<br style="clear:left;" />
+			
+			<p>
+				<b>Feb. 7, 2017</b> - Stonecraft v1.0.8-alpha released!
+			</p>
+			
+			<br style="clear:left;" />
+			
+			<p>
+				<b>Jan. 22, 2017</b> - Stonecraft WorldAtlas v1.0.0 now on <a href="https://github.com/MrCerealGuy/Stonecraft-WorldAtlas" target="_blank">github</a>.
+			</p>
+			
+			<br style="clear:left;" />
+			
+			<p>
+				<b>Jan. 17, 2017</b> - Stonecraft v1.0.7-alpha released! Now with abandoned mines and surprise blocks!
+			</p>
+			
+			<div class="row">
+                <div class="col-xs-6 col-md-4">
+                    <div class="thumbnail">
+                        <a href="./gfx/gallery/screenshot_20170116_164604.png" class="fancybox" rel="news-20170117"><img src="./gfx/gallery/small/screenshot_20170116_164604.png" alt="screenshot+1"></a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <div class="thumbnail">
+                        <a href="./gfx/gallery/screenshot_20170116_164705.png" class="fancybox" rel="news-20170117"><img src="./gfx/gallery/small/screenshot_20170116_164705.png" alt="screenshot+2"></a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <div class="thumbnail">
+                        <a href="./gfx/gallery/screenshot_20170116_170733.png" class="fancybox" rel="news-20170117"><img src="./gfx/gallery/small/screenshot_20170116_170733.png" alt="screenshot+3"></a>
+                    </div>
+                </div>
+            </div>
+			
+			<br style="clear:left;" />
+
+			<p>
+				<b>Jan. 9, 2017</b> - First version of Stonecraft WorldAtlas is online. It shows the explored part from the huge world of the <i>Stonecraft Survival Server</i>. The software will be published for free and open-source. See the WorldAtlas <a href="http://stonecraft.ddns.net/map.html">here</a> in action.
+				<br /><br />
+				<a href="./gfx/stonecraft-mapviewer.png" class="fancybox"><img src="./gfx/stonecraft-mapviewer-300.png"></a>
+			</p>
+			
+			<br style="clear:left;" />
+			
+			<p>
+				<b>Jan. 7, 2017</b> - Stonecraft v1.0.6-alpha released! Updated engine to 0.4.15, added teleporters, area protection and more!
+			</p>
+			
+			<br style="clear:left;" />
+			
+			<p>
+				<b>Jan. 3, 2017</b> - The official <a href="/stonecraft/html/server.html">Stonecraft Server</a> is online! Join the world of Stonecraft and play with friends.
+			</p>
+			
+			<br style="clear:left;" />
+			
+			<p>
+				<b>Dec. 23, 2016</b> - Stonecraft v1.0.5-alpha released!
+			</p>
+			
+			<br style="clear:left;" />
+			
+			<p>
+				<b>Dec. 22, 2016</b> - Stonecraft v1.0.4-alpha released!
+			</p>
+			
+			<br style="clear:left;" />
+			
+			<p>
+				<b>Dec. 18, 2016</b> - Stonecraft v1.0.3-alpha released!
+			</p>
+			
+			<br style="clear:left;" />
+			
+			<p>
+				<b>Dec. 16, 2016</b> - Stonecraft v1.0.2-alpha released!
+			</p>
+			
+			<br style="clear:left;" />
+			
+			<p>
+				<b>Dec. 11, 2016</b> - Stonecraft v1.0.1-alpha released!
+			</p>
+			
+			<br style="clear:left;" />
+			
+			<p>
+				<b>Dec. 9, 2016</b> - Stonecraft v1.0.0-alpha released!
+			</p>
+		</div>
+		
+		<a name="download"></a>
+        <div class="container">
+
+            <h2>Download</h2>
+			<br style="clear:left;" />
+			
+			<p><b>Current release: v1.0.9-alpha (Feb. 11, 2017)</b><br /><small>(pre-release version, maybe not stable yet). Use of Minetest engine 0.4.15.</small></p>
+			
+			<div class="row">
+                <div class="col-xs-6 col-md-6">
+					<div>
+						<img src="./gfx/win-icon.png" style="float:left;margin-right:15px;">Stonecraft (Win 32-bit) <a href="http://www.mediafire.com/file/cv4w2w5pjxydosq/setup-stonecraft-1.0.9a-win32.exe" target="_blank">EXE</a> | <a href="http://www.mediafire.com/file/t3mdk2ubkmz5x5m/stonecraft-1.0.9-alpha-client-win32.zip" target="_blank">ZIP</a>
+						<br />
+						Stonecraft (Win 64-bit) <a href="http://www.mediafire.com/file/wjgu145i45zjwq4/setup-stonecraft-1.0.9a-win64.exe" target="_blank">EXE</a> | <a href="http://www.mediafire.com/file/510iluauan52n21/stonecraft-1.0.9-alpha-client-win64.zip" target="_blank">ZIP</a>
+					</div>
+				</div>
+				
+				 <div class="col-xs-6 col-md-6">
+					<div>
+						<img src="./gfx/linux-icon.png" style="float:left;margin-right:15px;">Stonecraft (Linux 64-bit) <a href="http://www.mediafire.com/file/a6a82u6u4quj5d5/stonecraft-1.0.9-alpha-client-linux.tar.gz" target="_blank">TAR.GZ</a>
+						<br />
+						Dedicated Server (Linux 64-bit) <a href="http://www.mediafire.com/file/7h3j1589g53b456/stonecraft-1.0.9-alpha-server-linux.tar.gz" target="_blank">TAR.GZ</a>
+					</div>
+				</div>
+			</div>
+			<br style="clear:left;" />
+				
+			<!--
+			<br style="clear:left;" />
+			
+			<p>v1.0.0a (09.12.2016)<br /><small>(alpha version, not stable yet). Use of Minetest engine 0.4.14.</small></p>
+			
+			<div class="row">
+                <div class="col-xs-6 col-md-6">
+					<div>
+						<a href="#" target="_blank"><img src="./gfx/win-icon.png" style="float:left;margin-right:15px;">Stonecraft (Win 32-bit)</a>
+						<br />
+						<a href="#" target="_blank">Stonecraft (Win 64-bit)</a>
+					</div>
+				</div>
+				
+				 <div class="col-xs-6 col-md-6">
+					<div>
+						<a href="#" target="_blank"><img src="./gfx/linux-icon.png" style="float:left;margin-right:15px;">Stonecraft (Linux 64-bit)</a>
+						<br />
+						<a href="#" target="_blank">Dedicated Server (Linux 64-bit)</a>
+					</div>
+				</div>
+			</div>
+			-->
+
+			<br style="clear:left;" />
+
+			
+			<p>Get source code from Github</p>
+			
+			<a href="https://github.com/MrCerealGuy/Stonecraft/archive/master.zip">Source code (master)</a>
+			<br />
+			<a href="https://github.com/MrCerealGuy/Stonecraft-libdev-win/archive/master.zip">Windows libraries (master)</a>
+			<br /><br />
+			<p>For further information have a look at my <a href="https://github.com/MrCerealGuy/Stonecraft" target="_blank">github account</a>.</p>
+			
+			<a name="faq"></a>
+            <h3>FAQs</h3>
+
+            <div class="panel-group" id="accordion">
+                <!--
+				<div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#release">
+                                When will Stonecraft be released?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="release" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>Probably in 2017. I'm a one man game developer ;-).</p>
+                        </div>
+                    </div>
+                </div>
+				-->
+				<div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#lags">
+                                I have lags while playing Stonecraft. What can I do?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="lags" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>If you experience lags, then you should first deactivate shaders and other graphic effects like the simulation of erosion, see advanced settings. On weak hardware, I would suggest to choose 'Stonecraft Light' in the world creation settings.</p>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#cost">
+                                How much will Stonecraft cost to play?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="cost" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>Nothing, Stonecraft will be released as a freeware and open-source game. But you can donate some money via PayPal to support me.</p>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#texture">
+                                Can I use texture packs like in Minecraft?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="texture" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>Yes, you can use texture packs. See wiki for further information.</p>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#mod">
+                                Can I mod Stonecraft like in Minecraft?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="mod" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>Yes, you can install mods or create your own mods. See the developer section in wiki.</p>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#account">
+                                Do I need an account to play multiplayer?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="account" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>No, you don't need an account like in Minecraft.</p>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#host">
+                                How can I setup a multiplayer game?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="host" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>You can simple host a game over LAN or you run a dedicated server.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div id="footer">
+	 <div class="section section-dirt">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="well">
+						<h4>Support</h4>
+						
+							<p>Does this site need improvement? Found a bug, or need help using Stonecraft? Go ahead and <a href="mailto:mrcerealguy@gmx.de">contact me</a>.</p>
+
+							<p><a href="/stonecraft/html/impressum.html">Impressum</a></p>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- load js last -->
+<script src="./js/jquery.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/jquery.fancybox.pack.js"></script>
+<script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        // fancybox
+        $(".fancybox").fancybox();
+    });
+</script>
+
+  
+
+
+</body></html>
