@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+        <title>Robotik</title>
+
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <meta name="author" content="Andreas Zahnleiter">
+
+    </head>
+
+    <body>
+						<div id="header">
+			<p style="padding-bottom:30 px"> <a href="../index.html">Home</a> | <span style="color:#cc6600">Elektrotechnik</span> | <a href="./index-funktechnik.html">Funktechnik</a> | 
+			<a href="./index-sonstiges.html">Sonstiges</a> | <a href="./imprint.html">Impressum</a></p>
+			<h1>Andreas Zahnleiter</h1>
+			<img src="../gfx/header.jpg" height="90" width="960">
+		</div>
+        <div id="container">		
+
+
+            <div id="main_content">
+                <h2>Robotik</h2>
+
+                <p>Ich hoffe euch hier mal einen selbst gebauten Roboter zeigen zu können ;-).</p>
+                
+				<h3>Roboter von Boston Dynamics:</h3>
+				
+				<table border="0">
+                    <tr>
+                        <td>
+                            <iframe width="210" height="157" src="http://www.youtube.com/embed/cHJJQ0zNNOM" frameborder="0" allowfullscreen></iframe>
+                            <br><span style="font-size:9pt;">BigDog von Boston Dynamics</span>
+                        </td>
+                        <td>
+                            <iframe width="280" height="157" src="http://www.youtube.com/embed/aqCmX5dMYHg" frameborder="0" allowfullscreen></iframe>
+                            <br><span style="font-size:9pt;">DARPA Robot Masters Stairs</span>
+                        </td>
+						<td>
+                            <iframe width="280" height="157" src="http://www.youtube.com/embed/chPanW0QWhA" frameborder="0" allowfullscreen></iframe>
+                            <br><span style="font-size:9pt;">Cheetah Robot runs 28.3 mph; a bit faster than Usain Bolt </span>
+                        </td>
+                    </tr>
+					<tr>
+                        <td colspan="3">
+                            <iframe width="280" height="157" src="http://www.youtube.com/embed/mclbVTIYG8E" frameborder="0" allowfullscreen></iframe>
+                            <br><span style="font-size:9pt;">PETMAN</span>
+                        </td>
+
+                </table>
+
+            </div>
+
+                        <div id="footer">
+                <div style="float:left;"><p style="color:#000000;">&copy; by Andreas Zahnleiter. Kontakt per <a href="./email.html" style="color:#000000;">E-Mail</a></p></div>
+            </div>
+        </div>	
+    </body>
+</html>

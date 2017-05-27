@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+        <title>CB-Gateway</title>
+
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+		<meta name="robots" content="noindex">
+
+
+    </head>
+
+    <body>
+	
+			<div id="header">
+			<!--<p style="padding-bottom:30 px"> <a href="../index.html">Home</a> | <a href="./index-elektrotechnik.html">Elektrotechnik</a> | <span style="color:#cc6600">Funktechnik</span> | 
+			<a href="./index-sonstiges.html">Sonstiges</a> | <a href="./imprint.html">Impressum</a></p>-->
+
+			<img src="../gfx/header.jpg" height="90" width="960">
+		</div>
+        <div id="container">		
+
+
+
+            <div id="main_content">
+                <h2>CB-Gateway</h2>
+
+                <a name="1"><h3>Was ist das?</h3></a>
+
+                <p>Bei einem CB-Gateway werden herk&ouml;mmliche CB-Funkstationen &uuml;ber das Internet vernetzt. Das Internet dient hier als virtuelle Funkstrecke, so dass weltweit Sprache &uuml;bertragen werden kann. Die Technik dahinter ist relativ simpel. Das Funkger&auml;t von Station A empf&auml;ngt die Sprache, diese wird &uuml;ber den Lautsprecher-Ausgang des Funkger&auml;ts an den Eingang (LINE-IN) der Soundkarte verbunden und im Computer mithilfe einer Software digitalisiert und dann schlie&szlig;lich &uuml;ber das Internet &uuml;bertragen. Am entfernten Standort B wird das digitalisierte Signal wieder &uuml;ber den Ausgang (LINE-OUT) der Soundkarte des Computers an das Funkger&auml;t &uuml;ber den Mikrofoneingang &uuml;bertragen.</p>
+
+                <h3>CW &uuml;ber ein CB-VoIP-Gateway </h3>
+                <p>Im folgenden Video habe ich Morse-Signale (CW) &uuml;ber CB-Funk von meinem Notebook an meinen PC gesendet, Co- und Decodierung der Signale erfolgte mit Hilfe einer Software. In diesem Fall befanden sich beide Stationen an einem Standort, eine &Uuml;bertragung &uuml;ber das Internet w&auml;re mittels VoIP-Software (z.B. Teamspeak) ohne Weiteres m&ouml;glich.</p>
+				<img src="../gfx/video-icon.ico"> <a href="../mp4/CW_ueber_ein_CB-VoIP-Gateway.mp4" target="_blank">Video starten</a>
+
+            </div>	
+            
+           
+    </body>
+</html>

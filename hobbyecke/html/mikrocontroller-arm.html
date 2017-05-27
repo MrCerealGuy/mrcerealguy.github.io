@@ -1,0 +1,790 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+
+		<title>Mikrocontroller/Embedded Systems</title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="robots" content="noindex">
+		
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+		
+		<!-- To generate your own colored code visit http://www.bedaux.net/cpp2html/ -->
+<style type="text/css">
+.comment { color: #999999; font-style: italic; }
+.pre { color: #000099; }
+.string { color: #009900; }
+.char { color: #009900; }
+.float { color: #996600; }
+.int { color: #999900; }
+.bool { color: #000000; font-weight: bold; }
+.type { color: #FF6633; }
+.flow { color: #FF0000; }
+.keyword { color: #990000; }
+.operator { color: #663300; font-weight: bold; }
+.operator { color: #663300; font-weight: bold; }
+</style>
+
+    </head>
+    <body>
+		<div id="header">
+			<!--<p style="padding-bottom:30 px"> <a href="../index.html">Home</a> | <span style="color:#cc6600">Elektrotechnik</span> | <a href="./index-funktechnik.html">Funktechnik</a> | 
+			<a href="./index-sonstiges.html">Sonstiges</a> | <a href="./imprint.html">Impressum</a></p>-->
+
+			<img src="../gfx/header.jpg" height="90" width="960">
+		</div>
+        <div id="container">
+
+            <div id="main_content">
+                <h2>Mikrocontroller/Embedded Systems (ARM)</h2>
+                <p>&nbsp;</p>
+                <p> <a href="#1">ARM NXP LPC1768 Development Board + 3.2" TFT LCD Module</a> | <a href="#2">Textausgabe über UART</a> | <a href="#3">Textausgabe über das TFT LCD-Display</a> | <a href="#4">Bild aus SPI-Flash lesen</a>
+                </p>
+                <p>&nbsp;</p>
+                <h3>Was ist ein Mikrocontroller?</h3>
+                <p>Man kann sich einen Mikrocontroller als ein
+                    Ein-Chip-Computersystem (System on a Chip, Abk. SoC) vorstellen. Im
+                    Gegensatz zu einem Prozessor, der alleine nicht lauffähig ist,
+                    beinhaltet ein Mikrocontroller bereits einen Arbeits- und
+                    Programmspeicher, sowie auch komplexere Peripheriefunktionen wie
+                    verschiedene Bussysteme (CAN, USB, SPI, seriell...). Einen guten
+                    Einstieg in dieses faszinierende Thema bietet die deutsch-sprachige
+                    Seite <a href="http://www.mikrocontroller.net/" target="_blank">www.mikrocontroller.net/</a>.</p>
+                <p>&nbsp;</p>
+                <h3><a name="1">ARM NXP LPC1768 Development Board + 3.2" TFT LCD Module</a></h3>
+                <p>Meine ARM-Projekte habe ich mit einem Cortex-M3 durchgeführt. Das verwendete LandTiger Entwicklungsboard mit <strong>NXP LPC1768 ARM</strong> verfügt über einen 32-Bit-Mikroprozessor (100 MHz), 512 KB on-chip Flash und 64 KB SRAM. Auf dem Board befindet sich ein 3,2" TFT LCD-Display, Ethernet, USB, CAN, SD/MMC und zwei serielle Schnittstellen (UART). </p>
+                
+				<p><strong>Boardübersicht:</strong></p>
+				
+				<a href="../gfx/cortex-m3-board.jpg" rel="shadowbox"><img src="../gfx/cortex-m3-board-300.jpg" alt="" border="0" width="300"></a>
+				<a href="../gfx/cortex-m3-diagram.jpg" rel="shadowbox"><img src="../gfx/cortex-m3-diagram-300.jpg" alt="" border="0" width="300"></a>
+				
+				<br /><br />
+				
+				<p><strong>Spezifikation/Manual:</strong></p>
+				
+				<p>
+					<a href="../files/landtiger_v2.0_-_manual__v1_1.pdf">LandTiger Anleitung</a><br>
+					<a href="../files/LPC17xx-User-manual.pdf">LPC17xx Anleitung</a><br>
+					<a href="http://www.lpcware.com/content/nxpfile/mcb1700-sample-code-bundle-lpc17xx-peripherals-using-keils-mdk-arm" target="_blank">Beispielcode (Keil's MDK-ARM)</a>
+					
+					
+				</p>
+				
+				<br />
+				
+				<p><strong>Entwicklungsumgebung:</strong></p>
+				
+				<p>Die Programme habe ich in der Programmiersprache C geschrieben
+                    und verwende als Toolchain das <a href="http://www.keil.com/arm/mdk.asp" target="_blank">MDK-ARM Microcontroller Development Kit</a> und als Entwicklungsumgebung μVision4 IDE.
+                </p>
+               <!--<a href="../gfx/IMG_20130622_100051.jpg" rel="shadowbox"><img src="../gfx/IMG_20130622_100051s.jpg" alt="" border="0" width="50"></a>-->
+			   
+			   <p>
+			   Das folgende Programm dient als kleines Beispiel zur Ansteuerung der GPIO Ports, zur Demonstration lassen wir auf dem Board ein paar LEDs blinken:
+			   </p>
+                
+				<pre><span class="pre">#include "lpc17xx_gpio.h"
+#include "lpc17xx_clkpwr.h"
+</span><span class="keyword">
+volatile</span> uint32_t temp<span class="operator">;</span><span class="type">
+
+void</span> delay<span class="operator">(</span>uint32_t del<span class="operator">)
+{</span>
+	uint32_t i<span class="operator">;</span><span class="flow">
+
+	for</span><span class="operator">(</span>i<span class="operator">=</span><span class="int">0</span><span class="operator">;</span> i<span class="operator">&lt;</span>del<span class="operator">;</span> i<span class="operator">++)</span>
+		temp<span class="operator"> =</span> i<span class="operator">;
+}</span><span class="type">
+
+void</span> LEDBlinkExp<span class="operator">()
+{</span><span class="comment">
+	/* 10101010, d.h. von den Pins 0..7 werden wir 1, 3, 5 und 7 blinken lassen */</span><span class="type">
+    unsigned long</span> LED_PINS<span class="operator">  =  ((</span>uint32_t<span class="operator">)</span><span class="int">1</span><span class="operator">&lt;&lt;</span><span class="int">1</span><span class="operator">)|((</span>uint32_t<span class="operator">)</span><span class="int">1</span><span class="operator">&lt;&lt;</span><span class="int">3</span><span class="operator">)|((</span>uint32_t<span class="operator">)</span><span class="int">1</span><span class="operator">&lt;&lt;</span><span class="int">5</span><span class="operator">)|((</span>uint32_t<span class="operator">)</span><span class="int">1</span><span class="operator">&lt;&lt;</span><span class="int">7</span><span class="operator">);</span><span class="comment">
+
+    /* LEDs an PORT2 als Ausgang definieren  */</span>
+    GPIO_SetDir<span class="operator">(</span><span class="int">2</span><span class="operator">,</span> LED_PINS<span class="operator">,</span><span class="int"> 1</span><span class="operator">);</span><span class="flow">
+
+    while</span><span class="operator">(</span><span class="int">1</span><span class="operator">)
+    {</span><span class="comment">
+	    /* etwas warten */</span>
+	    delay<span class="operator">(</span><span class="int">1</span><span class="operator"> &lt;&lt;</span><span class="int"> 24</span><span class="operator">);</span><span class="comment">
+
+	    /* PORT2 auf low setzen */</span>
+		GPIO_ClearValue<span class="operator">(</span><span class="int">2</span><span class="operator">,</span> LED_PINS<span class="operator">);</span><span class="comment">
+
+		/* etwas warten */</span>
+		delay<span class="operator">(</span><span class="int">1</span><span class="operator"> &lt;&lt;</span><span class="int"> 24</span><span class="operator">);</span><span class="comment">
+
+		/* PORT2 auf high setzen */</span>
+		GPIO_SetValue<span class="operator">(</span><span class="int">2</span><span class="operator">,</span> LED_PINS<span class="operator">);
+	  }
+}</span><span class="type">
+
+int</span><span class="keyword"> main</span><span class="operator">(</span><span class="type">void</span><span class="operator">)
+{</span><span class="comment">
+	/* GPIO einschalten */</span>
+	LPC_SC<span class="operator">-&gt;</span>PCONP<span class="operator"> |= (</span><span class="int"> 1</span><span class="operator"> &lt;&lt;</span><span class="int"> 15</span><span class="operator"> );</span><span class="comment">
+
+	/* GPIO Clock einschalten */</span>
+	CLKPWR_ConfigPPWR<span class="operator">(</span>CLKPWR_PCONP_PCGPIO<span class="operator">,</span> ENABLE<span class="operator">);</span>
+
+	LEDBlinkExp<span class="operator">();</span><span class="flow">
+
+	return</span><span class="int"> 0</span><span class="operator">;
+}</span></pre>
+                <p>&nbsp;</p>
+                <hr>
+                <p>&nbsp;</p>
+
+                <h3><a name="2">Textausgabe über UART</a></h3>
+				
+				<p>UART ist eine digtiale serielle Schnittstelle über die man Daten empfangen und senden kann. Gerade bei der Entwicklung eines neuen uC-Programms ist sie sehr nützlich, da man zur Laufzeit Debugging-Informationen senden und am PC darstellen kann. Wie das geht, zeige ich an einem abgewandelten Beispiel aus dem Paket <a href="http://www.lpcware.com/content/nxpfile/lpc175x6x-cmsis-compliant-standard-peripheral-firmware-driver-library-keil-iar-gnu" target="_blank"><strong>LPC175x_6x CMSIS-Compliant Standard Peripheral Firmware Driver Library (Keil, IAR, GNU)</strong></a>. Ich werde an dieser Stelle nur das Hauptprogramm zeigen, das komplette Beispiel könnt ihr <a href="../files/UART-with-LPC1768.zip" target="_blank">hier</a> herunterladen.</p>
+				
+				<p>Die UART-Schnittstelle arbeitet im <strong>Interrupt-Mode</strong>, zum Verständnis des Programms sollte man sich die Interrupt-Handler-Funktionen</p>
+				
+					<ul>
+						<li><strong>UART0_IRQHandler</strong></li>
+						<li><strong>UART_IntErr</strong></li>
+						<li><strong>UART_IntTransmit</strong></li>
+						<li><strong>UART_IntReceive</strong></li>
+					</ul>
+				
+				<p>mal genauer anschauen.</p>
+				
+				<p>Im folgenden Screenshot wurde das Programm (hex-File) in den Flash-Speicher "gebrannt", dazu nutze ich das kostenlose Tool <strong>Flash Magic</strong>. Rechts im Screenshot ist ein <strong>Terminal-Programm</strong> zum Ansteuern von seriellen Schnittstellen zu sehen, es ist mit meinem Board über COM3 verbunden, da mein PC über keine seriellen Schnittstellen verfügt, nuzte ich einen Seriell-USB-Adapter. Wenn ich nun unten im Bereich "Transmit" den Buchstaben "r" an den Controller schicke, liefert er mir eine Zeichenkette zurück.</p>
+				
+				<a href="../gfx/uart-cortex-m3.jpg" rel="shadowbox"><img src="../gfx/uart-cortex-m3-300.jpg" alt="" border="0" width="300"></a>
+				
+				<br /><br />
+				
+				<pre><span class="pre">#include "lpc17xx_uart.h"
+#include "lpc17xx_libcfg.h"
+#include "lpc17xx_pinsel.h"
+</span><span class="comment">
+/************************** PRIVATE DEFINTIONS *************************/
+/* buffer size definition */</span><span class="pre">
+#define UART_RING_BUFSIZE 256
+</span><span class="comment">
+/* Buf mask */</span><span class="pre">
+#define __BUF_MASK (UART_RING_BUFSIZE-1)
+</span><span class="comment">/* Check buf is full or not */</span><span class="pre">
+#define __BUF_IS_FULL(head, tail) ((tail&amp;__BUF_MASK)==((head+1)&amp;__BUF_MASK))
+</span><span class="comment">/* Check buf will be full in next receiving or not */</span><span class="pre">
+#define __BUF_WILL_FULL(head, tail) ((tail&amp;__BUF_MASK)==((head+2)&amp;__BUF_MASK))
+</span><span class="comment">/* Check buf is empty */</span><span class="pre">
+#define __BUF_IS_EMPTY(head, tail) ((head&amp;__BUF_MASK)==(tail&amp;__BUF_MASK))
+</span><span class="comment">/* Reset buf */</span><span class="pre">
+#define __BUF_RESET(bufidx)	(bufidx=0)
+#define __BUF_INCR(bufidx)	(bufidx=(bufidx+1)&amp;__BUF_MASK)
+</span><span class="comment">
+
+/************************** PRIVATE TYPES *************************/
+
+/** @brief UART Ring buffer structure */</span><span class="keyword">
+typedef struct</span><span class="operator">
+{</span>
+    __IO uint32_t tx_head<span class="operator">;</span><span class="comment">                /*!&lt; UART Tx ring buffer head index */</span>
+    __IO uint32_t tx_tail<span class="operator">;</span><span class="comment">                /*!&lt; UART Tx ring buffer tail index */</span>
+    __IO uint32_t rx_head<span class="operator">;</span><span class="comment">                /*!&lt; UART Rx ring buffer head index */</span>
+    __IO uint32_t rx_tail<span class="operator">;</span><span class="comment">                /*!&lt; UART Rx ring buffer tail index */</span>
+    __IO uint8_t  tx<span class="operator">[</span>UART_RING_BUFSIZE<span class="operator">];</span><span class="comment">  /*!&lt; UART Tx data ring buffer */</span>
+    __IO uint8_t  rx<span class="operator">[</span>UART_RING_BUFSIZE<span class="operator">];</span><span class="comment">  /*!&lt; UART Rx data ring buffer */</span><span class="operator">
+}</span> UART_RING_BUFFER_T<span class="operator">;</span><span class="comment">
+
+
+/************************** PRIVATE VARIABLES *************************/</span>
+uint8_t menu1<span class="operator">[] =</span><span class="string"> "Hello World from Cortex M3!! \n\r"</span><span class="operator">;</span><span class="comment">
+
+// UART Ring buffer
+</span>UART_RING_BUFFER_T rb<span class="operator">;</span><span class="comment">
+
+// Current Tx Interrupt enable state
+</span>__IO FlagStatus TxIntStat<span class="operator">;</span><span class="comment">
+
+
+/************************** PRIVATE FUNCTIONS *************************/
+/* Interrupt service routines */</span><span class="type">
+void</span> UART0_IRQHandler<span class="operator">(</span><span class="type">void</span><span class="operator">);</span><span class="type">
+void</span> UART_IntErr<span class="operator">(</span>uint8_t bLSErrType<span class="operator">);</span><span class="type">
+void</span> UART_IntTransmit<span class="operator">(</span><span class="type">void</span><span class="operator">);</span><span class="type">
+void</span> UART_IntReceive<span class="operator">(</span><span class="type">void</span><span class="operator">);</span>
+
+uint32_t UARTReceive<span class="operator">(</span>LPC_UART_TypeDef<span class="operator"> *</span>UARTPort<span class="operator">,</span> uint8_t<span class="operator"> *</span>rxbuf<span class="operator">,</span> uint8_t buflen<span class="operator">);</span>
+uint32_t UARTSend<span class="operator">(</span>LPC_UART_TypeDef<span class="operator"> *</span>UARTPort<span class="operator">,</span> uint8_t<span class="operator"> *</span>txbuf<span class="operator">,</span> uint8_t buflen<span class="operator">);</span><span class="type">
+void</span> print_text<span class="operator">(</span><span class="type">void</span><span class="operator">);</span><span class="comment">
+
+/*----------------- INTERRUPT SERVICE ROUTINES --------------------------*/
+/*********************************************************************//**
+ * @brief		UART0 interrupt handler sub-routine
+ * @param[in]	None
+ * @return 		None
+ **********************************************************************/</span><span class="type">
+void</span> UART0_IRQHandler<span class="operator">(</span><span class="type">void</span><span class="operator">)
+{</span>
+	uint32_t intsrc<span class="operator">,</span> tmp<span class="operator">,</span> tmp1<span class="operator">;</span><span class="comment">
+
+	/* Determine the interrupt source */</span>
+	intsrc<span class="operator"> =</span> UART_GetIntId<span class="operator">(</span>LPC_UART0<span class="operator">);</span>
+	tmp<span class="operator"> =</span> intsrc<span class="operator"> &amp;</span> UART_IIR_INTID_MASK<span class="operator">;</span><span class="comment">
+
+	// Receive Line Status
+</span><span class="flow">	if</span><span class="operator"> (</span>tmp<span class="operator"> ==</span> UART_IIR_INTID_RLS<span class="operator">){</span><span class="comment">
+		// Check line status
+</span>		tmp1<span class="operator"> =</span> UART_GetLineStatus<span class="operator">(</span>LPC_UART0<span class="operator">);</span><span class="comment">
+		// Mask out the Receive Ready and Transmit Holding empty status
+</span>		tmp1<span class="operator"> &amp;= (</span>UART_LSR_OE<span class="operator"> |</span> UART_LSR_PE<span class="operator"> |</span> UART_LSR_FE<span class="operator"> \
+				|</span> UART_LSR_BI<span class="operator"> |</span> UART_LSR_RXFE<span class="operator">);</span><span class="comment">
+		// If any error exist
+</span><span class="flow">		if</span><span class="operator"> (</span>tmp1<span class="operator">) {</span>
+				UART_IntErr<span class="operator">(</span>tmp1<span class="operator">);
+		}
+	}</span><span class="comment">
+
+	// Receive Data Available or Character time-out
+</span><span class="flow">	if</span><span class="operator"> ((</span>tmp<span class="operator"> ==</span> UART_IIR_INTID_RDA<span class="operator">) || (</span>tmp<span class="operator"> ==</span> UART_IIR_INTID_CTI<span class="operator">)){</span>
+			UART_IntReceive<span class="operator">();
+	}</span><span class="comment">
+
+	// Transmit Holding Empty
+</span><span class="flow">	if</span><span class="operator"> (</span>tmp<span class="operator"> ==</span> UART_IIR_INTID_THRE<span class="operator">){</span>
+			UART_IntTransmit<span class="operator">();
+	}
+
+}</span><span class="comment">
+
+/********************************************************************//**
+ * @brief 		UART receive function (ring buffer used)
+ * @param[in]	None
+ * @return 		None
+ *********************************************************************/</span><span class="type">
+void</span> UART_IntReceive<span class="operator">(</span><span class="type">void</span><span class="operator">)
+{</span>
+	uint8_t tmpc<span class="operator">;</span>
+	uint32_t rLen<span class="operator">;</span><span class="flow">
+
+	while</span><span class="operator">(</span><span class="int">1</span><span class="operator">){</span><span class="comment">
+		// Call UART read function in UART driver
+</span>		rLen<span class="operator"> =</span> UART_Receive<span class="operator">((</span>LPC_UART_TypeDef<span class="operator"> *)</span>LPC_UART0<span class="operator">, &amp;</span>tmpc<span class="operator">,</span><span class="int"> 1</span><span class="operator">,</span> NONE_BLOCKING<span class="operator">);</span><span class="comment">
+		// If data received
+</span><span class="flow">		if</span><span class="operator"> (</span>rLen<span class="operator">){</span><span class="comment">
+			/* Check if buffer is more space
+			 * If no more space, remaining character will be trimmed out
+			 */</span><span class="flow">
+			if</span><span class="operator"> (!</span>__BUF_IS_FULL<span class="operator">(</span>rb<span class="operator">.</span>rx_head<span class="operator">,</span>rb<span class="operator">.</span>rx_tail<span class="operator">)){</span>
+				rb<span class="operator">.</span>rx<span class="operator">[</span>rb<span class="operator">.</span>rx_head<span class="operator">] =</span> tmpc<span class="operator">;</span>
+				__BUF_INCR<span class="operator">(</span>rb<span class="operator">.</span>rx_head<span class="operator">);
+			}
+		}</span><span class="comment">
+		// no more data
+</span><span class="flow">		else</span><span class="operator"> {</span><span class="flow">
+			break</span><span class="operator">;
+		}
+	}
+}</span><span class="comment">
+
+/********************************************************************//**
+ * @brief 		UART transmit function (ring buffer used)
+ * @param[in]	None
+ * @return 		None
+ *********************************************************************/</span><span class="type">
+void</span> UART_IntTransmit<span class="operator">(</span><span class="type">void</span><span class="operator">)
+{</span><span class="comment">
+    // Disable THRE interrupt
+</span>    UART_IntConfig<span class="operator">((</span>LPC_UART_TypeDef<span class="operator"> *)</span>LPC_UART0<span class="operator">,</span> UART_INTCFG_THRE<span class="operator">,</span> DISABLE<span class="operator">);</span><span class="comment">
+
+	/* Wait for FIFO buffer empty, transfer UART_TX_FIFO_SIZE bytes
+	 * of data or break whenever ring buffers are empty */
+	/* Wait until THR empty */</span><span class="flow">
+    while</span><span class="operator"> (</span>UART_CheckBusy<span class="operator">((</span>LPC_UART_TypeDef<span class="operator"> *)</span>LPC_UART0<span class="operator">) ==</span> SET<span class="operator">);</span><span class="flow">
+
+	while</span><span class="operator"> (!</span>__BUF_IS_EMPTY<span class="operator">(</span>rb<span class="operator">.</span>tx_head<span class="operator">,</span>rb<span class="operator">.</span>tx_tail<span class="operator">))
+    {</span><span class="comment">
+        /* Move a piece of data into the transmit FIFO */</span><span class="flow">
+    	if</span><span class="operator"> (</span>UART_Send<span class="operator">((</span>LPC_UART_TypeDef<span class="operator"> *)</span>LPC_UART0<span class="operator">, (</span>uint8_t<span class="operator"> *)&amp;</span>rb<span class="operator">.</span>tx<span class="operator">[</span>rb<span class="operator">.</span>tx_tail<span class="operator">],</span><span class="int"> 1</span><span class="operator">,</span> NONE_BLOCKING<span class="operator">)){</span><span class="comment">
+        /* Update transmit ring FIFO tail pointer */</span>
+        __BUF_INCR<span class="operator">(</span>rb<span class="operator">.</span>tx_tail<span class="operator">);
+    	}</span><span class="flow"> else</span><span class="operator"> {</span><span class="flow">
+    		break</span><span class="operator">;
+    	}
+    }</span><span class="comment">
+
+    /* If there is no more data to send, disable the transmit
+       interrupt - else enable it or keep it enabled */</span><span class="flow">
+	if</span><span class="operator"> (</span>__BUF_IS_EMPTY<span class="operator">(</span>rb<span class="operator">.</span>tx_head<span class="operator">,</span> rb<span class="operator">.</span>tx_tail<span class="operator">)) {</span>
+    	UART_IntConfig<span class="operator">((</span>LPC_UART_TypeDef<span class="operator"> *)</span>LPC_UART0<span class="operator">,</span> UART_INTCFG_THRE<span class="operator">,</span> DISABLE<span class="operator">);</span><span class="comment">
+    	// Reset Tx Interrupt state
+</span>    	TxIntStat<span class="operator"> =</span> RESET<span class="operator">;
+    }</span><span class="flow">
+    else</span><span class="operator">{</span><span class="comment">
+      	// Set Tx Interrupt state
+</span>		TxIntStat<span class="operator"> =</span> SET<span class="operator">;</span>
+    	UART_IntConfig<span class="operator">((</span>LPC_UART_TypeDef<span class="operator"> *)</span>LPC_UART0<span class="operator">,</span> UART_INTCFG_THRE<span class="operator">,</span> ENABLE<span class="operator">);
+    }
+}</span><span class="comment">
+
+
+/*********************************************************************//**
+ * @brief		UART Line Status Error
+ * @param[in]	bLSErrType	UART Line Status Error Type
+ * @return		None
+ **********************************************************************/</span><span class="type">
+void</span> UART_IntErr<span class="operator">(</span>uint8_t bLSErrType<span class="operator">)
+{</span>
+	uint8_t test<span class="operator">;</span><span class="comment">
+	// Loop forever
+</span><span class="flow">	while</span><span class="operator"> (</span><span class="int">1</span><span class="operator">){</span><span class="comment">
+		// For testing purpose
+</span>		test<span class="operator"> =</span> bLSErrType<span class="operator">;
+	}
+}</span><span class="comment">
+
+/*-------------------------PRIVATE FUNCTIONS------------------------------*/
+/*********************************************************************//**
+ * @brief		UART transmit function for interrupt mode (using ring buffers)
+ * @param[in]	UARTPort	Selected UART peripheral used to send data,
+ * 				should be UART0
+ * @param[out]	txbuf Pointer to Transmit buffer
+ * @param[in]	buflen Length of Transmit buffer
+ * @return 		Number of bytes actually sent to the ring buffer
+ **********************************************************************/</span>
+uint32_t UARTSend<span class="operator">(</span>LPC_UART_TypeDef<span class="operator"> *</span>UARTPort<span class="operator">,</span> uint8_t<span class="operator"> *</span>txbuf<span class="operator">,</span> uint8_t buflen<span class="operator">)
+{</span>
+    uint8_t<span class="operator"> *</span>data<span class="operator"> = (</span>uint8_t<span class="operator"> *)</span> txbuf<span class="operator">;</span>
+    uint32_t bytes<span class="operator"> =</span><span class="int"> 0</span><span class="operator">;</span><span class="comment">
+
+	/* Temporarily lock out UART transmit interrupts during this
+	   read so the UART transmit interrupt won't cause problems
+	   with the index values */</span>
+    UART_IntConfig<span class="operator">(</span>UARTPort<span class="operator">,</span> UART_INTCFG_THRE<span class="operator">,</span> DISABLE<span class="operator">);</span><span class="comment">
+
+	/* Loop until transmit run buffer is full or until n_bytes
+	   expires */</span><span class="flow">
+	while</span><span class="operator"> ((</span>buflen<span class="operator"> &gt;</span><span class="int"> 0</span><span class="operator">) &amp;&amp; (!</span>__BUF_IS_FULL<span class="operator">(</span>rb<span class="operator">.</span>tx_head<span class="operator">,</span> rb<span class="operator">.</span>tx_tail<span class="operator">)))
+	{</span><span class="comment">
+		/* Write data from buffer into ring buffer */</span>
+		rb<span class="operator">.</span>tx<span class="operator">[</span>rb<span class="operator">.</span>tx_head<span class="operator">] = *</span>data<span class="operator">;</span>
+		data<span class="operator">++;</span><span class="comment">
+
+		/* Increment head pointer */</span>
+		__BUF_INCR<span class="operator">(</span>rb<span class="operator">.</span>tx_head<span class="operator">);</span><span class="comment">
+
+		/* Increment data count and decrement buffer size count */</span>
+		bytes<span class="operator">++;</span>
+		buflen<span class="operator">--;
+	}</span><span class="comment">
+
+	/*
+	 * Check if current Tx interrupt enable is reset,
+	 * that means the Tx interrupt must be re-enabled
+	 * due to call UART_IntTransmit() function to trigger
+	 * this interrupt type
+	 */</span><span class="flow">
+	if</span><span class="operator"> (</span>TxIntStat<span class="operator"> ==</span> RESET<span class="operator">) {</span>
+		UART_IntTransmit<span class="operator">();
+	}</span><span class="comment">
+	/*
+	 * Otherwise, re-enables Tx Interrupt
+	 */</span><span class="flow">
+	else</span><span class="operator"> {</span>
+		UART_IntConfig<span class="operator">(</span>UARTPort<span class="operator">,</span> UART_INTCFG_THRE<span class="operator">,</span> ENABLE<span class="operator">);
+	}</span><span class="flow">
+
+    return</span> bytes<span class="operator">;
+}</span><span class="comment">
+
+
+/*********************************************************************//**
+ * @brief		UART read function for interrupt mode (using ring buffers)
+ * @param[in]	UARTPort	Selected UART peripheral used to send data,
+ * 				should be UART0
+ * @param[out]	rxbuf Pointer to Received buffer
+ * @param[in]	buflen Length of Received buffer
+ * @return 		Number of bytes actually read from the ring buffer
+ **********************************************************************/</span>
+uint32_t UARTReceive<span class="operator">(</span>LPC_UART_TypeDef<span class="operator"> *</span>UARTPort<span class="operator">,</span> uint8_t<span class="operator"> *</span>rxbuf<span class="operator">,</span> uint8_t buflen<span class="operator">)
+{</span>
+    uint8_t<span class="operator"> *</span>data<span class="operator"> = (</span>uint8_t<span class="operator"> *)</span> rxbuf<span class="operator">;</span>
+    uint32_t bytes<span class="operator"> =</span><span class="int"> 0</span><span class="operator">;</span><span class="comment">
+
+	/* Temporarily lock out UART receive interrupts during this
+	   read so the UART receive interrupt won't cause problems
+	   with the index values */</span>
+	UART_IntConfig<span class="operator">(</span>UARTPort<span class="operator">,</span> UART_INTCFG_RBR<span class="operator">,</span> DISABLE<span class="operator">);</span><span class="comment">
+
+	/* Loop until receive buffer ring is empty or
+		until max_bytes expires */</span><span class="flow">
+	while</span><span class="operator"> ((</span>buflen<span class="operator"> &gt;</span><span class="int"> 0</span><span class="operator">) &amp;&amp; (!(</span>__BUF_IS_EMPTY<span class="operator">(</span>rb<span class="operator">.</span>rx_head<span class="operator">,</span> rb<span class="operator">.</span>rx_tail<span class="operator">))))
+	{</span><span class="comment">
+		/* Read data from ring buffer into user buffer */</span><span class="operator">
+		*</span>data<span class="operator"> =</span> rb<span class="operator">.</span>rx<span class="operator">[</span>rb<span class="operator">.</span>rx_tail<span class="operator">];</span>
+		data<span class="operator">++;</span><span class="comment">
+
+		/* Update tail pointer */</span>
+		__BUF_INCR<span class="operator">(</span>rb<span class="operator">.</span>rx_tail<span class="operator">);</span><span class="comment">
+
+		/* Increment data count and decrement buffer size count */</span>
+		bytes<span class="operator">++;</span>
+		buflen<span class="operator">--;
+	}</span><span class="comment">
+
+	/* Re-enable UART interrupts */</span>
+	UART_IntConfig<span class="operator">(</span>UARTPort<span class="operator">,</span> UART_INTCFG_RBR<span class="operator">,</span> ENABLE<span class="operator">);</span><span class="flow">
+
+    return</span> bytes<span class="operator">;
+}</span><span class="comment">
+
+/*********************************************************************//**
+ * @brief	Print Welcome Screen Menu subroutine
+ * @param	None
+ * @return	None
+ **********************************************************************/</span><span class="type">
+void</span> print_text<span class="operator">(</span><span class="type">void</span><span class="operator">)
+{</span>
+	uint32_t tmp<span class="operator">,</span> tmp2<span class="operator">;</span>
+	uint8_t<span class="operator"> *</span>pDat<span class="operator">;</span>
+
+	tmp<span class="operator"> =</span><span class="keyword"> sizeof</span><span class="operator">(</span>menu1<span class="operator">);</span>
+	tmp2<span class="operator"> =</span><span class="int"> 0</span><span class="operator">;</span>
+	pDat<span class="operator"> = (</span>uint8_t<span class="operator"> *)&amp;</span>menu1<span class="operator">[</span><span class="int">0</span><span class="operator">];</span><span class="flow">
+	while</span><span class="operator">(</span>tmp<span class="operator">) {</span>
+		tmp2<span class="operator"> =</span> UARTSend<span class="operator">((</span>LPC_UART_TypeDef<span class="operator"> *)</span>LPC_UART0<span class="operator">,</span> pDat<span class="operator">,</span> tmp<span class="operator">);</span>
+		pDat<span class="operator"> +=</span> tmp2<span class="operator">;</span>
+		tmp<span class="operator"> -=</span> tmp2<span class="operator">;
+	}
+}</span><span class="comment">
+
+/*-------------------------MAIN FUNCTION------------------------------*/
+/*********************************************************************//**
+ * @brief		c_entry: Main UART program body
+ * @param[in]	None
+ * @return 		int
+ **********************************************************************/</span><span class="type">
+int</span> c_entry<span class="operator">(</span><span class="type">void</span><span class="operator">)
+{</span><span class="comment">
+	// UART Configuration structure variable
+</span>	UART_CFG_Type UARTConfigStruct<span class="operator">;</span><span class="comment">
+	// UART FIFO configuration Struct variable
+</span>	UART_FIFO_CFG_Type UARTFIFOConfigStruct<span class="operator">;</span><span class="comment">
+	// Pin configuration for UART0
+</span>	PINSEL_CFG_Type PinCfg<span class="operator">;</span>
+
+	uint32_t idx<span class="operator">,</span> len<span class="operator">;</span>
+	__IO FlagStatus exitflag<span class="operator">;</span>
+	uint8_t buffer<span class="operator">[</span><span class="int">10</span><span class="operator">];</span><span class="comment">
+
+	/*
+	 * Initialize UART0 pin connect
+	 */</span>
+	PinCfg<span class="operator">.</span>Funcnum<span class="operator"> =</span><span class="int"> 1</span><span class="operator">;</span>
+	PinCfg<span class="operator">.</span>OpenDrain<span class="operator"> =</span><span class="int"> 0</span><span class="operator">;</span>
+	PinCfg<span class="operator">.</span>Pinmode<span class="operator"> =</span><span class="int"> 0</span><span class="operator">;</span>
+	PinCfg<span class="operator">.</span>Pinnum<span class="operator"> =</span><span class="int"> 2</span><span class="operator">;</span>
+	PinCfg<span class="operator">.</span>Portnum<span class="operator"> =</span><span class="int"> 0</span><span class="operator">;</span>
+	PINSEL_ConfigPin<span class="operator">(&amp;</span>PinCfg<span class="operator">);</span>
+	PinCfg<span class="operator">.</span>Pinnum<span class="operator"> =</span><span class="int"> 3</span><span class="operator">;</span>
+	PINSEL_ConfigPin<span class="operator">(&amp;</span>PinCfg<span class="operator">);</span><span class="comment">
+
+
+	/* Initialize UART Configuration parameter structure to default state:
+	 * Baudrate = 9600bps
+	 * 8 data bit
+	 * 1 Stop bit
+	 * None parity
+	 */</span>
+	UART_ConfigStructInit<span class="operator">(&amp;</span>UARTConfigStruct<span class="operator">);</span><span class="comment">
+
+	// Initialize UART0 peripheral with given to corresponding parameter
+</span>	UART_Init<span class="operator">((</span>LPC_UART_TypeDef<span class="operator"> *)</span>LPC_UART0<span class="operator">, &amp;</span>UARTConfigStruct<span class="operator">);</span><span class="comment">
+
+
+	/* Initialize FIFOConfigStruct to default state:
+	 * 				- FIFO_DMAMode = DISABLE
+	 * 				- FIFO_Level = UART_FIFO_TRGLEV0
+	 * 				- FIFO_ResetRxBuf = ENABLE
+	 * 				- FIFO_ResetTxBuf = ENABLE
+	 * 				- FIFO_State = ENABLE
+	 */</span>
+	UART_FIFOConfigStructInit<span class="operator">(&amp;</span>UARTFIFOConfigStruct<span class="operator">);</span><span class="comment">
+
+	// Initialize FIFO for UART0 peripheral
+</span>	UART_FIFOConfig<span class="operator">((</span>LPC_UART_TypeDef<span class="operator"> *)</span>LPC_UART0<span class="operator">, &amp;</span>UARTFIFOConfigStruct<span class="operator">);</span><span class="comment">
+
+
+	// Enable UART Transmit
+</span>	UART_TxCmd<span class="operator">((</span>LPC_UART_TypeDef<span class="operator"> *)</span>LPC_UART0<span class="operator">,</span> ENABLE<span class="operator">);</span><span class="comment">
+
+    /* Enable UART Rx interrupt */</span>
+	UART_IntConfig<span class="operator">((</span>LPC_UART_TypeDef<span class="operator"> *)</span>LPC_UART0<span class="operator">,</span> UART_INTCFG_RBR<span class="operator">,</span> ENABLE<span class="operator">);</span><span class="comment">
+	/* Enable UART line status interrupt */</span>
+	UART_IntConfig<span class="operator">((</span>LPC_UART_TypeDef<span class="operator"> *)</span>LPC_UART0<span class="operator">,</span> UART_INTCFG_RLS<span class="operator">,</span> ENABLE<span class="operator">);</span><span class="comment">
+	/*
+	 * Do not enable transmit interrupt here, since it is handled by
+	 * UART_Send() function, just to reset Tx Interrupt state for the
+	 * first time
+	 */</span>
+	TxIntStat<span class="operator"> =</span> RESET<span class="operator">;</span><span class="comment">
+
+	// Reset ring buf head and tail idx
+</span>	__BUF_RESET<span class="operator">(</span>rb<span class="operator">.</span>rx_head<span class="operator">);</span>
+	__BUF_RESET<span class="operator">(</span>rb<span class="operator">.</span>rx_tail<span class="operator">);</span>
+	__BUF_RESET<span class="operator">(</span>rb<span class="operator">.</span>tx_head<span class="operator">);</span>
+	__BUF_RESET<span class="operator">(</span>rb<span class="operator">.</span>tx_tail<span class="operator">);</span><span class="comment">
+
+    /* preemption = 1, sub-priority = 1 */</span>
+    NVIC_SetPriority<span class="operator">(</span>UART0_IRQn<span class="operator">, ((</span><span class="int">0x01</span><span class="operator">&lt;&lt;</span><span class="int">3</span><span class="operator">)|</span><span class="int">0x01</span><span class="operator">));</span><span class="comment">
+	/* Enable Interrupt for UART0 channel */</span>
+    NVIC_EnableIRQ<span class="operator">(</span>UART0_IRQn<span class="operator">);</span><span class="comment">
+
+
+	// print welcome screen
+</span>	print_text<span class="operator">();</span><span class="comment">
+
+	// reset exit flag
+</span>	exitflag<span class="operator"> =</span> RESET<span class="operator">;</span><span class="comment">
+
+    /* Read some data from the buffer */</span><span class="flow">
+    while</span><span class="operator"> (</span>exitflag<span class="operator"> ==</span> RESET<span class="operator">)
+    {</span>
+       len<span class="operator"> =</span><span class="int"> 0</span><span class="operator">;</span><span class="flow">
+        while</span><span class="operator"> (</span>len<span class="operator"> ==</span><span class="int"> 0</span><span class="operator">)
+        {</span>
+            len<span class="operator"> =</span> UARTReceive<span class="operator">((</span>LPC_UART_TypeDef<span class="operator"> *)</span>LPC_UART0<span class="operator">,</span> buffer<span class="operator">,</span><span class="keyword"> sizeof</span><span class="operator">(</span>buffer<span class="operator">));
+        }</span><span class="comment">
+
+        /* Got some data */</span>
+        idx<span class="operator"> =</span><span class="int"> 0</span><span class="operator">;</span><span class="flow">
+        while</span><span class="operator"> (</span>idx<span class="operator"> &lt;</span> len<span class="operator">)
+        {</span><span class="flow">
+            if</span><span class="operator"> (</span>buffer<span class="operator">[</span>idx<span class="operator">] ==</span><span class="int"> 27</span><span class="operator">)
+            {</span><span class="comment">
+                /* ESC key, set exit flag */</span><span class="comment">
+            	//UARTSend((LPC_UART_TypeDef *)LPC_UART0, menu3, sizeof(menu3));
+</span>                exitflag<span class="operator"> =</span> SET<span class="operator">;
+            }</span><span class="flow">
+            else if</span><span class="operator"> (</span>buffer<span class="operator">[</span>idx<span class="operator">] ==</span><span class="char"> 'r'</span><span class="operator">)
+            {</span>
+                print_text<span class="operator">();
+            }</span><span class="flow">
+            else</span><span class="operator">
+            {</span><span class="comment">
+                /* Echo it back */</span>
+            	UARTSend<span class="operator">((</span>LPC_UART_TypeDef<span class="operator"> *)</span>LPC_UART0<span class="operator">, &amp;</span>buffer<span class="operator">[</span>idx<span class="operator">],</span><span class="int"> 1</span><span class="operator">);
+            }</span>
+            idx<span class="operator">++;
+        }
+    }</span><span class="comment">
+
+    // wait for current transmission complete - THR must be empty
+</span><span class="flow">    while</span><span class="operator"> (</span>UART_CheckBusy<span class="operator">((</span>LPC_UART_TypeDef<span class="operator"> *)</span>LPC_UART0<span class="operator">));</span><span class="comment">
+
+    // DeInitialize UART0 peripheral
+</span>    UART_DeInit<span class="operator">((</span>LPC_UART_TypeDef<span class="operator"> *)</span>LPC_UART0<span class="operator">);</span><span class="comment">
+
+    /* Loop forever */</span><span class="flow">
+    while</span><span class="operator">(</span><span class="int">1</span><span class="operator">);</span><span class="flow">
+    return</span><span class="int"> 1</span><span class="operator">;
+}</span><span class="comment">
+
+/* With ARM and GHS toolsets, the entry point is main() - this will
+   allow the linker to generate wrapper code to setup stacks, allocate
+   heap area, and initialize and copy code and data segments. For GNU
+   toolsets, the entry point is through __start() in the crt0_gnu.asm
+   file, and that startup code will setup stacks and data */</span><span class="type">
+int</span><span class="keyword"> main</span><span class="operator">(</span><span class="type">void</span><span class="operator">)
+{</span><span class="flow">
+    return</span> c_entry<span class="operator">();
+}</span><span class="pre">
+
+#ifdef  DEBUG
+</span><span class="comment">/*******************************************************************************
+* @brief		Reports the name of the source file and the source line number
+* 				where the CHECK_PARAM error has occurred.
+* @param[in]	file Pointer to the source file name
+* @param[in]    line assert_param error line source number
+* @return		None
+*******************************************************************************/</span><span class="type">
+void</span> check_failed<span class="operator">(</span>uint8_t<span class="operator"> *</span>file<span class="operator">,</span> uint32_t line<span class="operator">)
+{</span><span class="comment">
+	/* User can add his own implementation to report the file name and line number,
+	 ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+
+	/* Infinite loop */</span><span class="flow">
+	while</span><span class="operator">(</span><span class="int">1</span><span class="operator">);
+}</span><span class="pre">
+#endif
+</span><span class="comment">
+/*
+ * @}
+ */</span></pre>
+ 
+ 
+  <hr>
+				
+<p>&nbsp;</p>
+                <h3><a name="3">Textausgabe über das TFT LCD-Display</a></h3>
+				
+				<p>Im MDK wird eine kleine Garfikbibliothek, bestehend aus den Dateien GLCD.c, HzLib.c und AsciiLib.c, mitgeliefert. Sie ermöglicht einfache Grafikroutinen wie Textausgabe, Linien zeichnen, einzelne Pixel zu setzen und abzufragen. Nachfolgend ein kleines Beispiel, das auch <a href="../files/GLCD.zip">hier</a> heruntergeladen werden kann.</p>
+				
+				<a rel="shadowbox" href="../gfx/IMG_1442.jpg"><img width="300" border="0" alt="" src="../gfx/IMG_1442-300.jpg"></a>
+				
+ <pre><span class="comment">/* Includes ------------------------------------------------------------------*/</span><span class="pre">
+#include "GLCD.h" 
+#include "LPC17xx.h"
+</span><span class="type">
+int</span><span class="keyword"> main</span><span class="operator">(</span><span class="type">void</span><span class="operator">)
+{</span>
+  	LCD_Initializtion<span class="operator">();</span>
+  	LCD_Clear<span class="operator">(</span>Red<span class="operator">);</span>
+
+	GUI_Text<span class="operator">(</span><span class="int">80</span><span class="operator">,</span><span class="int">144</span><span class="operator">,</span><span class="string">"Cortex M3"</span><span class="operator">,</span>Cyan<span class="operator">,</span>Red<span class="operator">);</span>
+	LCD_DrawLine<span class="operator">(</span><span class="int">0</span><span class="operator">,</span><span class="int">166</span><span class="operator">,</span><span class="int">300</span><span class="operator">,</span><span class="int">166</span><span class="operator">,</span>Magenta<span class="operator">);</span>
+
+	GUI_Text<span class="operator">(</span><span class="int">0</span><span class="operator">,</span><span class="int">176</span><span class="operator">,</span><span class="string">"Willkommen in der Welt der uC-Programmierung!"</span><span class="operator">,</span>White<span class="operator">,</span>Red<span class="operator">);</span><span class="flow">
+
+	while</span><span class="operator"> (</span><span class="int">1</span><span class="operator">) { }
+}</span></pre>
+ 
+ <hr>
+				
+<p>&nbsp;</p>
+                <h3><a name="4">Bild aus SPI-Flash lesen</a></h3>
+				
+				<p>Im nächsten Beispiel lesen wir ein Bitmap aus dem SPI-Flash aus und zeigen es auf dem Display an. Das Bitmap wurde vorher mit Hilfe des Tools <a href="http://www.deadnode.org/sw/bin2h/" target="_blank">Bin2h</a> in ein C-Array BMP_DATA[] umgewandelt, unten findet ihr das Hauptprogramm, den kompletten Beispielcode gibt es <a href="../files/SPI-Flash-Picture.zip">hier</a>.</p>
+				
+				<a rel="shadowbox" href="../gfx/spi-flash-1.jpg"><img width="300" border="0" alt="" src="../gfx/spi-flash-1-300.jpg"></a> 
+				<a rel="shadowbox" href="../gfx/spi-flash-2.jpg"><img width="300" border="0" alt="" src="../gfx/spi-flash-2-300.jpg"></a>
+				
+				
+				
+				<pre><span class="comment">/* Includes ------------------------------------------------------------------*/</span><span class="pre">
+#include "SST25VF016B.h"
+#include "FlashDriver.h"
+#include "GLCD.h" 
+#include "BMP.c"
+</span><span class="comment">
+/* Private typedef -----------------------------------------------------------*/</span><span class="keyword">
+typedef struct</span><span class="operator">
+{</span>
+	uint8_t  pic_head<span class="operator">[</span><span class="int">2</span><span class="operator">];</span>				
+	uint16_t pic_size_l<span class="operator">;</span>			    
+	uint16_t pic_size_h<span class="operator">;</span>			   
+	uint16_t pic_nc1<span class="operator">;</span>				  
+	uint16_t pic_nc2<span class="operator">;</span>				   
+	uint16_t pic_data_address_l<span class="operator">;</span>	   
+	uint16_t pic_data_address_h<span class="operator">;</span>	
+	uint16_t pic_message_head_len_l<span class="operator">;</span>
+	uint16_t pic_message_head_len_h<span class="operator">;</span>
+	uint16_t pic_w_l<span class="operator">;</span>				
+	uint16_t pic_w_h<span class="operator">;</span>				   
+	uint16_t pic_h_l<span class="operator">;</span>				   
+	uint16_t pic_h_h<span class="operator">;</span>				   	
+	uint16_t pic_bit<span class="operator">;</span>				   
+	uint16_t pic_dip<span class="operator">;</span>				   
+	uint16_t pic_zip_l<span class="operator">;</span>			       
+	uint16_t pic_zip_h<span class="operator">;</span>			       
+	uint16_t pic_data_size_l<span class="operator">;</span>		   
+	uint16_t pic_data_size_h<span class="operator">;</span>		   
+	uint16_t pic_dipx_l<span class="operator">;</span>			   
+	uint16_t pic_dipx_h<span class="operator">;</span>			   	
+	uint16_t pic_dipy_l<span class="operator">;</span>			   
+	uint16_t pic_dipy_h<span class="operator">;</span>			   
+	uint16_t pic_color_index_l<span class="operator">;</span>	       
+	uint16_t pic_color_index_h<span class="operator">;</span>	       
+	uint16_t pic_other_l<span class="operator">;</span>			   
+	uint16_t pic_other_h<span class="operator">;</span>			   
+	uint16_t pic_color_p01<span class="operator">;</span>		       
+	uint16_t pic_color_p02<span class="operator">;</span>		       
+	uint16_t pic_color_p03<span class="operator">;</span>		        
+	uint16_t pic_color_p04<span class="operator">;</span>		       
+	uint16_t pic_color_p05<span class="operator">;</span>		       
+	uint16_t pic_color_p06<span class="operator">;</span>		       
+	uint16_t pic_color_p07<span class="operator">;</span>		       
+	uint16_t pic_color_p08<span class="operator">;			    			
+}</span>BMP_HEAD<span class="operator">;</span>
+
+BMP_HEAD bmp<span class="operator">;</span><span class="keyword">
+
+typedef struct</span><span class="operator">
+{</span>
+	uint16_t x<span class="operator">;</span><span class="comment">							/* LCD X */</span>
+	uint16_t y<span class="operator">;</span><span class="comment">							/* LCD Y	*/</span>
+	uint8_t  r<span class="operator">;</span><span class="comment">				            /* RED */</span>
+	uint8_t  g<span class="operator">;</span><span class="comment">						    /* GREEN */</span>
+	uint8_t  b<span class="operator">;</span><span class="comment">							/* BLUE	*/</span><span class="operator">
+}</span>BMP_POINT<span class="operator">;</span>
+
+BMP_POINT point<span class="operator">;</span><span class="comment">
+
+/* Private define ------------------------------------------------------------*/</span><span class="pre">
+#define BMP_ADDR  (1024*0)
+</span><span class="type">
+int</span><span class="keyword"> main</span><span class="operator">(</span><span class="type">void</span><span class="operator">)
+{</span>
+  uint16_t count<span class="operator">;</span><span class="comment">
+
+  // SPI-Flash und LCD initialisieren
+</span>  SPI_FLASH_Init<span class="operator">();</span>
+  LCD_Initializtion<span class="operator">();</span>
+  SPI_FLASH_Test<span class="operator">();</span>
+  SSTF016B_Erase<span class="operator">(</span> BMP_ADDR<span class="operator">/</span>SEC_SIZE<span class="operator"> , (</span> BMP_ADDR<span class="operator">+</span><span class="keyword">sizeof</span><span class="operator">(</span>BMP_DATA<span class="operator">) )/</span>SEC_SIZE<span class="operator"> +</span><span class="int">1</span><span class="operator"> );</span>
+  LCD_Clear<span class="operator">(</span>White<span class="operator">);</span><span class="comment"> 
+
+  // Statusmeldung schreiben
+</span>  GUI_Text<span class="operator">(</span><span class="int">0</span><span class="operator">,</span><span class="int">152</span><span class="operator">,</span><span class="string">"Bild in SPI-Flash schreiben..."</span><span class="operator">,</span>Black<span class="operator">,</span>White<span class="operator">);</span><span class="comment">
+  
+  // Bitmap aus BMP.c in SPI-Flash schreiben
+</span>  df_write_open<span class="operator">(</span> BMP_ADDR<span class="operator"> );</span><span class="flow">
+
+  for</span><span class="operator">(</span>count<span class="operator">=</span><span class="int">0</span><span class="operator">;</span>count<span class="operator">&lt;</span><span class="keyword">sizeof</span><span class="operator">(</span>BMP_DATA<span class="operator">)/</span><span class="int">255</span><span class="operator">;</span>count<span class="operator">++)
+  {</span>
+    df_write<span class="operator">( (</span>uint8_t<span class="operator">*)&amp;</span>BMP_DATA<span class="operator">[</span>count<span class="operator">*</span><span class="int">255</span><span class="operator">],</span><span class="int">255</span><span class="operator">);</span> 
+    df_write_close<span class="operator">(); 
+  }</span>
+
+  df_write<span class="operator">( (</span>uint8_t<span class="operator">*)&amp;</span>BMP_DATA<span class="operator">[</span>count<span class="operator">*</span><span class="int">255</span><span class="operator">],</span><span class="keyword">sizeof</span><span class="operator">(</span>BMP_DATA<span class="operator">)%</span><span class="int">255</span><span class="operator">);</span>  
+  df_write_close<span class="operator">();</span><span class="comment">   
+   
+  // Bild aus SPI-Flash lesen
+</span>  df_read_open<span class="operator">(</span> BMP_ADDR<span class="operator"> );</span>
+  df_read<span class="operator">( (</span>uint8_t<span class="operator"> *)&amp;</span>bmp<span class="operator">,</span><span class="keyword"> sizeof</span><span class="operator">(</span>bmp<span class="operator">));</span><span class="comment">  // Bitmap-Header lesen
+</span><span class="flow">    
+  if</span><span class="operator">( (</span>bmp<span class="operator">.</span>pic_head<span class="operator">[</span><span class="int">0</span><span class="operator">]==</span><span class="char">'B'</span><span class="operator">) &amp;&amp; (</span>bmp<span class="operator">.</span>pic_head<span class="operator">[</span><span class="int">1</span><span class="operator">]==</span><span class="char">'M'</span><span class="operator">) )
+  {</span>
+    uint16_t  tx<span class="operator">,</span>ty<span class="operator">;</span>
+	uint8_t buffer<span class="operator">[</span><span class="int">1024</span><span class="operator">];</span> 
+
+	df_read_seek<span class="operator">(</span> BMP_ADDR<span class="operator"> + (</span> bmp<span class="operator">.</span>pic_data_address_h<span class="operator">&lt;&lt;</span><span class="int">16</span><span class="operator"> |</span> bmp<span class="operator">.</span>pic_data_address_l<span class="operator"> ) );</span><span class="comment">
+
+    // Bitmap zeilenweise auslesen
+</span><span class="flow">	for</span><span class="operator">(</span>ty<span class="operator">=</span><span class="int">0</span><span class="operator">;</span>ty<span class="operator">&lt;</span>bmp<span class="operator">.</span>pic_h_l<span class="operator">;</span>ty<span class="operator">++)
+	{</span>	
+	  df_read<span class="operator">( &amp;</span>buffer<span class="operator">[</span><span class="int">0</span><span class="operator">] , (</span>bmp<span class="operator">.</span>pic_w_l<span class="operator">)*</span><span class="int">3</span><span class="operator"> );</span><span class="comment">
+
+	  // Pixel aus jeder Zeile auslesen
+</span><span class="flow">	  for</span><span class="operator">(</span>tx<span class="operator">=</span><span class="int">0</span><span class="operator">;</span>tx<span class="operator">&lt;</span>bmp<span class="operator">.</span>pic_w_l<span class="operator">;</span>tx<span class="operator">++)
+	  {</span>
+        point<span class="operator">.</span>r<span class="operator"> = *(</span>tx<span class="operator">*</span><span class="int">3</span><span class="operator"> +</span><span class="int">2</span><span class="operator">+</span>buffer<span class="operator">);</span>
+	    point<span class="operator">.</span>g<span class="operator"> = *(</span>tx<span class="operator">*</span><span class="int">3</span><span class="operator"> +</span><span class="int">1</span><span class="operator">+</span>buffer<span class="operator">);</span>
+	    point<span class="operator">.</span>b<span class="operator"> = *(</span>tx<span class="operator">*</span><span class="int">3</span><span class="operator"> +</span><span class="int">0</span><span class="operator">+</span>buffer<span class="operator">);</span>								
+	    point<span class="operator">.</span>x<span class="operator"> =</span> tx<span class="operator">;</span>
+	    point<span class="operator">.</span>y<span class="operator"> =</span> ty<span class="operator">;</span><span class="comment">
+
+	    // Pixel anzeigen
+</span>        LCD_SetPoint<span class="operator">(</span>point<span class="operator">.</span>x<span class="operator"> ,</span><span class="int">319</span><span class="operator">-</span>point<span class="operator">.</span>y<span class="operator">,</span>RGB565CONVERT<span class="operator">(</span>point<span class="operator">.</span>r<span class="operator">,</span>point<span class="operator">.</span>g<span class="operator">,</span>point<span class="operator">.</span>b<span class="operator">));
+      }                         
+	}
+  }</span><span class="comment"> 
+  /* Infinite loop */</span><span class="flow">
+  while</span><span class="operator"> (</span><span class="int">1</span><span class="operator">) ;
+}</span>
+
+</pre>
+
+
+
+            </div>
+                      
+        </div>
+    </body></html>

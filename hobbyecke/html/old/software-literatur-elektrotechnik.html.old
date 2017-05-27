@@ -1,0 +1,386 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+		<title>Literatur und Software der Elektrotechnik</title>
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<meta name="author" content="Andreas Zahnleiter" />
+
+	</head>
+	<body>
+								<div id="header">
+			<p style="padding-bottom:30 px"> <a href="../index.html">Home</a> | <span style="color:#cc6600">Elektrotechnik</span> | <a href="./index-funktechnik.html">Funktechnik</a> | 
+			<a href="./index-sonstiges.html">Sonstiges</a> | <a href="./imprint.html">Impressum</a></p>
+			<h1>Andreas Zahnleiter</h1>
+			<img src="../gfx/header.jpg" height="90" width="960">
+		</div>
+		<div id="container">
+
+			<div id="main_content">
+				<h2>Literatur/Software</h2>
+				<p>Hier findet ihr eine Liste von Büchern und Software, die ich
+					selber nutze und von denen ich viel profitiert habe. Die
+					Reihenfolge ist rein zufällig entstanden und stellt keine Wertung dar.
+				</p>
+				<p>&nbsp;</p>
+				<hr />
+				<p>&nbsp;</p>
+				<a name="1">
+					<h3>Literatur</h3>
+				</a>
+				<table width="100%">
+					<tbody>
+						<tr>
+							
+							<td valign="top">
+								<span style="font-size: large;">elektor</span>
+								<p>elektor ist eine Fachzeitschrift für Hobby-Elektroniker und Profis mit vielen praktischen Schaltungen. Ich kann nur jedem, der einen Einstieg in die Elektronik sucht, diese Zeitschrift sehr empfehlen. Alle Schaltungen werden ausführlich beschrieben und man lernt auf diese Weise Schaltungen zu verstehen.
+								</p>
+							</td>
+							<td width="80"> <a href="http://www.elektor.de/zeitschrift" target="_blank"><img src="../gfx/Elektor_January_2008.jpg" border="0" width="80" /></a> </td>
+						</tr>
+					</tbody>
+				</table>
+				<table width="100%">
+					<tbody>
+						<tr>
+							<td width="80"> <a href="http://www.amazon.de/Von-Schaltung-zum-Ger%C3%A4t-Elektronik-Projekte/dp/388180823X/ref=sr_1_1?ie=UTF8&amp;s=books&amp;qid=1299923708&amp;sr=8-1" target="_blank"><img src="../gfx/516FAGPRZEL._SL160_AA160_.jpg" border="0" width="80" /></a> </td>
+							<td valign="top">
+								<span style="font-size: large;">Von
+								der Schaltung zum Gerät: Die 63 besten Elektronik-Projekte</span><br />
+								von Max Perner und Frank Sichla
+								<p>Man muss schon wirklich lange suchen um in der heutigen
+									Zeit ein Elektronik-Bastelbuch für Anfänger zu finden, dieses habe ich
+									durch Zufall im Conrad gefunden. Bei diesem Buch merkt man auch gleich,
+									dass dies von Praktikern geschrieben wurde und nicht von Theoretikern,
+									gerade Anfänger auf dem Gebiet der Elektronik haben ja es sehr schwer
+									einen Einstieg zu finden. Dieses Buch jedoch ruft gleich von Anfang an
+									zum Selbstbau auf. Die Schaltungen werden auch erläutert, jedoch muss
+									man hier schon Grundkenntnisse mitbringen um die Funktionsweise zu
+									verstehen, da dieses Buch nicht auf die Grundlagen der Elektronik und
+									Elektrotechnik eingeht.
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table style="margin-top: 30px;" width="100%">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<span style="font-size: large;">Taschenbuch
+								der Elektrotechnik. Grundlagen und Elektronik</span><br />
+								von Ralf Kories und Heinz Schmidt-Walter
+								<p>Wer ein gutes Nachschlagewerk der Elektrotechnik sucht,
+									wird mit diesem Buch fündig. Auf über 600 Seiten werden alle
+									wesentlichen Gebiete der Elektrotechnik abgedeckt, allerdings nur die
+									Grundlagen, wer in ein Gebiet tiefer einsteigen möchte, muss auf
+									weiterführende Literatur zurückgreifen. Zum Verständnis helfen vor
+									allem die anschaulichen Grafiken, auch die teils komplexen
+									Zusammenhänge verstehen die Autoren dem Leser leicht nahe zubringen.
+								</p>
+							</td>
+							<td align="right" width="80"> <a href="http://www.amazon.de/Taschenbuch-Elektrotechnik-Grundlagen-Elektronik-Kories/dp/3817117345/ref=sr_1_3?s=books&amp;ie=UTF8&amp;qid=1299925898&amp;sr=1-3" target="_blank"><img src="../gfx/taschenbuch_der_elektrotechnik.jpg" border="0" width="80" /></a> </td>
+						</tr>
+					</tbody>
+				</table>
+				<table style="margin-top: 30px;" width="100%">
+					<tbody>
+						<tr>
+							<td width="80"> <a href="http://www.amazon.de/PSPICE-Einf%C3%BChrung-die-Elektroniksimulation-Mit/dp/3446415920/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1299926423&amp;sr=1-1" target="_blank"><img src="../gfx/pspice-einfhrung-in-die-elektroniksimulation-mit-cd-11736622.jpeg" border="0" width="80" /></a> </td>
+							<td valign="top">
+								<span style="font-size: large;">PSPICE.
+								Einführung in die Elektroniksimulation. Mit CD</span><br />
+								von Robert Heinemann
+								<p>Wer einmal mit einer Elektroniksimulationssoftware
+									gearbeitet hat, wird sie nicht mehr missen wollen, dies gilt sowohl für
+									den Profi als auch für den Hobbyelektroniker. Im Buch liegt eine CD mit
+									der Demoversion OrCAD 16.0 bei, die die Simulation von Schaltungen mit
+									bis zu 60 Bauteilen zulässt, für viele private Projekte ist dies auch
+									meist ausreichend. Aber Achtung! PSPICE lernt man nicht mal so an einem
+									Nachmittag, aber wenn man es mal beherrscht, erleicht es den Alltag
+									eines Elektroniker ungemein.
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table style="margin-top: 30px;" width="100%">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<span style="font-size: large;">Taschenbuch
+								der Mathematik</span><br />
+								von Ilja N. Bronstein, K. A. Semendjajew, Gerhard Musiol und Heiner
+								Muehlig
+								<p>Der Bronstein ist für mich DAS Nachschlagewerk für die
+									Mathematik. Dieses Buch deckt so ziemlich alles ab, was die Mathematik
+									zu bieten hat, mal abgesehen von sehr speziellen Themen. Wenn ich ein
+									mathematisches Problem zu lösen habe, liegt dieses Buch immer in meiner
+									Reichweite. Zum Lernen ist dieses Buch weniger geeignet, hier empfehle
+									ich vor allem die Bücher von Lothar Papula.
+								</p>
+							</td>
+							<td align="right" width="80"> <a href="http://www.amazon.de/Taschenbuch-Mathematik-Ilja-N-Bronstein/dp/3817120079/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1299926534&amp;sr=1-1" target="_blank"><img src="../gfx/24445187n.jpg" border="0" width="80" /></a> </td>
+						</tr>
+					</tbody>
+				</table>
+				<table style="margin-top: 30px;" width="100%">
+					<tbody>
+						<tr>
+							<td width="80"> <a href="http://www.amazon.de/Wie-mi%C3%9Ft-man-Oszilloskop-Messbeispielen/dp/3772367666/ref=sr_1_3?ie=UTF8&amp;qid=1299926668&amp;sr=1-3" target="_blank"><img src="../gfx/wie-misst-man-mit-dem-oszilloskop-29842530.jpeg" border="0" width="80" /></a> </td>
+							<td valign="top">
+								<span style="font-size: large;">Wie
+								mißt man mit dem Oszilloskop?: Technik, Geräte, Messpraxis mit über 150
+								Messbeispielen</span><br />
+								von Dietmar Benda
+								<p>Wer die kompletten Möglichkeiten eines Oszilloskops
+									nutzen möchte und damit nicht nur als ein besseres Voltmeter, kommt um
+									etwas Theorie nicht herum. Dieses Buch beinhaltet viele Messbeispiele,
+									so dass man das Gelernte auch gleich in die Praxis umsetzen kann.
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table style="margin-top: 30px;" width="100%">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<span style="font-size: large;">Fachkunde
+								Elektrotechnik</span><br />
+								von Klaus Tkotz
+								<p>Dieses Buch richtet sich vor allem an Auszubildende in
+									Elektroberufen und zeichnet sich durch eine sehr gute Übersichtlichkeit
+									und Verständlichkeit aus. Der Autor bringt die Themen auf den Punkt,
+									der Leser wird hier nicht von Formel erschlagen, für den Einsteiger
+									also pefekt! Wer jedoch tiefer einsteigen möchte, muss auf
+									weiterführende Literatur zurückgreifen. 
+								</p>
+							</td>
+							<td align="right" width="80"> <a href="http://www.amazon.de/Fachkunde-Elektrotechnik-Klaus-Tkotz/dp/3808531894/ref=sr_1_1?ie=UTF8&amp;qid=1336497526&amp;sr=8-1" target="_blank"><img src="../gfx/51fBuVEZLNL._SL500_AA300_.jpg" border="0" width="80" /></a> </td>
+						</tr>
+					</tbody>
+				</table>
+				<table style="margin-top: 30px;" width="100%">
+					<tbody>
+						<tr>
+							<td width="80"> <img src="../gfx/51DZMVPPYQL._SL500_AA300_.jpg" border="0" width="80" /> </td>
+							<td valign="top">
+								<span style="font-size: large;">PC-Elektronik
+								Labor Band 1-4</span><br />
+								von Herbert Bernstein
+								<p>Dieses Buch geht Schritt für Schritt auf die
+									Schaltungstechnik ein, das Beste ist, man kann diese Schaltungen direkt
+									mit der beigelegten Software simulieren. Dadurch eignet man sich ein
+									Grundverständnis für die Funktionsweise der Elektronik an.
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table style="margin-top: 30px;" width="100%">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<span style="font-size: large;">Grundgebiete
+								der Elektrotechnik: Band 1: Stationäre Vorgänge</span><br />
+								von Arnold Führer, Klaus Heidemann und Wolfgang Nerreter
+								<p>Ideal für den E-Technikstudenten für die ersten beiden
+									Semester.
+								</p>
+							</td>
+							<td align="right" width="80"> <a href="http://www.amazon.de/Grundgebiete-Elektrotechnik-Band-Station%C3%A4re-Vorg%C3%A4nge/dp/3446406689/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1336498378&amp;sr=1-1" target="_blank"><img src="../gfx/51DZMVPPYQL._SL500_AA3002_.jpg" border="0" width="80" /></a> </td>
+						</tr>
+					</tbody>
+				</table>
+				<table style="margin-top: 30px;" width="100%">
+					<tbody>
+						<tr>
+							<td width="80"> <a href="http://www.elektronikjournal.de/" target="_blank"><img src="../gfx/eJL_1_2012.jpg" border="0" width="80" /></a>
+							</td>
+							<td valign="top">
+								<span style="font-size: large;">elektronikJOURNAL</span>
+								<p>Themenmagazin für Entscheider rund um die
+									Elektronikentwicklung. Es werden folgende Bereiche abgedeckt:<br />
+									<br />
+									Embedded, Leistungselektronik, Distribution+Entwicklungsdienstleistung,
+									Medizinelektronik und Elektromechanik.
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table style="margin-top: 30px;" width="100%">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<span style="font-size: large;">Grundgebiete der Elektrotechnik: Band 2: Zeitabhängige Vorgänge</span><br />
+								von Arnold Führer, Klaus Heidemann und Wolfgang Nerreter
+								<p>Ideal für den E-Technikstudenten für die ersten beiden
+									Semester.
+								</p>
+							</td>
+							<td align="right" width="80"> <a href="http://www.amazon.de/Grundgebiete-Elektrotechnik-Band-Zeitabh%C3%A4ngige-Vorg%C3%A4nge/dp/3446430385/ref=pd_bxgy_b_img_y" target="_blank"><img src="../gfx/3446430385.01.S001.LXXXXXXX.jpg" border="0" width="80" /></a> </td>
+						</tr>
+					</tbody>
+				</table>
+				<table style="margin-top: 30px;" width="100%">
+					<tbody>
+						<tr>
+							<td width="80"> <a href="http://www.amazon.de/Digitaltechnik-Lehr--%C3%9Cbungsbuch-Elektrotechniker-Informatiker/dp/3834804592/ref=sr_1_1?s=books&ie=UTF8&qid=1360493606&sr=1-1" target="_blank"><img src="../gfx/3834804592.01.S001.LXXXXXXX.jpg" border="0" width="80" /></a>
+							</td>
+							<td valign="top">
+								<span style="font-size: large;">Digitaltechnik: Lehr- und Übungsbuch für Elektrotechniker und Informatiker</span>
+								<p>"Dieses Lehr- und Übungsbuch stellt praxisnah und lückenlos die Grundlagen der Digitaltechnik bis hin zur Programmierung einfacher Mikroprozessoren dar. Die Darstellung der booleschen Algebra und die verwendeten Symbole entsprechen der geltenden DIN-Norm. Die Kapitel über synchrone und asynchrone Schaltwerke wurden überarbeitet und übersichtlicher gegliedert. Übungsaufgaben am Ende eines jeden Kapitels und deren Lösung im Anhang ermöglichen auch in dieser 6. Auflage ein erfolgreiches Selbststudium.", Amazon.de
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>&nbsp;</p>
+				<hr />
+				<p>&nbsp;</p>
+				<a name="2">
+					<h2>Software für die Schaltungssimulation</h2>
+				</a>
+				<table width="100%">
+					<tbody>
+						<tr>
+							<td width="80"> <a href="http://www.linear.com/designtools/software/#LTspice" target="_blank"><img src="../gfx/ltspice.gif" border="0" width="80" /></a> </td>
+							<td valign="top">
+								<span style="font-size: large;">LTspice
+								IV</span>
+								<p>LTspice ist eine kostenlose Software zur
+									Schaltungssimulation. Wie der Produktname schon vermuten lässt, basiert
+									das Programm auf SPICE.
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table style="margin-top: 30px;" width="100%">
+					<tbody>
+						<tr>
+							
+							<td valign="top">
+								<span style="font-size: large;">OrCAD
+								16.0</span>
+								<p>Software zur Simulation von analogen und digitalen
+									Schaltungen.
+								</p>
+							</td>
+							<td width="80"> <a href="http://www.cadence.com/products/orcad/pages/default.aspx" target="_blank"><img src="../gfx/products_pspice_305.jpg" border="0" width="80" /></a> </td>
+						</tr>
+					</tbody>
+				</table>
+				<p>&nbsp;</p>
+				<hr />
+				<p>&nbsp;</p>
+
+				<h2>Software für PCB/Elektroplanung</h2>
+
+				<table style="margin-top: 30px;" width="100%">
+					<tbody>
+						<tr>
+							<td width="80"> <a href="http://www.autodesk.com" target="_blank"><img src="../gfx/AutocadElectrical2012_boxshot_204x300.jpg" border="0" width="80" /></a> </td>
+							<td valign="top">
+								<span style="font-size: large;">AutoCAD
+								Electrical 2012</span>
+								<p>Diese Software beinhaltet alles für die
+									elektrotechnische Planung, ermöglicht die Automatisierung von
+									zahlreichen Entwurfsprozessen. Für Studenten und Bildungseinrichtungen
+									ist die Software kostenlos!
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table style="margin-top: 30px;" width="100%">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<span style="font-size: large;">EPLAN
+								Education</span>
+								<p>Beinhaltet die Softwarepakete EPLAN Electric P8, EPLAN
+									Fluid, EPLAN PPE und EPLAN Pro Panel und ist für Ingenieurstudenten
+									kostenlos!
+								</p>
+							</td>
+							<td width="80"> <a href="http://www.eplan.de" target="_blank"><img src="../gfx/cover_eplan_education2.0_02.png" border="0" width="80" /></a> </td>
+						</tr>
+					</tbody>
+				</table>
+				<table style="margin-top: 30px;" width="100%">
+					<tbody>
+						<tr>
+							<td width="80"> <a href="http://www.cadsoft.de/eagle-pcb-design-software/" target="_blank"><img src="../gfx/cs-logo21.jpg" border="0" width="80" /></a> </td>
+							<td valign="top">
+								<span style="font-size: large;">CadSoft EAGLE PCB Design Software</span>
+								<p>"EAGLE ist eine preisgekrönte, leistungsfähige und flexible PCB Design Software, die über die selben Kernfunktionen wir andere wesentlich teurere CAD-Programme verfügt und seit mehr als 20 Jahren weltweit Design Ingenieure begeistert.", cadsoft.de
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>&nbsp;</p>
+				<hr />
+				<p>&nbsp;</p>
+				
+				<h2>Software für die Mikrocontroller-Programmierung</h2>
+				
+				<table style="margin-top: 30px;" width="100%">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<span style="font-size: large;">AVR
+								Studio 4</span>
+								<p>Entwicklungsumgebung für Mikrocontroller aus dem Hause
+									ATMEL.
+								</p>
+							</td>
+							<td width="80"> <a href="http://www.atmel.com/dyn/products/tools_card.asp?tool_id=2725" target="_blank"><img src="../gfx/studio4_high.jpg" border="0" width="80" /></a> </td>
+						</tr>
+					</tbody>
+				</table>
+				<table style="margin-top: 30px;" width="100%">
+					<tbody>
+						<tr>
+							<td width="80"> <a href="http://www.lpcware.com/lpcxpresso" target="_blank"><img src="../gfx/LPCXpressoIDELink.png" border="0" width="80" /></a> </td>
+							<td valign="top">
+								<span style="font-size: large;">LPCXpresso</span>
+								<p>LPCXpresso ist eine Entwicklungsplattform von NXP, die eine leichte und schnelle Entwicklung von Software für die LPC-Mikrocontroller ermöglicht.
+								</p>
+							</td>
+							
+						</tr>
+					</tbody>
+				</table>
+				
+				<p>&nbsp;</p>
+				<hr />
+				<p>&nbsp;</p>
+				
+				<h2>Software für numerische Berechnungen</h2>
+
+				<table style="margin-top: 30px;" width="100%">
+					<tbody>
+						<tr>
+							<td valign="top">
+								<span style="font-size: large;">Matlab</span>
+								<p>"MATLAB® ist eine höhere Programmiersprache und interaktive Umgebung für numerische Berechnungen, Visualisierung und Programmierung. MATLAB dient zur Datenanalyse, Algorithmen-Entwicklung und zur Erstellung von Modellen und Anwendungen.", MathWorks.de
+								</p>
+							</td>
+							<td width="80"> <a href="http://www.mathworks.de/products/matlab/" target="_blank"><img src="../gfx/matlab.jpg" border="0" width="80" /></a> </td>
+						</tr>
+					</tbody>
+				</table>
+				
+				
+			</div>
+                        <div id="footer">
+                <div style="float:left;"><p style="color:#000000;">&copy; by Andreas Zahnleiter. Kontakt per <a href="./email.html" style="color:#000000;">E-Mail</a></p></div>
+            </div>
+		</div>
+	</body>
+</html>

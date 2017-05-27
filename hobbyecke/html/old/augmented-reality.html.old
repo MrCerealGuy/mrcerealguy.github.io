@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+        <title>Augmented Reality</title>
+
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+
+        <link rel="stylesheet" type="text/css" href="../js/shadowbox-3.0.3/shadowbox.css">
+        <script type="text/javascript" src="../js/shadowbox-3.0.3/shadowbox.js"></script>
+        <script type="text/javascript">
+            Shadowbox.init();
+        </script>
+    </head>
+
+    <body>
+					<div id="header">
+			<p style="padding-bottom:30 px"> <a href="../index.html">Home</a> | <a href="./index-elektrotechnik.html">Elektrotechnik</a> | <a href="./index-funktechnik.html">Funktechnik</a> | 
+			<span style="color:#cc6600">Sonstiges</span> | <a href="./imprint.html">Impressum</a></p>
+
+			<img src="../gfx/header.jpg" height="90" width="960">
+		</div>
+
+        <div id="container">		
+	
+
+            <div id="main_content">
+                <h2>Augmented Reality</h2>
+
+                <p>Augmented Reality ist eine interessante Technik unsere bekannte Realit&auml;t mit digitalen Informationen zu erweitern. Anwendungsbereiche gibt es viele, angefangen von Navigationssystemen direkt in der Frontscheibe eines Autos, ein sogenanntes Head-Up-Display bis hin zur <a href="http://www.heise.de/ct-tv/artikel/Video-Eine-Vision-wird-Realitaet-1202300.html" target="_blank">virtuell unterst&uuml;tzen OPs</a> mit Hilfe eines Head-Mounted-Displays.</p>
+
+                <p>Hier eine eindrucksvolle <a href="http://www.toyota.co.uk/cgi-bin/toyota/bv/generic_editorial.jsp?navRoot=toyota_1024_root&nodiv=TRUE&fullwidth=TRUE&forceText=TRUE&edname=iQ_reality&id=iQ_reality&catname=/toyota_1024_root/main_nav/pageTopNav/Zone+iQ&zone=Zone+iQ&menuid=316070&sr=Mall" target="_blank">Demo von Toyota</a>:</p>
+
+				<table border="0">
+                    <tr>
+                        <td>
+							<img src="../gfx/video-icon.ico"> <a href="../mp4/Toyota iQ Car _ Augmented Reality 1_2.mp4" target="_blank">Video starten</a>
+                            <br><span style="font-size:9pt;">Toyota iQ Car / Augmented Reality 1/2</span>
+                        </td>
+                        <td>
+							<img src="../gfx/video-icon.ico"> <a href="../mp4/Toyota iQ Car _ Augmented Reality 2_2.mp4" target="_blank">Video starten</a>
+                            <br><span style="font-size:9pt;">Toyota iQ Car / Augmented Reality 2/2</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>	
+    </body>
+</html>

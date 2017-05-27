@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+
+        <title>Scientific Computing & Visualization</title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="robots" content="noindex">
+		
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+    </head>
+
+     <body>
+					<div id="header">
+			<!--<p style="padding-bottom:30 px"> <a href="../index.html">Home</a> | <a href="./index-elektrotechnik.html">Elektrotechnik</a> | <a href="./index-funktechnik.html">Funktechnik</a> | 
+			<span style="color:#cc6600">Sonstiges</span> | <a href="./imprint.html">Impressum</a></p>-->
+
+			<img src="../gfx/header.jpg" height="90" width="960">
+		</div>
+        <div id="container">		
+
+
+            <div id="main_content">
+                <h2>Scientific Computing & Visualization</h2>
+				
+				<p>
+					<a href="#1">Plotten mit Gnuplot</a> | <a href="#2">Modellierung und Simulation mit Matlab/Simulink</a>
+                </p>
+				
+				<p>&nbsp;</p>
+				
+                <p>In der Technik und in den Naturwissenschaften trifft man auf viele verschiedene Modelle, an denen man verschiedene Berechnungen durchführen möchte um Voraussagen für das Verhalten eines Systems unter bestimmten Bedingungen machen zu können. Hier möchte ich zeigen wie einfach dies sein kann.</p>
+                
+                <h3><a name="1">Plotten mit Gnuplot</a></h3>
+                
+                <p>Gnuplot ist ein kostenfreies wissenschaftliches Plotprogramm. <a href="http://www.gnuplot.info/" target="_blank">Hier</a> findet ihr weitere Infos.</p>
+                
+                <p><u>Beispiel: Sinus-Kurve mit Amplitude a=5</u></p>
+                
+                <pre>
+gnuplot> a=5.0
+gnuplot> f(x)=sin(x)*a
+gnuplot> plot f(x)
+                </pre>
+                
+                <img src="../gfx/plot1.jpg" >
+                
+                <p><u>Beispiel: 3D-Plot einer Funktion mit Gitternetzlinien</u></p>
+                
+                <pre>
+set hidden3d
+set isosamples 40
+set xrange [-4.5:4.5]
+set yrange [-4.5:4.5]
+set zrange [0.0:5.0]
+set xtics 0.5
+set ytics 1.0
+set ztics 0.5
+set view 40,50,1.0,1.5
+f(x,y)=(x**2+3.5*y**2-y)*exp(1-(x**2+y**2))
+splot f(x,y)
+                </pre>
+                
+                <img src="../gfx/plot2.jpg" >
+                
+                <p><u>Aufladen eines Kondensators</u></p>
+                
+                <p>U=10V, R=100Ohm, C=mF</p>
+                
+                <pre>
+e=2.71828
+U=10
+R=100
+C=0.001
+set xrange [0:0.5]
+set yrange [0:10]
+f(x)=U*(1-e**(-x/(R*C)))
+plot f(x)
+                </pre>
+                
+                <img src="../gfx/plot3.jpg" >
+                
+                <p><u>Entladen eines Kondensators</u></p>
+                
+                <p>U=10V, R=100Ohm, C=mF</p>
+                
+                <pre>
+e=2.71828
+U=10
+R=100
+C=0.001
+set xrange [0:0.5]
+set yrange [0:10]
+f(x)=U*e**(-x/(R*C))
+plot f(x)
+                </pre>
+                
+                <img src="../gfx/plot4.jpg" >
+				
+				<hr>
+                <p>&nbsp;</p>
+				
+				<h3><a name="2">Modellierung und Simulation mit Matlab/Simulink</a></h3>
+				
+				<p>Nehmen wir mal an wir haben ein Bobbycar (Masse m = 35 kg inkl. Fahrer) so aufgerüstet, dass es mit der maximalen Antriebskraft von F = 80 N beschleunigt werden kann. Jetzt möchten wir in einer Simulation herausfinden, wann sich welche maximale Geschwindigkeit einstellt. Um die Simulation etwas interessanter zu gestalten, soll auch die Rollreibung und der Luftwiderstand berücksichtigt werden. Anbei nochmal die Eckpunkte:</p>
+				
+				<p style="line-height:30px;">
+				Gesamtmasse <b>m</b> = 35kg<br />
+				max. Antriebskraft <b>F</b> = 80 N<br />
+				Rollreibung <math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi><b>F</b></mi><mi><b>R</b></mi></msub><mo>=</mo><mn>10</mn><mi>N</mi><mo>&#183;</mo><mi>s</mi><mi>i</mi><mi>g</mi><mi>n</mi><mo>(</mo><mi>v</mi><mo>)</mo></math><br />
+				Luftwiderstand <math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi><b>F</b></mi><mi><b>W</b></mi></msub><mo>=</mo><msub><mi>c</mi><mi>w</mi></msub><mo>&#183;</mo><mi>A</mi><mo>&#183;</mo><msup><mi>v</mi><mn>2</mn></msup><mo>&#183;</mo><mi>s</mi><mi>i</mi><mi>g</mi><mi>n</mi><mo>(</mo><mi>v</mi><mo>)</mo></math> mit Luftwiderstandsbeiwert <math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi><b>c</b></mi><mi><b>w</b></mi></msub><mo>=</mo><mn>0</mn><mo>,</mo><mn>6</mn><mfrac><mrow><mi>N</mi><msup><mi>s</mi><mn>2</mn></msup></mrow><msup><mi>m</mi><mn>4</mn></msup></mfrac></math><br />
+				Querschnittsfläche des Bobbycars <math xmlns="http://www.w3.org/1998/Math/MathML"><mi><b>A</b></mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>4</mn><msup><mi>m</mi><mn>2</mn></msup></math>
+				</p>
+				<p>
+				Das folgende Schaubild zeigt das Bobbycar, das von der Kraft F in x-Richtung beschleunigt wird. In entgegengesetzter Richtung wirken Rollreibung und der Luftwiderstand, die resultierende Kraft ist dann kleiner als die Antriebskraft F. Hinweis: Die Beträge der Vektoren lassen keinen Schluss auf die tatsächlichen Verhältnisse zu.
+				</p>
+				<img src="../files/simulink/Kraefte.jpg">
+				
+				<p>			
+				Die Antriebskraft gemindert um Rollreibung und Luftwiderstand ist gleich dem Produkt aus Masse und Beschleunigung:
+				</p>
+				
+				<p>
+				<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>F</mi><mo>-</mo><msub><mi>F</mi><mi>R</mi></msub><mo>-</mo><msub><mi>F</mi><mi>W</mi></msub><mo>=</mo><mi>m</mi><mo>&#183;</mo><mfrac><mrow><mi>d</mi><mi>v</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></math>
+				</p>
+				
+				<p>
+				Nach etwas Umstellung erhalten wir folgende Gleichung:
+				</p>
+				
+				<p>
+				<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>F</mi><mo>-</mo><msub><mi>F</mi><mi>R</mi></msub><mo>-</mo><msub><mi>c</mi><mi>w</mi></msub><mo>&#183;</mo><mi>A</mi><mo>&#183;</mo><msup><mi>v</mi><mn>2</mn></msup><mo>=</mo><mi>m</mi><mo>&#183;</mo><mfrac><mrow><mi>d</mi><mi>v</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></math>
+				</p>
+				
+				<p>
+				Wie wir erkennen, handelt es sich um eine Differentialgleichung 1. Ordnung. Nach der Laplace-Transformation erhalten wir folgende Gleichung:
+				</p>
+				
+				<p>
+				<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>F</mi><mo>-</mo><msub><mi>F</mi><mi>R</mi></msub><mo>-</mo><msub><mi>c</mi><mi>w</mi></msub><mo>&#183;</mo><mi>A</mi><mo>&#183;</mo><msup><mi>v</mi><mn>2</mn></msup><mo>=</mo><mi>m</mi><mo>&#183;</mo><msup><mi>s</mi><mn>2</mn></msup><mo>&#183;</mo><mi>x</mi></math>
+				</p>
+				
+				<p>
+				Auf der rechten Seite stört uns noch die Masse, deshalb dividieren wir auf beiden Seiten durch m und erhalten:
+				</p>
+				
+				<p>
+				<math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mi>F</mi><mi>m</mi></mfrac><mo>-</mo><mfrac><msub><mi>F</mi><mi>R</mi></msub><mi>m</mi></mfrac><mo>-</mo><mfrac><mrow><msub><mi>c</mi><mi>w</mi></msub><mo>&#183;</mo><mi>A</mi><mo>&#183;</mo><msup><mi>v</mi><mn>2</mn></msup></mrow><mi>m</mi></mfrac><mo>=</mo><msup><mi>s</mi><mn>2</mn></msup><mo>&#183;</mo><mi>x</mi></math>
+				</p>
+				
+				<p>
+				Mit Hilfe dieser Gleichung können wir nun ganz einfach folgendes Blockschaltbild, gemäß den Regeln der Systemtheorie, aufstellen:
+				</p>
+				
+				<img src="../files/simulink/Blockschaltbild.jpg">
+				
+				<p>
+				Ein mögliches Simulink-Modell könnte demnach wie folgt aussehen (es geht etwas über die Aufgabenstellung hinaus):
+				</p>
+				
+				<img src="../files/simulink/Simulink.jpg">
+				
+				<p>
+				Die Modellparameter werden in einer separten Skriptdatei festgelegt. Auch die Steuerung der Simulation das Plotten der Ergebnisse übernimmt das Skript:
+				</p>
+				
+				<img src="../files/simulink/skript.jpg">
+				
+				<br /><br />
+				
+				<p>
+				Auswertung der Geschwindigkeit und des zurückgelegten Weges:
+				</p>
+				
+				
+				
+				<img src="../files/simulink/scope.jpg">
+				
+				<img src="../files/simulink/plot1.jpg">
+				
+				<img src="../files/simulink/plot2.jpg">
+                    
+            </div>
+
+                      
+        </div>	
+    </body>
+</html>

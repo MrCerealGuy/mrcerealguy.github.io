@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+        <title>Interessantes aus Physik und Technik</title>
+
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <meta name="author" content="Andreas Zahnleiter">
+        
+        <link rel="stylesheet" type="text/css" href="../js/shadowbox-3.0.3/shadowbox.css">
+        <script type="text/javascript" src="../js/shadowbox-3.0.3/shadowbox.js"></script>
+        <script type="text/javascript">
+            Shadowbox.init();
+        </script>
+    </head>
+
+    <body>
+					<div id="header">
+			<p style="padding-bottom:30 px"> <a href="../index.html">Home</a> | <a href="./index-elektrotechnik.html">Elektrotechnik</a> | <a href="./index-funktechnik.html">Funktechnik</a> | 
+			<span style="color:#cc6600">Sonstiges</span> | <a href="./imprint.html">Impressum</a></p>
+			<h1>Andreas Zahnleiter</h1>
+			<img src="../gfx/header.jpg" height="90" width="960">
+		</div>
+		
+        <div id="container">		
+
+
+            <div id="main_content">
+                <h2>Interessantes aus Physik und Technik</h2>
+
+                <h3>Quantum Levitation</h3>
+
+                <p>Die Universit&auml;t Tel-Aviv demonstriert hier einen Quanten-Supraleiter in einem magnetischen Feld mit einem erstaunlichen Levitations-Effekt. <a href="http://www.youtube.com/embed/Ws6AAhTw7RA" rel="shadowbox">Hier klicken!</a></p>
+
+                <h3>Ferrofluid</h3>
+                
+                <p>Ferrofluid Skulpturen, die sich zum Rhythmus der Musik bewegen. Weitere Informationen findet man <a href="http://www.kodama.hc.uec.ac.jp/" target="_blank">hier</a>. Eine Demonstration ist <a href="http://www.youtube.com/embed/me5Zzm2TXh4" rel="shadowbox">hier</a> zu sehen.</p>
+
+                <h3>Infinity Mirror</h3>
+                
+                <p>Sehr eindrucksvoller optischer Effekt mit Hilfe von LEDs. <a href="http://www.youtube.com/embed/TZkdQeevJu0" rel="shadowbox">Hier klicken!</a></p>
+
+                <p><a href="http://www.dradio.de/dlf/sendungen/forschak/788682/" target="_blank">Wissenschaftler prüfen die Kanzius-Methode zur Wasserspaltung</a><br>Eine Demonstration ist <a href="http://www.youtube.com/embed/4OklIm5a1Lc" rel="shadowbox">hier</a> zu finden.</p>
+				
+                
+            </div>
+
+                        <div id="footer">
+                <div style="float:left;"><p style="color:#000000;">&copy; by Andreas Zahnleiter. Kontakt per <a href="./email.html" style="color:#000000;">E-Mail</a></p></div>
+            </div>
+        </div>	
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+        <title>Menschen und Entdeckungen in der Elektrotechnik</title>
+
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+		<meta name="robots" content="noindex">
+
+    </head>
+
+    <body>
+					<div id="header">
+			<!--<p style="padding-bottom:30 px"> <a href="../index.html">Home</a> | <span style="color:#cc6600">Elektrotechnik</span> | <a href="./index-funktechnik.html">Funktechnik</a> | 
+			<a href="./index-sonstiges.html">Sonstiges</a> | <a href="./imprint.html">Impressum</a></p>-->
+
+			<img src="../gfx/header.jpg" height="90" width="960">
+		</div>
+		
+        <div id="container">		
+
+
+            <div id="main_content">
+                <h2>Menschen und Entdeckungen in der Elektrotechnik</h2>
+				
+				<br />
+				
+				<h3>AT&T Tech Channel</h3>
+				
+				<p>Wer sich für die geschichtliche Entwicklung der Elektrotechnik/Elektronik interessiert, findet im <a href="http://techchannel.att.com/" target="_blank">AT&T Tech Channel</a> viele original-produzierte Videos.</p>
+
+                <p><a href="http://www.youtube.com/embed/uKH-GijnAGk" rel="shadowbox">AT&T Archives: Telstar!</a></p>
+				
+				<p><a href="http://www.youtube.com/embed/WiQvGRjrLnU" rel="shadowbox">AT&T Archives: Genesis of the Transistor</a></p>
+				
+				<p><a href="http://www.youtube.com/embed/ecl2ZO2MnTI" rel="shadowbox">AT&T Archives: Testing the First Public Cell Network</a></p>
+				
+				<p><a href="http://www.youtube.com/embed/avHo0-qU8xo" rel="shadowbox">AT&T Archives: Seeing the Digital Future (1961)</a></p>
+				
+				<p><a href="http://www.youtube.com/embed/q2kd1B0Ybto" rel="shadowbox">AT&T Archives: Microworld </a></p>
+				
+				<p><a href="http://www.youtube.com/embed/ScOd3ExKFM8" rel="shadowbox">AT&T Archives: Single Sideband, a 1977 film about microwave transmission</a></p>
+              
+				<br />
+			  
+				<h3>Erfinder, Visionäre und Entdecker</h3>
+                              
+                <p><a href="http://www.youtube.com/embed/Jw8gjlvJqT4" rel="shadowbox">Nikola Tesla - Erfinder Magier Prophet</a></p>
+				
+				<p style="font-style:italic;">"Nikola Tesla wurde 1856 in Kroatien geboren und starb1943 in New York.
+				<br>
+				Er wird vielfach als "der größte Erfinder aller Zeiten" bezeichnet. Als Entdecker der "Freien Energie" ist er für einige fast zu einem Mythos geworden. Auch die Wissenschaft erinnert sich allmählich wieder an jenes vergessene, visionäre Genie, das seiner Zeit damals weit voraus war und ebenso verkannt und bekämpft wie ehrfürchtig bewundert wurde. Es war Tesla, nicht Edison, der Energieübertragung mittels Wechselstromtransformation entwickelte; es war Tesla, nicht Marconi, der das Radio erfand; es war Tesla, der bereits vor hundert Jahren die Grundlagen für die Computertechnik, den Satellitenfunk und die Raumfahrt schuf. Nikola Tesla träumte von einer besseren Welt: von einer Erde, befreit von Hunger und Not, von einem weltweiten Kommunikationssystem, von der Kontrolle es Menschen über das Wetter, von der Nutzung eines unbegrenzten Vorrats von Energie und, last not least, von einer ständigen Verbindung zu Bewohnern anderer Planeten. Vieles, was Teslas Zeitgenossen wie Utopie erschien, gehört inzwischen zu den alltäglichen Errungenschaften des modernen Lebens, anderes wird bis heute nicht verstanden oder aber der Öffentlichkeit vorenthalten: ein Teil seiner schriftlich skizzierten Erfindungen verschwand in geheimen Militär- und Staatsarchiven."</p>
+				
+				<br /><br />	
+				
+				
+				<p><a href="http://www.youtube.com/embed/AyKd1q8D30s" rel="shadowbox">Welt unter Strom Teil 1</a> | <a href="http://www.youtube.com/embed/-obzArxfzCA" rel="shadowbox">2</a> | <a href="http://www.youtube.com/embed/XX_vWKScxUk" rel="shadowbox">3</a></p>
+				
+                <p style="font-style:italic;">"Die Dokumentation erklärt, wie der Mensch hinter die Geheimnisse der Stromerzeugung und -speicherung kam -- bis hin zur Erfindung eines bahnbrechenden kleinen Gegenstands: der Batterie. Im 18. und zu Beginn des 19. Jahrhunderts machten Physiker in England, im niederländischen Leiden, in den Vereinigten Staaten, in Marly bei Paris, in Bologna und Padua mit viel Intuition, einer Portion Glück und unter dem Druck der Konkurrenz eine Entdeckung nach der anderen. Der Zuschauer erfährt von der Erfindung des elektrostatischen Motors, des Blitzableiters, der ersten Elektrobatterie, der Voltaikbatterie und der allerersten Bogenlampe.
+				<br>
+				<br>
+				Im Mittelpunkt dieser Dokumentation stehen prägende Persönlichkeiten wie Isaac Newton, Francis Hawksbee, Pieter van Musschenbroeck, Benjamin Franklin, George-Louis Leclerc und Thomas-François Dalibard, Henry Cavendish, Luigi Galvani, Alessandro Volta, Humphry Davy, Giovanni Aldini und andere."</p>
+				<p><a href="http://www.arte.tv/guide/de/050724-001/welt-unter-strom-1-3" target="_blank">Quelle: Arte TV</a></p>
+
+                
+                
+                
+            </div>
+
+        </div>	
+    </body>
+</html>

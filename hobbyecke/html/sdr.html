@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+
+        <title>Software Defined Radio (SDR)</title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="robots" content="noindex">
+		
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+        
+    </head>
+
+    <body>
+			 								<div id="header">
+			<!--<p style="padding-bottom:30 px"> <a href="../index.html">Home</a> | <a href="./index-elektrotechnik.html">Elektrotechnik</a> | <span style="color:#cc6600">Funktechnik</span> | 
+			<a href="./index-sonstiges.html">Sonstiges</a> | <a href="./imprint.html">Impressum</a></p>-->
+
+			<img src="../gfx/header.jpg" height="90" width="960">
+		</div>
+        <div id="container">		
+
+
+            <div id="main_content">
+                <h2>Software Defined Radio (SDR)</h2>
+				<p>&nbsp;</p>
+				<p> <a href="#1">Einstieg mit WebSDR</a> | <a href="#2">SDR mit DVB-T/DAB USB-Stick (RTL2832U)</a> | <a href="#3">Raspberry Pi + RTL-SDR</a> | <a href="#4">ADS-B mit RTL-SDR</a>
+                </p>
+				<p>&nbsp;</p>
+                <p>Bei einem SDR findet die gesamte Signalverarbeitung eines Hochfrequenz-Senders bzw. Empf&auml;ngers mit Hilfe von Software statt. D.h. die Modulation und Demodulation wird dabei vollst&auml;ndig von der Software &uuml;bernommen, es k&ouml;nnen somit auch alle m&ouml;glichen Betriebsarten realisiert werden. Es existieren auch bereits online-basierte Software Defined Radios wie z.B. das Internet-Portal <a href="http://www.websdr.org" target="_blank">WebSDR.org</a>.</p>
+                
+                <h3><a name="1">Einstieg mit WebSDR</a></h3>
+                
+                <p><a href="../gfx/websdr.jpg" rel="shadowbox"><img src="../gfx/websdr-small.jpg" alt="" border="0" align="left" hspace="10"></a> Hier sieht man einen in der Funktechnik typisches <b>Wasserfalldiagramm</b>, das hier in diesem Beispiel einen Teil des <b>40m-Bands</b> zeigt. Wasserfalldiagramme zeigen Signale unterschiedlicher Stärke (farbliche Hervorhebung) verschiedener Frequenzen (x-Achse) in zeitlicher Abfolge von oben nach unten (y-Achse) an. Über einen Regler (in Form einer gelben Bandpasskurve) lassen sich einfach <b>Frequenz und Bandbreite</b> ändern. Weiter unten sieht man die Zuhörer, entweder mit der IP-Adresse oder mit Rufzeichen.</p>
+                
+                
+                
+                <p>Link zum WebSDR: <a href="http://rn3dkt.ru/" target="_blank">http://rn3dkt.ru/</a></p>
+                
+                <br /><br />
+                
+                <h3>Software: SDR-RADIO</h3>
+                
+                <p><a href="../gfx/sdr-radio.jpg" rel="shadowbox"><img src="../gfx/sdr-radio-small.jpg" alt="" border="0" align="left" hspace="10"></a> SDR-RADIO ist eine Windows-Anwendung für SDR Receivers and Transceivers, es besteht auch die Möglichkeit <b>externe Quellen</b> einzubinden, d.h. es ist kein eigener Receiver notwendig. Natürlich ist der Reiz mit einem eigenen Empfänger viel größer ;-).</p>
+                
+                
+                
+                 <p>Link zur Software: <a href="http://www.sdr-radio.com" target="_blank">http://www.sdr-radio.com</a></p>
+                
+				<br /><br />
+				
+				<h3><a name="2">SDR mit DVB-T/DAB USB-Stick</a></h3>
+				
+				<p>Auf Dauer ist natürlich der SDR-Empfang über das Internet unbefriedigend, daher muss ein richtiger SDR-Empfänger her. Da gute Empfänger allerdings ab 200&euro; aufwärts kosten, zeige ich hier wie man kostengünstig einen DVB-T/DAB USB-Stick als einen vollwertigen SDR nutzen kann, möglich macht dies der Chip RTL2832 mit einem Elonis E4000 oder FC0013 Tuner. Folgende Ausstattung wird benötigt:</p>
+				
+				<p>Hardware/Software:</p>
+				
+				<ul>
+				<li>DVB-T/DAB USB-Stick, z.B. Terratec Noxon (ca. 25&euro;)</li>
+				<li>PC ab Windows XP</li>
+				<li>SDR# und Zadig zur Treiberinstallation</li>
+				</ul>
+				
+				<p>Zuerst muss die Software als <a href="http://sdrsharp.com/downloads/sdr-install.zip">ZIP-Archiv heruntergeladen</a> und in ein Verzeichnis eurer Wahl entpackt werden. Als nächstes die "Install.bat" ausführen, das Skript lädt automatisch alle benötigten Dateien herunter. Nun den DAB-USB-Stick anschließen, aber nicht den Treiber von der Hersteller-CD installieren! Wir müssen hier für SDR# einen speziellen Treiber installieren, dazu öffnet ihr zunächst das "sdrsharp" Verzeichnis und startet "Zadig". Im Menü klickt ihr nun auf Options->List All Devices und wählt den von Windows erkannten USB-Stick aus, bei mir hat er die Bezeichnung RTL2832U. Mit einem Klick auf "Install Driver" sollte nach ein paar Minuten die Installion abgeschlossen sein.</p>
+
+				<a href="../gfx/zadig.jpg" rel="shadowbox"><img src="../gfx/zadig-small.jpg" alt="" border="0"></a>
+				<p>&nbsp;</p>
+				
+				<p><a href="../gfx/sdrsharp1.jpg" rel="shadowbox"><img src="../gfx/sdrsharp1-small.jpg" alt="" border="0" align="left" hspace="10"></a> Die SDR-Software wird nun über "SDRSharp.exe" gestartet. Als nächstes muss nur noch unter "Configure" der Stick mit der Bezeichnung "RTL-SDR / USB" ausgewählt werden.</p>
+
+				
+				<br /><br /><br /><br /><br /><br /><br /><br /><br />
+				
+				<p><a href="../gfx/sdrsharp2.jpg" rel="shadowbox"><img src="../gfx/sdrsharp2-small.jpg" alt="" border="0" align="left" hspace="10"></a> Wenn alles korrekt eingestellt ist, sollte mit einem Klick auf "Play" etwas zu hören sein.</p>
+				
+				
+				<p>&nbsp;</p>
+				
+				<p>Um den Kurzwellenbereich hören zu können, ist allerdings noch ein Frequenzkonverter notwendig, der die KW-Frequenzen in den empfangbaren Bereich des DAB-Sticks anhebt.</p>
+				
+				
+				<p>&nbsp;</p>
+				
+				<h3><a name="3">Raspberry Pi + RTL-SDR</a></h3>
+				
+				<p>Mit einem Raspberry Pi ist es sogar möglich einen kostengünstigen SDR-Receiver zu bauen. Der folgende Prototyp besteht aus folgenden Komponenten:</p>
+				
+				<ul>
+					<li>Raspberry Pi Modell B 512 MB</li>
+					<li>2,8" TFT Display und/oder Monitor mit HDMI-Anschluss</li>
+					<li>DVB-T/DAB USB-Stick (RTL2832U)</li>
+					<li>EDIMAX EW-7811UN Wireless USB Adapter, 150 Mbit/s, IEEE802.11b/g/n </li>
+					<li>100 MHz HF-Up-Converter (für Kurzwellenempfang)</li>
+					<li>LogiLink 4-Port Hub USB 2.0</li>
+					<li>2x40 Watt-Endstufe</li>
+					<li>Kfz-Lautsprecher</li>
+					<li>Teleskop-Antenne (UKW)/KW-Antenne</li>
+					
+				</ul>
+
+				<br>
+				
+				<p>Hardwareaufbau:</p>
+				
+				<a href="../gfx/IMG_1212_2.jpg" rel="shadowbox"><img src="../gfx/IMG_1212_2s.jpg" alt="" border="0" align="left" hspace="10"></a>
+				
+				<p>
+					Folgende Software kommt zum Einsatz:<br><br>
+					- Raspbian (Wheezy)
+					- RTL-SDR (<a href="http://sdr.osmocom.org/trac/wiki/rtl-sdr" target="_blank">OsmoSDR</a>)
+				</p>
+								
+				<p>Installation:</p>
+				
+				<p>
+					Ladet euch zuerst von <a href="http://www.raspberrypi.org/downloads" target="_blank">raspberrypi.org</a> <strong>New Out of Box Software (NOOBS)</strong> herunter falls ihr noch unerfahren mit dem Raspberry Pi seid, im anderen Fall könnt ihr auch gleich das Raw Image <strong>Raspbian</strong> herunterladen und über das Tool <strong>Win32DiskImager</strong> auf eine SD-Karte schreiben. Für die Installation und Konfiguration ist es einfacher den Raspberry Pi an einen Monitor mit HDMI und Tastatur/Maus anzuschließen.
+				</p>
+				
+				<p>
+					Desktop deaktivieren: Für dieses Projekt ist nicht unbedingt ein Deskop notwendig und verbraucht nur unnötig Arbeitsspeicher. über den Befehl <strong>sudo raspi-config</strong> könnt ihr die Einstellung <strong>enable boot to desktop</strong> deaktivieren, nach einem Neustart landet ihr dann direkt in der Konsole.
+				</p>
+				
+				<p>
+					Als nächstes installieren wir den oben genannten WLAN-Stick, sobald der Stick eingesteckt wurde, sollte er von Raspbian erkannt worden sein, dies kann man einfach mit dem Befehl <strong>dmesg</strong> überprüfen, hier sollte der Treiber <strong>rtl8192cu</strong> auftauchen. Mit dem Befehl <strong>ifconfig</strong> kann geprüft werden, ob der WLAN-Stick als Netzwerkgerät <strong>wlan0</strong> auftaucht. Um eine Verbindung mit eurem WLAN-Netzwerk herzustellen, müssen die Zugangsdaten in der Konfigurationsdatei <strong>/etc/network/interfaces</strong> hinterlegt werden, z.B.
+				</p>
+				
+				<pre>
+auto lo
+iface lo inet loopback
+iface eth0 inet dhcp
+
+auto wlan0
+allow-hotplug wlan0
+iface wlan0 inet dhcp
+wpa-ap-scan 1
+wpa-scan-ssid 1
+wpa-ssid "DEIN-WLAN-NAME"
+wpa-psk "DEIN-WLAN-SCHLÜSSEL"
+				</pre>
+				
+				<p>Damit die Änderungen wirksam werden, muss der Netzwerkdienst neugestartet werden:</p>
+				
+				<pre>
+sudo service networking restart
+				</pre>
+				
+				<p>
+					Zu guter Letzt müssen wir nur noch die eigentliche Software für den SDR-Empfang installieren. Da es ziemlich mühselig ist, alle Software-Komponenten einzeln zu installieren, hat der amerikanische Student Jacob Zelek ein sehr nützliches Skript geschrieben (Danke!!), dass ihr euch bei <a href="https://github.com/jacobzelek/rtl_sdr_kit" target="_blank">GitHub</a> herunterladen könnt, geht dabei wie folgt vor:
+				</p>
+				
+				<pre>
+git clone https://github.com/jacobzelek/rtl_sdr_kit.git rtl_sdr_kit
+cd rtl_sdr_kit
+chmod +x rtl_sdr_kit.sh
+./rtl_sdr_kit.sh install
+				</pre>
+				
+				<p>Um eure SDR-Software aktuell zu halten, muss zukünftig nur folgender Befehl aufgerufen werden:</p>
+
+<pre>
+./rtl_sdr_kit.sh update
+</pre>
+
+				<p>Nun kann es losgehen! Über das Skript <strong>rtl_fm</strong> könnt ihr den Tuner auf eine beliebige UKW-Frequenz einstellen, z.B. auf 96,3 MHz:</p>
+				
+				<pre>
+rtl_fm -f 96.3e6 -W -s 200000 -r 48000 - | aplay -r 48k -f S16_LE
+				</pre>
+				
+				<p>Weitere Informationen findet ihr auf <a href="http://sdr.osmocom.org/trac/wiki/rtl-sdr" target="_blank">sdr.osmocom.org</a>, nützlich ist auch der <a href="http://kmkeen.com/rtl-demod-guide/" target="_blank">Rtl_fm Guide</a>.</p>
+				
+				<br />
+				
+				<table>
+					<tr>
+						<td>
+							<p>Der Raspberry Pi bootet:</p>
+														
+							<iframe src="https://player.vimeo.com/video/219075071" width="300" height="169" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+							
+						</td>
+						<td>
+							<p>UKW-Empfang (HF Up-Converter ist deaktiviert):</p>							
+							<iframe src="https://player.vimeo.com/video/219075016" width="300" height="169" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						</td>
+					</tr>
+				</table>
+				
+				<p>&nbsp;</p>
+				
+				<h3><a name="4">ADS-B mit RTL-SDR</a></h3>
+				
+				<p>ADS-B steht für Automatic Dependent Surveillance - Broadcast und ist ein System der Flugsicherung zur Anzeige der Flugbewegungen im Luftraum. Der ADS-B Transponder sendet auf 1090 MHz ca. einmal die Sekunde Flugdaten wie Position, Geschwindigkeit, Flugnummer u.v.m.</p>
+				
+				<p><a href="../gfx/ads-b3.jpg" rel="shadowbox"><img src="../gfx/ads-b3-small.jpg" alt="" border="0" align="left" hspace="10"></a> Mit einfachsten Mitteln wie einem RTL-SDR, der Software RTL1090 von jetvision.de und adsbSCOPE von sprut ermöglichen das Dekodieren und Anzeigen der Signale am heimischen PC. Hier fliegen zwei Flugzeuge in Richtung Süden:</p>
+
+				<br style="clear:left;" />
+
+				<p><a href="../gfx/ads-b4.jpg" rel="shadowbox"><img src="../gfx/ads-b4-small.jpg" alt="" border="0" align="left" hspace="10"></a> Hier hat mein "Radar" zwei Flugzeuge vom Typ C-130J-30 Hercules der U.S. Air Force erfasst.</p>
+				
+				<!--http://www.richy-schley.de/pages/funk-kommunikation/sdr-funkscanner-mit-dvb-t-stick-fuer-20-euro.php-->
+				<!--http://www.aa5sh.com/?page_id=65-->
+				
+				<br /><br /><br /><br />
+
+            </div>
+
+        </div>	
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><title>Elektrotechnik</title>
+
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<meta name="robots" content="noindex">
+
+
+
+</head>
+<body>
+
+		<div id="header">
+			<!--<p style="padding-bottom:30 px"> <a href="../index.html">Home</a> | <span style="color:#cc6600">Elektrotechnik</span> | <a href="./index-funktechnik.html">Funktechnik</a> | 
+			<a href="./index-sonstiges.html">Sonstiges</a> | <a href="./imprint.html">Impressum</a></p>-->
+
+			<img src="../gfx/header.jpg" height="90" width="960">
+		</div>
+
+<div id="container">
+
+<div id="main_content">
+<h2>Elektrotechnik</h2>
+<p>&nbsp;</p>
+<table width="100%">
+<tbody>
+<tr>
+<td width="30%"><img src="../gfx/PICT0043_75.jpg" align="left" hspace="5"> &gt; <a href="./elektronik.html">Elektronik-Projekte</a></td>
+<td width="30%"><img src="../gfx/MC.jpg" align="left" hspace="5"> &gt; <a href="./mikrocontroller.html">Mikrocontroller-Projekte (AVR)</a></td>
+<td><img src="../gfx/MC.jpg" align="left" hspace="5"> &gt;&nbsp;<a href="./mikrocontroller-arm.html"><span style="text-decoration: underline;">Mikrocontroller-Projekte (ARM)</span></a></td>
+</tr>
+<tr>
+<td><img style="width: 75px; height: 75px; float: left;" alt="LTspice IV" src="../gfx/ltspice-logo.jpg" hspace="5"> &gt;&nbsp;<a href="./ltspice.html"><span style="text-decoration: underline;">Simulation mit LTspice IV</span></a></td>
+<td><img src="../gfx/DF1730SB_75.jpg" align="left" hspace="5"> &gt; <a href="./labor.html">Labor/Equipment</a></td>
+<td><img src="../gfx/IMG_1061_75.jpg" align="left" hspace="5"> &gt; <a href="./reparatur.html">Reparatur</a></td>
+
+</tr>
+<tr>
+<!--<td><img src="../gfx/516FAGPRZEL._SL160_AA160_75.jpg" align="left" hspace="5"> &gt; <a href="./software-literatur-elektrotechnik.html">Software/Literatur</a></td>-->
+<!--<td><img src="../gfx/elektronik.jpg" align="left" hspace="5"> &gt; <a href="/elektrotechnik/lehrvideos">E-Learning</a></td>-->
+<!--<td><img src="../gfx/elektronik.jpg" align="left" hspace="5"> &gt; <a href="./robotik.html">Robotik</a></td>-->
+<!--<td><img src="../gfx/Tesla_Broadcast_Tower_1904_75.jpg" align="left" hspace="5"> &gt; <a href="./historisches.html">Menschen und Entdeckungen in der Elektrotechnik</a></td>-->
+<td><img src="../gfx/elektronik.jpg" align="left" hspace="5px;"> &gt; <a href="./vorlesungsskripte.html">Vorlesungsskripte</a></td>
+<td><img src="../gfx/elektronik.jpg" align="left" hspace="5"> &gt; <a href="./links-elektrotechnik.html">Links</a></td>
+<td>&nbsp;</td>
+</tr>
+
+
+
+
+</tbody>
+</table>
+</div>
+
+</div>
+</body></html>

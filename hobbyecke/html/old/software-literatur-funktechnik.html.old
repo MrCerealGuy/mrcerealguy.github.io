@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+        <title>Literatur und Software der Funktechnik</title>
+
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+
+    </head>
+
+    <body>
+				 								<div id="header">
+			<p style="padding-bottom:30 px"> <a href="../index.html">Home</a> | <a href="./index-elektrotechnik.html">Elektrotechnik</a> | <span style="color:#cc6600">Funktechnik</span> | 
+			<a href="./index-sonstiges.html">Sonstiges</a> | <a href="./imprint.html">Impressum</a></p>
+
+			<img src="../gfx/header.jpg" height="90" width="960">
+		</div>
+        <div id="container">		
+
+
+            <div id="main_content">
+                <h2>Literatur/Software</h2>
+
+                <p>Hier findet ihr eine Liste von B&uuml;chern und Software, die ich selber nutze und von denen ich viel profitiert habe. Die Reihenfolge ist rein zuf&auml;llig entstanden und stellt keine Wertung dar.</p>
+
+                <p>&nbsp;</p>
+                <hr>
+                <p>&nbsp;</p>
+
+                <h3><a name="1">Literatur</a></h3>
+
+
+                <table width="100%" style="margin-top:30px;">
+                    <tr>
+                        <td valign="top">
+                            <span style="font-size:large;">Amateurfunk-Lehrgang Technik: F&uuml;r das Amateurfunkzeugnis Klasse 1 und 2. Mit den Erl&auml;uterungen aller Pr&uuml;fungsfragen</span><br>von Eckart K. W. Moltrecht
+                            <p>Im deutschprachigen Raum wohl das beste Buch f&uuml;r die Vorbereitung auf die Amateurfunkpr&uuml;fung/Teil Technik.</p>
+                        </td>
+                        <td align="right" width="80px">
+                            <a href="http://www.amazon.de/Amateurfunk-Lehrgang-Technik-Amateurfunkzeugnis-Erl%C3%A4uterungen-Pr%C3%BCfungsfragen/dp/3881803890/ref=pd_bxgy_b_text_c" target="_blank"><img src="../gfx/51tyjfSYMvL._SL500_AA300_.jpg" width="80px" border="0"/></a>
+                        </td>
+                    </tr>
+                </table>
+
+                <table width="100%" style="margin-top:30px;">
+                    <tr>
+                        <td width="80px">
+                            <a href="http://www.amazon.de/Amateurfunk-Lehrgang-Betriebstechnik-Vorschriften-f%C3%BCr-Amateurfunkzeugnis/dp/3881808035/ref=pd_cp_b_1" target="_blank"><img src="../gfx/Amateurfunklehrgang-Betriebstechnik-und-Vorschriften.png.jpg" width="80px" border="0"/></a>
+                        </td>
+                        <td valign="top">
+                            <span style="font-size:large;">Amateurfunk-Lehrgang: Betriebstechnik und Vorschriften f&uuml;r das Amateurfunkzeugnis</span><br>von Eckart K. W. Moltrecht
+                            <p>Im deutschprachigen Raum wohl das beste Buch f&uuml;r die Vorbereitung auf die Amateurfunkpr&uuml;fung/Teil Betriebstechnik und Vorschriften.</p>
+                        </td>
+                    </tr>
+                </table>
+                                
+                <table width="100%" style="margin-top:30px;">
+                    <tr>
+                        <td valign="top">
+                            <span style="font-size:large;">Sender & Frequenzen 2012</span><br>von Michael Schmitz und Wolf Siebel
+                            <p>Jahrbuch für weltweiten Rundfunkempfang Lang-, Mittel-, Kurzwelle - Satellit - Webradio</p>
+                        </td>
+                        <td width="80px">
+                            <a href="http://www.amazon.de/Sender-Frequenzen-2012-Michael-Schmitz/dp/3881808655/ref=sr_1_1?ie=UTF8&qid=1336906612&sr=8-1" target="_blank"><img src="../gfx/4_841315685b.jpg" width="80" style="border:none;"></a>
+                        </td>
+                    </tr>
+                </table>
+
+                <table width="100%" style="margin-top:30px;">
+                    <tr>
+                        <td width="80px">
+                            <a href="http://www.amazon.de/Handbuch-Kurzwellenempf%C3%A4nger-Besser-bedienen-h%C3%B6ren/dp/3881806776/ref=sr_1_1?s=books&ie=UTF8&qid=1336907177&sr=1-1" target="_blank"><img src="../gfx/41nNqfHxg1L._SL500_AA300_.jpg" width="80" style="border:none;"></a>
+                        </td>
+                        <td valign="top">
+                            <span style="font-size:large;">Handbuch Kurzwellenempfänger: Besser bedienen - mehr hören</span><br>von Thomas Riegler
+                            <p>Dieses Buch liefert einen guten Überblick bekannter Kurzwellenempfänger mit vielen Tipps und Tricks für den Praktiker!</p>
+                        </td>
+
+                    </tr>
+                </table>
+
+                <p>&nbsp;</p>
+                <hr>
+                <p>&nbsp;</p>
+
+                <h3><a name="2">Software</a></h3>
+
+                <table width="100%" style="margin-top:30px;">
+                    <tr>
+                        <td width="80px">
+                            <a href="http://www.afup.a36.de" target="_blank"><img src="../gfx/tnafuptraining.gif" width="80px" border="0"/></a>
+                        </td>
+                        <td valign="top">
+                            <span style="font-size:large;">AfuP - Amateurfunktraining</span>
+                            <p>Eine n&uuml;tzliche Software um sich auf die Amateurfunkpr&uuml;fung vorzubereiten.</p>
+                        </td>
+
+                    </tr>
+                </table>
+
+                <table width="100%" style="margin-top:30px;">
+                    <tr>
+                        <td valign="top">
+                            <span style="font-size:large;">HamScope</span>
+                            <p>Hierbei handelt es sich um einen multi-mode Kommunikationsinterface f&uuml;r Amateurfunker. Sie unterst&uuml;tzt unter anderem die Betriebsarten PSK31, RTTY, ASCII, MFSK16, PACKET und CW,.</p>
+                        </td>
+                        <td width="80px">
+                            <a href="http://www.qsl.net/hamscope/" target="_blank"><img src="../gfx/hamscope.jpg" width="80px" border="0"/></a>
+                        </td>
+                    </tr>
+                </table>
+
+                <table width="100%" style="margin-top:30px;">
+                    <tr>
+                        <td width="80px">
+                            <a href="http://f6cte.free.fr/" target="_blank"><img src="../gfx/multipsk.jpg" width="80px" border="0"/></a>
+                        </td>
+                        <td valign="top">
+                            <span style="font-size:large;">MULTIPSK</span>
+                            <p>Eine gute Alternative zu HamScope, MULTIPSK kann jedoch auch Senden. Und es unterst&uuml;tzt auch den Empfang von SSTV-Signalen, was sehr interessant ist.</p>
+                        </td>
+                    </tr>
+                </table>
+                
+                <table width="100%" style="margin-top:30px;">
+                    <tr>
+                        <td valign="top">
+                            <span style="font-size:large;">SDR-RADIO</span>
+                            <p>SDR-Radio ist eine kostenlose Windows-Anwendung für SDR-Receivers und Transceivers. Sie bietet einen einfachen Einstieg für Kurzwellenhörer, da man im einfachsten Fall (ohne eigenen Receiver) nur einen PC mit Internetzugang benötigt, externe von der Community betriebene Receiver lassen sich einfach anwählen.</p>
+                        </td>
+                        <td width="80px">
+                            <a href="http://www.sdr-radio.com/" target="_blank"><img src="../gfx/sdr-radio-160.jpg" width="80px" border="0"/></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>	
+    </body>
+</html>

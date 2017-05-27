@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Banner & Linkvorschl&auml;ge</title>
+
+        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+        <meta name="author" content="Andreas Zahnleiter">
+        <meta name="description" content="Private Homepage von Andreas Zahnleiter rund um die Elektro- und Informationstechnik. Schau doch mal vorbei!">
+        <meta name="keywords" content="Elektrotechnik, Informationstechnik, Funktechnik, Elektronik, BOS, Amateurfunk, Mikrocontroller">
+
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-12629653-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+    </head>
+
+    <body>
+        <div id="container">		
+            <div id="header">
+                <h1 style="margin-bottom: 0px; color: rgb(0, 0, 0);">Elektro- und Informationstechnik und vieles mehr...</h1>
+                <span style="color: grey; font-style: italic; font-weight: lighter; font-size:small;">"Wer aufhört zu lernen ist alt. Er mag zwanzig oder achtzig sein." (Henry Ford)</span>
+            </div>
+
+            			<div id="menuNav">
+				<ul id="menu">
+					<li><a href="/">Home</a></li>
+					<li><a href="/elektrotechnik">Elektrotechnik</a></li>
+					<li><a href="/funktechnik">Funktechnik</a></li>
+					<li><a href="/sonstiges">Sonstiges</a></li>
+				</ul>
+			</div>
+
+            <div id="main_content">
+                <h2>Banner & Linkvorschl&auml;ge</h2>
+
+                <p>ich w&uuml;rde mich freuden wenn du einen Link auf deine Homepage einbauen w&uuml;rdest.</p>
+
+
+                <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                    <tbody>
+                        <tr> 
+                            <td width="22%">
+                                <div align="center">
+                                    <a href="http://www.andreas-zahnleiter.de" target="_blank"><img src="../gfx/banner_468x60.jpg" alt="Elektro- und Informationstechnik" width="468" height="60" border="0"></a><br>
+                                    <strong><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Full-Banner 468 x 60</font></strong>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div align="center"><textarea cols="50" name="textfield1" rows="4"><a href="http://www.andreas-zahnleiter.de" target="_blank"><img src="http://www.andreas-zahnleiter.de/gfx/banner_468x60.jpg" alt="Elektro- und Informationstechnik" width="468" height="60" border="0"></a></textarea></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div id="footer">
+                <div style="float:left;"><p style="color:#000000;">&copy; by Andreas Zahnleiter. Kontakt per <a href="./email.html" style="color:#000000;">E-Mail</a> // <a href="skype:conan83m?call" style="color:#000000;">Skype</a></p></div><div style="float:right;"><p style="color:#000000;"><a style="color:#000000;" href="/impressum">Impressum</a></p></div>
+            </div>
+        </div>	
+    </body>
+</html>

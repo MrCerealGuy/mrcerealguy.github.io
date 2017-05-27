@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+        <title>Lehrvideos Mathematik</title>
+
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <meta name="author" content="Andreas Zahnleiter">
+
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-12629653-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+        
+        <link rel="stylesheet" type="text/css" href="../js/shadowbox-3.0.3/shadowbox.css">
+        <script type="text/javascript" src="../js/shadowbox-3.0.3/shadowbox.js"></script>
+        <script type="text/javascript">
+            Shadowbox.init();
+        </script>
+    </head>
+
+    <body>
+        <div id="container">		
+            <div id="header">
+                <h1 style="margin-bottom: 0px; color: rgb(0, 0, 0);">Elektro- und Informationstechnik und vieles mehr...</h1>
+                <span style="color: grey; font-style: italic; font-weight: lighter; font-size:small;">"Wer aufhört zu lernen ist alt. Er mag zwanzig oder achtzig sein." (Henry Ford)</span>
+            </div>
+
+            			<div id="menuNav">
+				<ul id="menu">
+					<li><a href="/">Home</a></li>
+					<li><a href="/elektrotechnik">Elektrotechnik</a></li>
+					<li><a href="/funktechnik">Funktechnik</a></li>
+					<li><a href="/sonstiges">Sonstiges</a></li>
+				</ul>
+			</div>
+
+            <div id="main_content">
+                <h2>Lehrvideos</h2>
+                <p>Ich finde praxisanschauliche Lehrvideos immer sehr hilfreich und kann folgende Beitr&auml;ge empfehlen:</p>
+
+                <h3>Differenzialgleichungen</h3>
+
+                <p>
+                 
+                <a href="http://www.youtube.com/embed/vfj_pJPPaII" rel="shadowbox">Was ist eine Differentialgleichung (Teil 1)</a><br>
+                <a href="http://www.youtube.com/embed/47uNqYJ5nfA" rel="shadowbox">Was ist eine Differentialgleichung (Teil 2) - Beispiel Fahrrad ausrollen lassen </a><br>
+                <a href="http://www.youtube.com/embed/A9pEK1bzex4" rel="shadowbox">Differentialgleichungen 1. Ordnung - Variablentrennung (Separation der Variablen)</a><br>
+                
+                </p>
+                
+                <p>Tipp: Auf <a href="http://www.oberprima.com" alt="OberPrima.com">OberPrima.com</a> finden sich viele weitere Videos!</p>
+
+            </div>
+
+            <div id="footer">
+                <div style="float:left;"><p style="color:#000000;">&copy; by Andreas Zahnleiter. Kontakt per <a href="./email.html" style="color:#000000;">E-Mail</a> // <a href="skype:conan83m?call" style="color:#000000;">Skype</a></p></div><div style="float:right;"><p style="color:#000000;"><a href="/verlinke-mich" style="color:#000000;">Verlinke mich!</a> <a style="color:#000000;" href="/impressum">Impressum</a></p></div>
+            </div>
+        </div>	
+    </body>
+</html>

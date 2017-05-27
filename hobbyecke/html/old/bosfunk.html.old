@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+        <title>BOS-Funk</title>
+
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+		<meta name="robots" content="noindex">
+
+    </head>
+
+    <body>
+			<div id="header">
+			<!--<p style="padding-bottom:30 px"> <a href="../index.html">Home</a> | <a href="./index-elektrotechnik.html">Elektrotechnik</a> | <span style="color:#cc6600">Funktechnik</span> | 
+			<a href="./index-sonstiges.html">Sonstiges</a> | <a href="./imprint.html">Impressum</a></p>-->
+
+			<img src="../gfx/header.jpg" height="90" width="960">
+		</div>
+		
+        <div id="container">		
+
+
+		
+            <div id="main_content">
+                <h2>BOS-Funk</h2>
+
+                <a name="1"><h3>Was ist das?</h3></a>
+
+                <p>Unter BOS-Funk versteht man den nicht &ouml;ffentlichen Funkdienst in Deutschland, der von Beh&ouml;rden und Organisationen mit Sicherheitsaufgaben (BOS) verwendet wird. Dazu z&auml;hlen die Polizei, die Feuerwehr, das THW, Rettungsdienste, Katastrophenschutzbeh&ouml;rden sowie weitere Beh&ouml;rden mit Sicherheitsaufgaben. Der BOS-Funk verwendet das 8m-, 4m-, 2m- und 70-cm-Band. In allen B&auml;ndern wird Frequenzmodulation (FM) eingesetzt. Das Abh&ouml;ren von Funkmitteilungen auf diesen Frequenzen ist in Deutschland verboten und kann sogar mit Freiheitsstrafe geahndet werden! Hier noch Ausz&uuml;ge aus dem Telekommunikationsgesetz (TKG):</p>
+
+                <blockquote style="padding:10px;">
+                    <p><i><b>&sect; 89 Abh&ouml;rverbot, Geheimhaltungspflicht der Betreiber von Empfangsanlagen</b><br>
+                            Telekommunikationsgesetz vom 22. Juni 2004 (BGBl. I S. 1190), zuletzt ge&auml;ndert durch Artikel 2 des Gesetzes vom 21. Dezember 2007 (BGBl. I S. 3198)<br>
+                            <b>1 </b>Mit einer Funkanlage d&uuml;rfen nur Nachrichten, die f&uuml;r den Betreiber der Funkanlage, Funkamateure im Sinne des Gesetzes &uuml;ber den Amateurfunk vom 23. Juni 1997 (BGBl. I S. 1494), die Allgemeinheit oder einen unbestimmten Personenkreis bestimmt sind, abgeh&ouml;rt werden.
+                            <b>2 </b>Der Inhalt anderer als in Satz 1 genannter Nachrichten sowie die Tatsache ihres Empfangs d&uuml;rfen, auch wenn der Empfang unbeabsichtigt geschieht, auch von Personen, f&uuml;r die eine Pflicht zur Geheimhaltung nicht schon nach &sect; 88 besteht, anderen nicht mitgeteilt werden.
+                            <b>3 </b>&sect; 88 Abs. 4 gilt entsprechend.
+                            <b>4 </b>Das Abh&ouml;ren und die Weitergabe von Nachrichten auf Grund besonderer gesetzlicher Erm&auml;chtigung bleiben unber&uuml;hrt.<br><br>
+                            <b>&sect; 148 Strafvorschriften</b><br>
+
+                            Telekommunikationsgesetz vom 22. Juni 2004 (BGBl. I S. 1190), zuletzt ge&auml;ndert durch Artikel 2 des Gesetzes vom 21. Dezember 2007 (BGBl. I S. 3198)<br>
+                            <b>(1)</b> Mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe wird bestraft, wer<br>
+                            1. entgegen &sect; 89 Satz 1 oder 2 eine Nachricht abh&ouml;rt oder den Inhalt einer Nachricht oder die Tatsache ihres Empfangs einem anderen mitteilt oder<br>
+                            2. entgegen &sect; 90 Abs. 1 Satz 1 eine dort genannte Sendeanlage<br>
+                            a) besitzt oder<br>
+
+                            b) herstellt, vertreibt, einf&uuml;hrt oder sonst in den Geltungsbereich dieses Gesetzes verbringt.<br>
+                            <b>(2)</b>  Handelt der T&auml;ter in den F&auml;llen des Absatzes 1 Nr. 2 Buchstabe b fahrl&auml;ssig, so ist die Strafe Freiheitsstrafe bis zu einem Jahr oder Geldstrafe.<br></font>
+                            <br><a href="http://www.gesetze-im-internet.de/">Quelle: Bundesministerium der Justiz 19.09.2008</a>
+                        </i></p>
+                </blockquote>
+
+
+
+                <table border="0">
+                    <tr>
+                        <td>
+                            <a href="../gfx/IMG_0718.jpg"><img src="../gfx/IMG_0718s.jpg" alt="Handfunkscanner Albrecht AE 72 H" border="0" width="300px" height="225px"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="font-size:9pt;">(Abb.: Handfunkscanner Albrecht AE 72 H)</span>
+                        </td>
+                    </tr>
+                </table>
+
+                <h3>Ein paar Funkmitschnitte...</h3>
+                <p>...folgen noch.</p>
+
+                <a name="3"><h3>Links</h3></a>
+
+                <p>Ein paar interessante Links:</p>
+
+                <div class="link-liste">
+                    <p><a href="http://www.frequenzdatenbank.de/bos-funk/" target="_blank">Frequenzdatenbank.de - BOS-Funk Kan&auml;le 2m/4m</a><br>
+                        Eine umfangreiche Datenbank mit Frequenzen aus dem BOS-Funkdienst mit guten Such- und Filterm&ouml;glichkeit.
+                    </p>
+
+                    <p><a href="http://mitglied.multimania.de/bauersebi/BOS-Funk.htm" target="_blank">BOS-Funk, FMEs, Feuerwehr, THW, Rettungsdienst, Scanner, Frequenzen usw.</a></p>
+
+                    <p><a href="http://bos-funk-info.de.tl/Home.htm" target="_blank">Private Seite mit Infos zum BOS-Funk, Funkmeldesystem (FMS) und Funkscanner.</a></p>
+
+                    <p><a href="http://www.bos-funktraining.de/" target="_blank">BOS-Funktraining</a></p>
+
+                    <p><a href="http://www.moba-paffenholz.de/bos-funk" target="_blank">Geschichtliche Entwicklung des BOS-Funks</a></p>
+
+                    <p><a href="http://www.looprecorder.de/" target="_blank">Loop Recorder: Sound Recording Software</a><br>Mit dieser Software habe ich die Funkscanner-Kommunikation aufgezeichnet.</p>
+
+
+                </div>
+            </div>
+
+        </div>	
+    </body>
+</html>

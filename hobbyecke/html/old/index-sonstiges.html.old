@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+        <title>Sonstiges</title>
+
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+		<meta name="robots" content="noindex">
+
+    </head>
+
+    <body>
+        <div id="container">		
+
+					<div id="header">
+			<!--<p style="padding-bottom:30 px"> <a href="../index.html">Home</a> | <a href="./index-elektrotechnik.html">Elektrotechnik</a> | <a href="./index-funktechnik.html">Funktechnik</a> | 
+			<span style="color:#cc6600">Sonstiges</span> | <a href="./imprint.html">Impressum</a></p>-->
+
+			<img src="../gfx/header.jpg" height="90" width="960">
+		</div>
+
+
+            <div id="main_content">
+                <h2>Sonstiges</h2>
+
+  				<p>&nbsp;</p>
+				
+				<table width="100%">
+					<tr>
+						<td width="30%" valign="top"><img src="../gfx/elektronik.jpg" align="left" hspace="5px;"> > <a href="./scientific-computing.html">Scientific Computing & Visualization</a></td>
+						<!--<td valign="top"><img src="../gfx/elektronik.jpg" align="left" hspace="5px;"> > <a href="./physik-technik.html">Interessantes aus<br>Physik/Technik</a></td>-->
+						<!--<td width="30%" valign="top"><img src="../gfx/elektronik.jpg" align="left" hspace="5px;"> > <a href="./augmented-reality.html">Augmented Reality</a></td>-->
+						<!--<td valign="top"><img src="../gfx/elektronik.jpg" align="left" hspace="5px;"> > <a href="./links-informationstechnik.html">Links</a></td>-->
+						<td valign="top"><img src="../gfx/elektronik.jpg" align="left" hspace="5px;"> > <a href="./opensource.html">Software (Freeware / OpenSource)</a></td>
+						<!--<td valign="top"><img src="../gfx/elektronik.jpg" align="left" hspace="5px;"> > <a href="./kritik.html">Kritik zu Gesellschaft und Technik</a></td>-->
+					</tr>
+				</table>
+
+            </div>
+
+
+        </div>	
+    </body>
+</html>

@@ -1,0 +1,947 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+        
+		<title>Mikrocontroller/Embedded Systems</title>
+
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="robots" content="noindex">
+		
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+		
+		<!-- To generate your own colored code visit http://www.bedaux.net/cpp2html/ -->
+		<style type="text/css">
+		.comment { color: #999999; font-style: italic; }
+		.pre { color: #000099; }
+		.string { color: #009900; }
+		.char { color: #009900; }
+		.float { color: #996600; }
+		.int { color: #999900; }
+		.bool { color: #000000; font-weight: bold; }
+		.type { color: #FF6633; }
+		.flow { color: #FF0000; }
+		.keyword { color: #990000; }
+		.operator { color: #663300; font-weight: bold; }
+		.operator { color: #663300; font-weight: bold; }
+		</style>
+
+    </head>
+    <body>
+		<div id="header">
+			<!--<p style="padding-bottom:30 px"> <a href="../index.html">Home</a> | <span style="color:#cc6600">Elektrotechnik</span> | <a href="./index-funktechnik.html">Funktechnik</a> | 
+			<a href="./index-sonstiges.html">Sonstiges</a> | <a href="./imprint.html">Impressum</a></p>-->
+
+			<img src="../gfx/header.jpg" height="90" width="960">
+		</div>
+        <div id="container">
+            <div id="main_content">
+                <h2>Mikrocontroller/Embedded Systems</h2>
+				
+                <p>&nbsp;</p>
+				
+                <p>
+					<a href="#1">myAVR Board MK2 USB</a> | <a href="#2">Einführendes Beispiel: Taster steuert eine LED</a>
+                    | <a href="#3">Eine kleine Blinkschaltung</a> | <a href="#4">Ein kleiner Addierer</a> | <a href="#5">16x2
+                        LCD-Ansteuerung mit Arduino Mega 2560</a> | <a href="#6">Ein
+                        kleiner Webserver mit Arduino</a> | <a href="#7">Ein Telnet-Server mit Arduino</a> | <a href="#8">Voice Recognition mit Arduino</a> | <a href="#9">VU-Meter mit Arduino</a> | <a href="#10">GSM mit Arduino</a> | <a href="#11">PWM mit ATmega8</a> | <a href="#12">Manchester-codiertes Signal auf 868 MHz senden und empfangen, Teil 1</a> | <a href="#13">Manchester-codiertes Signal auf 868 MHz senden und empfangen, Teil 2</a> | <a href="#14">Steuern mit USB und AVR ATmega8 / 3-Kanal-Relais Karte</a>
+                </p>
+				
+                <p>&nbsp;</p>
+				
+                <h3>Was ist ein Mikrocontroller?</h3>
+				
+                <p>
+					Man kann sich einen Mikrocontroller als ein Ein-Chip-Computersystem (System on a Chip, Abk. SoC) vorstellen. Im Gegensatz zu einem Prozessor, der alleine nicht lauffähig ist, beinhaltet ein Mikrocontroller bereits einen Arbeits- und Programmspeicher, sowie auch komplexere Peripheriefunktionen wie verschiedene Bussysteme (CAN, USB, SPI, seriell...). Einen guten Einstieg in dieses faszinierende Thema bietet die deutsch-sprachige Seite <a href="http://www.mikrocontroller.net/" target="_blank">www.mikrocontroller.net/</a>.
+				</p>
+                
+				<p>&nbsp;</p>
+				
+                <h3><a name="1">myAVR Board MK2 USB</a></h3>
+				
+                <p>
+					Meine Projekte habe ich mit dem Experimentierboard mit einem RISC AVR-Mikrocontroller (ATmega8) der Firma ATMEL realisiert. Auf dem Board befindet sich ein ISP-Programmer, damit ist es möglich die Software direkt aus der Entwicklungsumgebung (z.B. AVR Studio 4) in den EEPROM-Speicher zu brennen.
+				</p>
+					
+                <p>
+					Die Programme habe ich in der Programmiersprache C geschrieben und verwende den AVR-GCC-Compiler für AVR-Mikrocontroller sowie die C-Standardbibliothek avr-libc. Unter Windows gibt es hierfür das WinAVR-Softwarepaket, das man kostenlos herunterladen kann. Als Entwicklungsumgebung nutze ich den Texteditor Notepad++ unter Verwendung von Makefiles auf der Kommandozeilenebene. Nähere Informationen zur Programmierung findet ihr auf <a href="http://www.mikrocontroller.net/articles/AVR-GCC-Tutorial" target="_blank" alt="Mikrocontroller">Mikrocontroller.net</a> und zur Hardware auf <a href="http://myavr.de/" target="_blank" alt="MyAVR">MyAVR.de</a>.
+				</p>
+					
+                <p>Hier noch ein paar Bilder von meinem Board:</p>
+				
+                <a href="../gfx/IMG_0074.jpg" rel="shadowbox"><img src="../gfx/IMG_0074-300.jpg" alt="" border="0" width="300"></a>
+                <a href="../gfx/IMG_0076.jpg" rel="shadowbox"><img src="../gfx/IMG_0076-300.jpg" alt="" border="0" width="300"></a>
+				<a href="../gfx/IMG_0077.jpg" rel="shadowbox"><img src="../gfx/IMG_0077-300.jpg" alt="" border="0" width="300"></a>
+				<!--<a href="../gfx/IMG_0078.jpg" rel="shadowbox"><img src="../gfx/IMG_0078-300.jpg" alt="" border="0" width="300"></a>
+				<a href="../gfx/IMG_0079.jpg" rel="shadowbox"><img src="../gfx/IMG_0079-300.jpg" alt="" border="0" width="300"></a>-->
+               
+				<p>&nbsp;</p>
+                <hr>
+                <p>&nbsp;</p>
+
+                <h3><a name="2">Einführendes Beispiel: Taster
+                        steuert eine LED</a></h3>
+                <table>
+                    <tbody>
+                        <tr>
+                        </tr>
+                        <tr>
+                            <td class="">
+                                <pre><code>#include &lt;avr/io.h&gt;<br><br>int main(void)<br>{ <br> DDRB = 0xFF; // LED-Port auf Ausgang <br> DDRD = 0x00; // Key-Port auf Eingang<br>	<br> PORTD = 0xFF; // die Pullup Widerstände aktivieren<br> <br> uint8_t old_key_state = 0xFF; // bisher war kein Taster gedrückt<br> <br> uint8_t new_key_state;<br> uint8_t led_state = 0x00;<br> uint8_t state_change = 0;<br> <br> while(1)<br> {<br> new_key_state = PIND; <br>	<br>	if (old_key_state != new_key_state)<br>	{<br>	<br> old_key_state = new_key_state;<br> state_change++;<br>	<br> if (state_change == 2)<br> {<br>	led_state = ~led_state;<br>	state_change = 0; <br> } <br> } <br>	<br>	PORTB = led_state;<br> }<br>}<br></code></pre>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+				
+                <p>Das Programm funktioniert folgendermaßen:</p>
+				
+                <ol>
+                    <li>Zuerst schalten wird den Port für die LED auf Ausgang und den Port, wo unser Taster angeschlossen ist, auf Eingang. Zusätzlich aktivieren wir die Pullup-Widerstände.</li>
+                    <li>Dann definieren wir mehrere Variablen, die den Zustand des Tasters speichern.</li>
+                    <li>In der Endlosschleife fragen wir ständig ab, ob sich am Zustand des Tasters etwas geändert hat.</li>
+                    <li>Sollte dies der Fall sein, invertieren wir den Zustand der LED, d.h. wenn sie eingeschaltet war, wird sie nun ausgeschaltet und umgekehrt.</li>
+                </ol>
+				
+                <p>Nachdem das Programm erfolgreich compiliert wurde, habe ich es direkt per ISP-Programmer auf den Mikrocontroller hochgeladen.</p>
+					
+                <a href="../gfx/uc-projekt1.jpg" rel="shadowbox"><img src="../gfx/uc-projekt1-300.jpg" alt="Taster steuert LED" border="0" width="300"></a>
+                
+				<p>&nbsp;</p>
+                <hr>
+                <p>&nbsp;</p>
+
+                <h3><a name="3">Eine kleine Blinkschaltung</a></h3>
+                <table>
+                    <tbody>
+                        <tr>
+                        </tr>
+                        <tr>
+                            <td class="cpp">
+                                <pre><code>/*<br> * main.c<br> *<br> * Created: 22.04.2012 16:44:06<br> * Author: Andreas Zahnleiter<br> */ <br><br>#include &lt;avr/io.h&gt;<br>#include &lt;util/delay.h&gt; // benötigt für _delay_ms<br><br>int main(void)<br>{<br> uint8_t i = 0x00; <br><br> DDRB = 0xff; // Port-B auf Ausgang legen<br>	<br> do <br> {<br> PORTB = i; // Ausgabe Bitmuster<br>	i++; <br>	_delay_ms(900); // etwas warten<br> }<br> while (1);<br>	<br> return 0;<br>}<br></code></pre>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+				
+                <p>Und so schaut's aus:</p>
+
+				<iframe src="https://player.vimeo.com/video/219074715" width="300" height="169" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                
+                <p><u>Eine kleine Denkaufgabe:</u></p>
+				
+                <p>
+					Warum blinken die LEDs mit unterschiedlicher Geschwindigkeit? Hinweis: Die LEDs sind von links nach rechts mit den Pins 0-2 am Port B angeschlossen, falls dies im Video nicht gut zu erkennen sein sollte. Die Lösung hat was mit dem Bitmuster zu tun ;-). Und wer gar nicht drauf kommt, klickt mal <a href="../gfx/Bitmuster-Blinkschaltung.jpg" rel="shadowbox">hier</a>.
+				</p>
+                
+				<p>&nbsp;</p>
+                <hr>
+                <p>&nbsp;</p>
+
+                <h3><a name="4">Ein kleiner Addierer</a></h3>
+				
+                <p>
+					Das Programm funktioniert folgendermaßen: über den Taster 1 gibt man den 1. Summanden ein, dann betötigt man den Taster 2, damit wird dem Programm gesagt, dass nun die Eingabe des 2. Summanden folgt. Ein erneutes Drücken des Tasters 2 führt die Addition und die Ausgabe der Summe über eine LED aus.
+				</p>
+				
+                <table>
+                    <tbody>
+                        <tr>
+                        </tr>
+                        <tr>
+                            <td class="cpp">
+                                <pre><code>/*<br> * main.c<br> *<br> * Addiert zwei Zahlen und gibt das Ergebnis über eine LED aus.<br> *<br> * Created: 01.05.2012<br> * Author: Andreas Zahnleiter<br> */ <br> <br>#ifndef F_CPU<br>#define F_CPU 3686400<br>#endif<br><br>#include &lt;avr/io.h&gt; <br>#include &lt;util/delay.h&gt; // benötigt für _delay_ms<br>#include &lt;inttypes.h&gt;<br><br>/* Einfache Funktion zum Entprellen eines Tasters */<br>inline uint8_t debounce(volatile uint8_t *port, uint8_t pin)<br>{<br> if ( !(*port &amp; (1 &lt;&lt; pin)) )<br> {<br> /* Pin wurde auf Masse gezogen, 100ms warten */<br> _delay_ms(100);<br><br> if ( *port &amp; (1 &lt;&lt; pin) )<br> {<br> /* Anwender Zeit zum Loslassen des Tasters geben */<br> _delay_ms(100);<br> return 1;<br> }<br> }<br> return 0;<br>}<br><br>/* Legt ein Signal auf einen Ausgang mit definierter Dauer */<br>void signal(volatile uint8_t *port, uint8_t pin, uint8_t delay)<br>{<br> *port = *port ^ ( 1 &lt;&lt; pin); <br> _delay_ms(delay);<br> *port = *port ^ ( 1 &lt;&lt; pin); <br>}<br><br>/* Gibt die Summe über eine LED aus */<br>void ausgabe(uint8_t summe)<br>{<br> uint8_t i = 0x00;<br>	<br> _delay_ms(200);<br>	<br> do<br> {<br> signal(&amp;PORTB, PB0, 200);<br> _delay_ms(1000);<br>	i++;<br>	<br> } while (i &lt; summe);<br>}<br><br>int main(void)<br>{<br> uint8_t zahl1 = 0x00;<br> uint8_t zahl2 = 0x00;<br> uint8_t state = 0x00; // 0 = 1. Summanden einlesen, 1 = 2. Summanden<br> // einlesen, 2 = addieren und ausgeben<br><br> DDRB = 0xff; // Port-B auf Ausgang legen<br> DDRD = 0x00; // Port-D auf Eingang legen <br> PORTD = 0xff; // Pull-Ups aktivieren<br>	<br> do <br> {<br> // Zähler-Taste gedrückt?<br> if (debounce(&amp;PIND, PD2))<br> {<br> switch (state)<br> {<br> case 0: // 1. Summanden inkrementieren <br> zahl1++;<br> signal(&amp;PORTB, PB0, 200);<br>	break;<br>	<br>	case 1: // 2. Summanden inkrementieren<br> zahl2++;<br> signal(&amp;PORTB, PB0, 200);<br>	break;<br> }<br>	}<br>	<br>	// Kommando-Taste gedrückt?<br>	if (debounce(&amp;PIND, PD3))<br>	{<br> state++;<br>	<br> signal(&amp;PORTB, PB1, 1000);<br>	<br> if (state == 2)<br> {<br>	ausgabe(zahl1+zahl2);<br>	state = zahl1 = zahl2 = 0;<br> }<br>	}<br> }<br> while (1);<br>	<br> return 0;<br>}<br></code></pre>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+				
+				<p>&nbsp;</p>
+                <hr>
+                <p>&nbsp;</p>
+
+                <h3><a name="5">16x2 LCD-Ansteuerung mit Arduino Mega 2560</a></h3>
+				
+                <p>
+					Mit einem Arduino Mega 2560 Mikrocontroller möchte ich euch die einfache Ansteuerung eines 16x2 LCD-Displays demonstieren. Zum Einsatz kommt hier das LCD Keypad Shield, das sich einfach auf das Board aufstecken lässt.
+				</p>
+					
+                <a href="../gfx/IMG_1087.jpg" rel="shadowbox"><img src="../gfx/IMG_1087-300.jpg" alt="" border="0" width="300"></a>
+               
+			   <pre><code class="cpp"><span class="comment">// include the library code:</span>
+<span class="preprocessor">#include &lt;LiquidCrystal.h&gt;</span>
+
+<span class="comment">/*
+    LCD RS pin to digital pin 8
+    LCD Enable pin to digital pin 9
+    LCD D4 pin to digital pin 4
+    LCD D5 pin to digital pin 5
+    LCD D6 pin to digital pin 6
+    LCD D7 pin to digital pin 7 
+*/</span>
+
+<span class="comment">// initialize the library with the numbers of the interface pins</span>
+LiquidCrystal lcd( <span class="number">8</span>, <span class="number">9</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span> );
+
+<span class="keyword">void</span> setup()
+{
+  <span class="comment">// set up the LCD's number of columns and rows:</span>
+  lcd.begin(<span class="number">16</span>, <span class="number">2</span>);
+  
+  <span class="comment">// Print a message to the LCD.</span>
+  lcd.print(<span class="string">"It works!"</span>);
+}
+
+<span class="keyword">void</span> loop()
+{
+}</code></pre>
+
+                <p>&nbsp;</p>
+                <hr>
+                <p>&nbsp;</p>
+
+                <h3><a name="6">Ein kleiner Webserver mit Arduino</a></h3>
+				
+                <p>
+					Hier ein etwas komplexeres Beispiel wie der Arduino Ethernet Shield genutzt werden kann um einen kleinen Webserver aufzubauen, zu finden auch auf <a href="http://www.arduino.cc">Arduino.cc</a>, hier nur etwas abgewandelt. Laptop und Arduino hängen an einem Switch und bilden so ein kleines LAN. Der Laptop hat die statische IP 192.168.0.1 und der Webserver 192.168.0.2. Der Aufruf im Browser über die IP liefert eine simple HTML-Seite.
+				</p>
+					
+                <a href="../gfx/IMG_1084.jpg" rel="shadowbox"><img src="../gfx/IMG_1084-300.jpg" alt="" border="0" width="300"></a>
+                <a href="../gfx/IMG_1083.jpg" rel="shadowbox"><img src="../gfx/IMG_1083-300.jpg" alt="" border="0" width="300"></a>
+				
+				<p>
+					Im nachfolgenden Bild wird der Mini-Webserver autark an einer WLAN-LAN-Brücke betrieben, der eine Verbindung zum WLAN-Router hält. Stromversorgung erfolgt über einen USB-Stecker (im Bild nicht zu sehen). Rechts im Bild ist auf meinem iPod touch die aufgerufene HTML-Seite zu sehen, diesmal aber unter einer anderen IP.
+				</p>
+				
+				<a href="../gfx/IMG_1095.jpg" rel="shadowbox"><img src="../gfx/IMG_1095-300.jpg" alt="" border="0" width="300"></a>
+				<a href="../gfx/IMG_1101.jpg" rel="shadowbox"><img src="../gfx/IMG_1101-300.jpg" alt="" border="0" width="300"></a>
+				
+				<p>Nachfolgend der Beispiel-Code, die IP muss natürlich an dein Netz angepasst werden.</p>
+				
+<pre><code class="cpp"><span class="preprocessor">#include &lt;SPI.h&gt;</span>
+<span class="preprocessor">#include &lt;Ethernet.h&gt;</span>
+
+<span class="comment">// Enter a MAC address and IP address for your controller below.</span>
+<span class="comment">// The IP address will be dependent on your local network:</span>
+byte mac[] = { <span class="number">0xFF</span>, <span class="number">0x23</span>, <span class="number">0xBA</span>, <span class="number">0x7C</span>, <span class="number">0x5F</span>, <span class="number">0xDD</span> };
+byte ip[] = { <span class="number">192</span>, <span class="number">168</span>, <span class="number">1</span>, <span class="number">177</span>};
+
+<span class="comment">// Initialize the Ethernet server library</span>
+<span class="comment">// with the IP address and port you want to use</span>
+<span class="comment">// (port 80 is default for HTTP):</span>
+EthernetServer server = EthernetServer(<span class="number">80</span>);
+
+<span class="keyword">void</span> setup()
+{
+ <span class="comment">// Open serial communications and wait for port to open:</span>
+  Serial.begin(<span class="number">9600</span>);
+
+  <span class="comment">// start the Ethernet connection and the server:</span>
+  Ethernet.begin(mac, ip);
+
+  server.begin();
+  Serial.print(<span class="string">"server is at "</span>);
+  Serial.println(Ethernet.localIP());
+  
+}
+
+<span class="keyword">void</span> loop()
+{
+  <span class="comment">// listen for incoming clients</span>
+  EthernetClient client = server.available();
+  
+  <span class="keyword">if</span> (client)
+  {
+    Serial.println(<span class="string">"new client"</span>);
+    
+    <span class="comment">// an http request ends with a blank line</span>
+    boolean currentLineIsBlank = <span class="keyword">true</span>;
+    
+    <span class="keyword">while</span> (client.connected())
+    {
+      <span class="keyword">if</span> (client.available())
+      {
+        <span class="keyword">char</span> c = client.read();
+        Serial.write(c);
+        
+        <span class="comment">// if you've gotten to the end of the line (received a newline</span>
+        <span class="comment">// character) and the line is blank, the http request has ended,</span>
+        <span class="comment">// so you can send a reply</span>
+        <span class="keyword">if</span> (c == <span class="string">'\n'</span> &amp;&amp; currentLineIsBlank)
+        {
+          <span class="comment">// send a standard http response header</span>
+          client.println(<span class="string">"HTTP/1.1 200 OK"</span>);
+          client.println(<span class="string">"Content-Type: text/html"</span>);
+          client.println(<span class="string">"Connnection: close"</span>);
+          client.println();
+          client.println(<span class="string">"&lt;!DOCTYPE HTML&gt;"</span>);
+          client.println(<span class="string">"&lt;html&gt;"</span>);            
+          client.println(<span class="string">"&lt;p&gt;\"Wer aufh&amp;ouml;rt zu lernen ist alt. Er mag zwanzig oder achtzig sein.\" (Henry Ford)"</span>);      
+          client.println(<span class="string">"&lt;/html&gt;"</span>);
+          <span class="keyword">break</span>;
+        }
+        <span class="keyword">if</span> (c == <span class="string">'\n'</span>)
+        {
+          <span class="comment">// you're starting a new line</span>
+          currentLineIsBlank = <span class="keyword">true</span>;
+        }
+        <span class="keyword">else</span> <span class="keyword">if</span> (c != <span class="string">'\r'</span>)
+        {
+          <span class="comment">// you've gotten a character on the current line</span>
+          currentLineIsBlank = <span class="keyword">false</span>;
+        }
+      }
+    }
+    <span class="comment">// give the web browser time to receive the data</span>
+    delay(<span class="number">1</span>);
+    
+    <span class="comment">// close the connection:</span>
+    client.stop();
+    Serial.println(<span class="string">"client disonnected"</span>);
+  }
+}</code></pre>
+
+                <p>&nbsp;</p>
+                <hr>
+                <p>&nbsp;</p>
+
+				
+				
+				<h3><a name="7">Ein Telnet-Server mit Arduino</a></h3>
+				
+				<p>
+					Was kann man noch so mit einem Ethernet- und LCD-Shield anfangen? Wäre es nicht interessant von einem entfernten Rechner Nachrichten an den Arduino zu senden und über das LCD auszugeben? Also habe ich mich ans Werk gemacht und zunächst das LCD-Shield über ein kleines Breadboard mit Jumper-Steckverbindern an freie PINs des Arduinos angeschlossen. Als nächstes musste nur noch die Software programmiert werden. Wie das LCD-Shield programmiert werden kann, haben wir oben im Beispiel bereits gesehen, hier ist nur auf die geänderte PIN-Belegung zu beachten, da das Ethernet-Modul direkt auf dem Arduino aufgesteckt ist. Der Telnetserver lässt sich nach demselben Prinzip programmieren wie der Webserver, nur dass wir hier diesmal den Standard-Port 23 für den Telnet-Dienst verwenden. Der untere Teil des Quellcodes ist für die korrekte Ausgabe auf dem LCD-Display verantwortlich, Zeichen können über die Backspace-Taste (ASCII-Code 8) geläscht werden.
+				</p>
+											
+				<iframe src="https://player.vimeo.com/video/219198223" width="300" height="169" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				
+				<p>Nachfolgend der Beispiel-Code, die IP muss natürlich an dein Netz angepasst werden.</p>
+				
+				<pre><code class="cpp"><span class="preprocessor">#include &lt;SPI.h&gt;</span>
+<span class="preprocessor">#include &lt;Ethernet.h&gt;</span>
+<span class="preprocessor">#include &lt;LiquidCrystal.h&gt;</span>
+ 
+<span class="comment">// initialize the library with the numbers of the interface pins</span>
+LiquidCrystal lcd( <span class="number">15</span>, <span class="number">14</span>, <span class="number">19</span>, <span class="number">18</span>, <span class="number">17</span>, <span class="number">16</span> );
+<span class="keyword">int</span> col = <span class="number">0</span>, row = <span class="number">0</span>;  <span class="comment">// position of cursor</span>
+ 
+<span class="comment">// MAC and IP</span>
+byte mac[] = { <span class="number">0xFF</span>, <span class="number">0x23</span>, <span class="number">0xBA</span>, <span class="number">0x7C</span>, <span class="number">0x5F</span>, <span class="number">0xDD</span> };
+IPAddress ip(<span class="number">192</span>,<span class="number">168</span>,<span class="number">1</span>, <span class="number">177</span>);
+
+<span class="comment">// telnet defaults to port 23</span>
+EthernetServer server(<span class="number">23</span>);
+boolean gotAMessage = <span class="keyword">false</span>; <span class="comment">// whether or not you got a message from the client yet</span>
+<span class="keyword">int</span> incomingByte = <span class="number">0</span>;
+ 
+<span class="keyword">void</span> setup()
+{
+   <span class="comment">// set up the lcd's number of columns and rows:</span>
+  lcd.begin(<span class="number">16</span>, <span class="number">2</span>);
+  lcd.blink();
+  
+  <span class="comment">//Default text to start with</span>
+  lcd.print(<span class="string">"Running!"</span>);
+  
+  <span class="comment">// initialize the ethernet device</span>
+  Ethernet.begin(mac, ip);
+  
+  <span class="comment">// start listening for clients</span>
+  server.begin();
+  
+  <span class="comment">// open the serial port</span>
+  Serial.begin(<span class="number">9600</span>);
+}
+ 
+<span class="keyword">void</span> loop()
+{
+  <span class="comment">// wait for a new client:</span>
+  EthernetClient client = server.available();
+  
+  <span class="comment">// when the client sends the first byte, say hello:</span>
+  <span class="keyword">if</span> (client)
+  {
+    <span class="keyword">if</span> (!gotAMessage)
+    {
+      Serial.println(<span class="string">"We have a new client"</span>);
+      client.println(<span class="string">"Welcome to Andy's Telnet!"</span>);
+      gotAMessage = <span class="keyword">true</span>;
+      lcd.clear();
+    }
+    
+    lcd.setCursor(col, row);
+ 
+    <span class="comment">// read the bytes incoming from the client:</span>
+    <span class="keyword">char</span> thisChar = client.read();
+    
+    <span class="keyword">if</span> (thisChar &gt;= <span class="number">32</span> &amp;&amp; thisChar &lt;= <span class="number">126</span>)
+    {         
+      <span class="comment">// write the bytes to the lcd.</span>
+      lcd.write(thisChar);
+      
+      <span class="comment">// echo back</span>
+      server.write(thisChar);
+      
+      <span class="comment">// print the bytes to serial.</span>
+      Serial.print(thisChar);
+    
+      <span class="keyword">if</span> (col &lt; <span class="number">15</span>) col++;
+      <span class="keyword">else</span>
+      {
+        col=<span class="number">0</span>;
+      
+        <span class="keyword">if</span> (row==<span class="number">0</span>)
+          row++;
+        <span class="keyword">else</span>
+          row=<span class="number">0</span>;
+      }
+    }
+    <span class="keyword">else</span> <span class="keyword">if</span> (thisChar == <span class="number">8</span>) <span class="comment">// backspace</span>
+    {
+      <span class="keyword">if</span> (col==<span class="number">0</span>)
+      {
+        <span class="keyword">if</span> (row==<span class="number">0</span>) {} <span class="comment">// do nothing</span>
+        <span class="keyword">else</span>
+        {
+          row=<span class="number">0</span>;
+          col=<span class="number">15</span>;
+        }
+      }
+      <span class="keyword">else</span>
+      {
+        col=col-<span class="number">1</span>;
+      }
+      
+      lcd.setCursor(col, row);
+      lcd.write(<span class="number">32</span>); <span class="comment">// overwrite with white space</span>
+  
+      <span class="comment">// clear char on telnet client, echo must be disabled</span>
+      server.write(<span class="number">8</span>);
+      server.write(<span class="number">32</span>);
+      server.write(<span class="number">8</span>);
+
+      lcd.setCursor(col, row);
+    }
+  }  
+}</code></pre>
+
+                <p>&nbsp;</p>
+                <hr>
+                <p>&nbsp;</p>
+
+				<h3><a name="8">Voice Recognition mit Arduino</a></h3>
+
+				<p>
+					Wie wäre es eigene sprachgesteuerte Geräte zu bauen? Zu aufwendig und teuer würden die meisten behaupten! Doch mit Arduino und einem günstigen Spracherkennungsmodul vom Hersteller "VeeaR" mit der Produktbezeichnung "EasyVR Shield" ist dies kein Problem mehr. Hier findet ihr die <a href="http://download.tigal.com/veear/EasyVR_User_Manual_3.4.2.pdf">Benutzeranleitung</a>.
+				</p>
+
+				<a href="../gfx/IMG_1112.jpg" rel="shadowbox"><img src="../gfx/IMG_1112-300.jpg" alt="" border="0" width="300"></a>
+
+				<p>
+					Hier noch ein etwas komplexeres Beispiel. Das Programm wartet zunächst auf den Sprachbefehl "COMPUTER" und wechselt nach erfolgreicher Erkennung in die Befehlsgruppe 1. Der Befehl "NEXT" gibt einen Beep-Ton aus. Mit einer Software vom Hersteller lassen sich nicht nur alle möglichen Befehle mit einer Befehlshierarchie programmieren, sondern auch Sounddateien hochladen, die dann über die API abgespielt werden können. Angeschlossen ist auch ein LCD-Modul, das Statusmeldungen ausgibt, die natürlich auch alternativ über den Serial Monitor angezeigt werden können.
+				</p>
+
+<pre><code class="cs"><span class="preprocessor">#<span class="keyword">if</span> defined(ARDUINO) &amp;&amp; ARDUINO &gt;= 100</span>
+  <span class="preprocessor">#include "Arduino.h"</span>
+  <span class="preprocessor">#include "SoftwareSerial.h"</span>
+  SoftwareSerial port(<span class="number">12</span>,<span class="number">13</span>);
+<span class="preprocessor">#<span class="keyword">else</span> // Arduino 0022 - use modified NewSoftSerial</span>
+  <span class="preprocessor">#include "WProgram.h"</span>
+  <span class="preprocessor">#include "NewSoftSerial.h"</span>
+  NewSoftSerial port(<span class="number">12</span>,<span class="number">13</span>);
+<span class="preprocessor">#<span class="keyword">endif</span></span>
+
+<span class="preprocessor">#include "EasyVR.h"</span>
+<span class="preprocessor">#include &lt;LiquidCrystal.h&gt;</span>
+
+EasyVR easyvr(port);
+
+<span class="comment">// initialize the library with the numbers of the interface pins</span>
+LiquidCrystal lcd( <span class="number">9</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">4</span> );
+<span class="keyword">int</span> col = <span class="number">0</span>, row = <span class="number">0</span>;  <span class="comment">// position of cursor</span>
+
+<span class="comment">//Groups and Commands</span>
+<span class="keyword">enum</span> Groups
+{
+  GROUP_0  = <span class="number">0</span>,
+  GROUP_1  = <span class="number">1</span>
+};
+
+<span class="keyword">enum</span> Group0 
+{
+  G0_COMPUTER = <span class="number">0</span>
+};
+
+<span class="keyword">enum</span> Group1 
+{
+  G1_NEXT = <span class="number">0</span>
+};
+
+
+EasyVRBridge bridge;
+
+int8_t <span class="keyword">group</span>, idx;
+
+<span class="keyword">void</span> setup()
+{
+  <span class="comment">// bridge mode?</span>
+  <span class="keyword">if</span> (bridge.check())
+  {
+    cli();
+    bridge.loop(<span class="number">0</span>, <span class="number">1</span>, <span class="number">12</span>, <span class="number">13</span>);
+  }
+  <span class="comment">// run normally</span>
+  Serial.begin(<span class="number">9600</span>);
+  port.begin(<span class="number">9600</span>);
+
+  <span class="keyword">if</span> (!easyvr.detect())
+  {
+    Serial.println(<span class="string">"EasyVR not detected!"</span>);
+    <span class="keyword">for</span> (;;);
+  }
+
+  easyvr.setPinOutput(EasyVR::IO1, LOW);
+  Serial.println(<span class="string">"EasyVR detected!"</span>);
+  easyvr.setTimeout(<span class="number">5</span>);
+  easyvr.setLanguage(<span class="number">3</span>);
+
+  <span class="keyword">group</span> = EasyVR::TRIGGER; <span class="comment">//&lt;-- start group (customize)</span>
+  
+     <span class="comment">// set up the lcd's number of columns and rows:</span>
+  lcd.begin(<span class="number">16</span>, <span class="number">2</span>);
+  lcd.blink();
+  
+  <span class="comment">//Default text to start with</span>
+  display(<span class="string">"Running!"</span>);
+  delay(<span class="number">1000</span>);
+}
+
+<span class="keyword">void</span> action();
+
+<span class="keyword">void</span> loop()
+{
+  easyvr.setPinOutput(EasyVR::IO1, HIGH); <span class="comment">// LED on (listening)</span>
+
+  Serial.print(<span class="string">"Say a command in Group "</span>);
+  Serial.println(<span class="keyword">group</span>);
+  
+  display(<span class="string">"Say a command in Group "</span> + String(<span class="keyword">group</span>));
+  
+  easyvr.recognizeCommand(<span class="keyword">group</span>);
+
+  <span class="keyword">do</span>
+  {
+    <span class="comment">// can do some processing while waiting for a spoken command</span>
+  }
+  <span class="keyword">while</span> (!easyvr.hasFinished());
+  
+  easyvr.setPinOutput(EasyVR::IO1, LOW); <span class="comment">// LED off</span>
+
+  idx = easyvr.getCommand();
+  
+  <span class="keyword">if</span> (idx &gt;= <span class="number">0</span>)
+  {
+    <span class="comment">// print debug message</span>
+    uint8_t train = <span class="number">0</span>;
+    <span class="keyword">char</span> name[<span class="number">32</span>];
+    Serial.print(<span class="string">"Command: "</span>);
+    Serial.print(idx);
+   
+    <span class="keyword">if</span> (easyvr.dumpCommand(<span class="keyword">group</span>, idx, name, train))
+    {
+      Serial.print(<span class="string">" = "</span>);
+      Serial.println(name);
+      
+      display(<span class="string">"Command: "</span> + String(idx) + <span class="string">" = "</span> + name);
+      delay(<span class="number">1000</span>);
+    }
+    <span class="keyword">else</span>
+      Serial.println();
+    
+    <span class="comment">// perform some action</span>
+    action();
+  }
+  <span class="keyword">else</span> <span class="comment">// errors or timeout</span>
+  {
+    <span class="keyword">if</span> (easyvr.isTimeout())
+    {
+      Serial.println(<span class="string">"Timed out, try again..."</span>);
+      display(<span class="string">"Timed out, try again..."</span>);
+      delay(<span class="number">1000</span>);
+    }
+    int16_t err = easyvr.getError();
+    <span class="keyword">if</span> (err &gt;= <span class="number">0</span>)
+    {
+      Serial.print(<span class="string">"Error "</span>);
+      Serial.println(err, HEX);
+      
+      String strErr;
+      
+      <span class="keyword">if</span> (err == <span class="number">17</span>)
+        strErr = <span class="string">"ERR_RECOG_FAIL"</span>;
+      <span class="keyword">else</span> <span class="keyword">if</span> (err == <span class="number">4</span>)
+        strErr = <span class="string">"ERR_DATACOL_TOO_SOFT"</span>;
+      <span class="keyword">else</span> strErr = <span class="string">"UNKNOWN"</span>;
+      
+      display(<span class="string">"Error: "</span> + strErr);
+      delay(<span class="number">1000</span>);
+    }
+  }
+}
+
+<span class="keyword">void</span> action()
+{
+    <span class="keyword">switch</span> (<span class="keyword">group</span>)
+    {
+    <span class="keyword">case</span> GROUP_0:
+      <span class="keyword">switch</span> (idx)
+      {
+      <span class="keyword">case</span> G0_COMPUTER:
+        <span class="keyword">group</span> = GROUP_1;
+        easyvr.playSound(<span class="number">1</span>, EasyVR::VOL_FULL);
+        <span class="keyword">break</span>;
+      }
+    <span class="keyword">break</span>;
+      
+    <span class="keyword">case</span> GROUP_1:
+      <span class="keyword">switch</span> (idx)
+      {
+      <span class="keyword">case</span> G1_NEXT:
+        easyvr.playSound(<span class="number">0</span>, EasyVR::VOL_FULL);      
+        <span class="keyword">break</span>;
+      }
+    <span class="keyword">break</span>;
+    }
+}
+
+<span class="keyword">void</span> display(String strText)
+{
+    lcd.clear();
+    lcd.setCursor(<span class="number">0</span>, <span class="number">0</span>); 
+    
+    lcd.print(strText);
+    
+    <span class="keyword">if</span> (strText.length() &gt; <span class="number">16</span>)
+    {
+      lcd.setCursor(<span class="number">0</span>, <span class="number">1</span>);
+      lcd.print(strText.substring(<span class="number">16</span>));
+    }
+}</code></pre>
+
+        <p>&nbsp;</p>
+        <hr>
+        <p>&nbsp;</p>
+
+		<h3><a name="9">VU-Meter mit Arduino</a></h3>
+		
+		<p>Das nachfolgende Projekt zeigt den Aufbau eines VU-Meters. Sie besteht aus einem Mikrofon-Vorverstärker (Conrad-Bausatz), einem zweistufigen NF-Transistorverstärker, LED-Schaltung und dem Arduino-Mikrocontrollerboard Mega 2560. Die Verstärker-Schaltung wird mit einer Gleichspannung von 8-12V versorgt, bei Batteriebetrieb muss man bei abnehmender Spannung die Schaltung nachjustieren (Empfindlichkeit erhöhen). Die Schaltpläne folgen demnächst...</p>
+		
+		<table>
+			<tr>
+				<td>
+					<p>VU-Meter Test mit NF-Signalgenerator:</p>
+
+					<iframe src="https://player.vimeo.com/video/219074837" width="300" height="169" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</td>
+				<td>
+					<p>VU-Meter mit Kondensator-Mikrofon Vorverstärker:</p>
+					
+					<iframe src="https://player.vimeo.com/video/219074918" width="300" height="169" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</td>
+			</tr>
+		</table>
+		
+		<br />
+		
+		<p>Hier ist das Programm für die Ansteuerung der 6 LEDs:</p>
+		
+<pre><code class="avrasm">int ledCount = <span class="number">6</span><span class="comment">;    // Anzahl der Leds</span>
+ 
+int leds[<span class="number">6</span>]  = { <span class="number">9</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">4</span> }<span class="comment">;      // Pins der LEDs</span>
+
+int potiPin   = A13<span class="comment">;   // Analoger Pin für Poti zur Einstellung der Intensität</span>
+int audioPin  = A0<span class="comment">;   // Analoger Pin für Audio-Eingang</span>
+ 
+int i<span class="comment">;</span>
+ 
+void setup()
+{
+  pinMode(potiPin, INPUT)<span class="comment">;</span>
+  pinMode(audioPin, INPUT)<span class="comment">;</span>
+ 
+  for (i = <span class="number">0</span><span class="comment">; i &lt; ledCount; i++)</span>
+    pinMode(leds[i], OUTPUT)<span class="comment">;</span>
+  
+  Serial<span class="preprocessor">.begin</span>(<span class="number">9600</span>)<span class="comment">;</span>
+  
+  
+}
+
+void loop()
+{
+  int intensity = analogRead(potiPin)<span class="comment">;</span>
+  int audio      = analogRead(audioPin)<span class="comment">;</span>
+ 
+  Serial<span class="preprocessor">.println</span>(<span class="string">"Audio: "</span> + String(audio))<span class="comment">;</span>
+  Serial<span class="preprocessor">.println</span>(<span class="string">"Intensitaet: "</span> + String(intensity))<span class="comment">;</span>
+ 
+  audio  = audio  / intensity<span class="comment">;</span>
+  
+  Serial<span class="preprocessor">.println</span>(<span class="string">"Pegel: "</span> + String(audio))<span class="comment">;</span>
+ 
+  if (audio == <span class="number">0</span>)                                     // Wenn Lautstärke = <span class="number">0</span> dann alle LEDs ausschalten
+    for(i = <span class="number">0</span><span class="comment">; i &lt; ledCount; i++)</span>
+      digitalWrite(leds[i], LOW)<span class="comment">;</span>
+  else
+  {
+    for (i = <span class="number">0</span><span class="comment">; i &lt; audio; i++)                       // LEDs einschalten, je höher die Lautstärke, desto mehr LEDs werden eingeschaltet</span>
+     digitalWrite(leds[i], HIGH)<span class="comment">;</span>
+ 
+    for(i = i<span class="comment">; i &lt; ledCount; i++)                // LEDs ausschalten, je niedriger die Lautstärke, desto mehr LEDs werden ausgeschaltet</span>
+      digitalWrite(leds[i], LOW)<span class="comment">;</span>
+  }
+  
+  delay(<span class="number">100</span>)<span class="comment">;</span>
+}</code></pre>
+
+
+                <p>&nbsp;</p>
+                <hr>
+                <p>&nbsp;</p>
+				
+				<h3><a name="10">GSM mit Arduino</a></h3>
+
+				<p>
+					Im nächsten Beispiel zeige ich wie einfach es ist mit einem Mikrocontroller ein <strong>Quad-band GSM/GPRS Modul</strong> anzusteuern. Ich verwende einen Arduino UNO Mikrocontroller und ein GSM/GPRS Shield von Tinyos Electronics, das Shield verwendet den SIM900 Chip von SIMCOM. Das folgende Programm stellt eine Verbindung zum GSM-Netz her und wartet auf Befehle (AT commands), die über die serielle Schnittstelle an das Board übertragen werden. Hier ein Beispiel für einen ausgehenden Anruf:
+				</p>
+	
+<pre>
+	AT+CPIN="1234"
+	ATD123456789;
+</pre>
+	
+				<p>
+					Der Befehl <strong>"AT+CPIN"</strong> schaltet die SIM-Karte frei, falls sie mit einer Pin gesperrt ist. Und <strong>"ATD"</strong> stellt eine Verbindung zur angegebenen Telefonnummer her. Statusmeldungen werden über die serielle Schnittstelle an die Konsole ausgegeben. In der Arduino IDE mit Strg+Shift+M aufrufen. Um das Beispiel ausführen zu können, müsst ihr zunächst die Library (siehe unter Dokumente) in das Arduino Library Verzeichnis entpacken.
+				</p>	
+
+				<p>
+					<strong>Dokumente:</strong><br><br>
+					<a href="http://www.tinyosshop.com/datasheet/gsmshield.zip" target="_blank">Schematic</a><br>
+					<a href="http://www.tinyosshop.com/datasheet/BETA_GSM_GPRS_GPS_IDE100_v302.zip.zip" target="_blank">Library/Test code</a><br>
+					<a href="http://www.tinyosshop.com/datasheet/SIM900_AT_Command_Manual_V1.05.pdf" target="_blank">AT Command Manual</a><br>
+					<a href="http://www.tinyosshop.com/datasheet/SIM900_Hardware_Design_V2.00.pdf" target="_blank">SIM900 Hardware Design</a><br>
+					<a href="http://www.tinyosshop.com/datasheet/SIM900_Brochure_V1005.pdf" target="_blank">SIM900_Brochure_V1005</a><br>
+				</p>
+	
+				<a href="../gfx/IMG_1134.jpg" rel="shadowbox"><img src="../gfx/IMG_1134-300.jpg" alt="" border="0" width="300"></a>
+	
+				<p>Hier ein leicht nachvollziehbarer Quellcode, der bewusst minimalistisch gehalten wurde um die Grundfunktionalität zu demonstrieren.</p>
+	
+<pre><span class="pre">#include "SIM900.h"
+#include &lt;SoftwareSerial.h&gt;
+</span><span class="type">
+char</span> inSerial<span class="operator">[</span><span class="int">50</span><span class="operator">];</span><span class="type">
+int</span> i<span class="operator">=</span><span class="int">0</span><span class="operator">;</span>
+boolean started<span class="operator">=</span><span class="bool">false</span><span class="operator">;</span><span class="type">
+
+void</span> setup<span class="operator">() 
+{</span><span class="comment">
+  // Serielle Schnittstelle initialisieren, Baudrate 9600
+</span>  Serial<span class="operator">.</span>begin<span class="operator">(</span><span class="int">9600</span><span class="operator">);</span>
+  Serial<span class="operator">.</span>println<span class="operator">(</span><span class="string">"- Andys Einstieg in die GSM Welt -\n"</span><span class="operator">);</span>
+  Serial<span class="operator">.</span>print<span class="operator">(</span><span class="string">"Teste ob Netz vorhanden..."</span><span class="operator">);</span><span class="comment">
+  
+  // Versuche eine GSM-Verbindung aufzubauen...
+</span><span class="flow">  if</span><span class="operator"> (</span>gsm<span class="operator">.</span>begin<span class="operator">(</span><span class="int">4800</span><span class="operator">))
+  {</span>
+    Serial<span class="operator">.</span>println<span class="operator">(</span><span class="string">"ja ;-). Warte auf Befehle (AT commands): "</span><span class="operator">);</span>
+    started<span class="operator">=</span><span class="bool">true</span><span class="operator">;</span>  
+    gsm<span class="operator">.</span>forceON<span class="operator">();
+  }</span><span class="flow">
+  else</span>
+    Serial<span class="operator">.</span>println<span class="operator">(</span><span class="string">"nein :-("</span><span class="operator">);
+};</span><span class="comment">
+
+// Befehle über die serielle Schnittstelle lesen bzw.
+// empfangene Daten vom GSM-Modem ausgeben.
+</span><span class="type">void</span> loop<span class="operator">() 
+{</span>
+  i<span class="operator">=</span><span class="int">0</span><span class="operator">;</span><span class="flow">
+  
+  if</span><span class="operator"> (</span>Serial<span class="operator">.</span>available<span class="operator">() &gt;</span><span class="int"> 0</span><span class="operator">)</span><span class="comment">  // Wurden Daten über die serielle Schnittstelle gesendet?
+</span><span class="operator">  {</span><span class="flow">            
+    while</span><span class="operator"> (</span>Serial<span class="operator">.</span>available<span class="operator">() &gt;</span><span class="int"> 0</span><span class="operator">)</span><span class="comment"> // Ja, Daten zeichenweise einlesen
+</span><span class="operator">    {</span>
+      inSerial<span class="operator">[</span>i<span class="operator">]=(</span>Serial<span class="operator">.</span>read<span class="operator">());</span>
+      delay<span class="operator">(</span><span class="int">10</span><span class="operator">);</span>
+      i<span class="operator">++;      
+    }</span>
+    
+    inSerial<span class="operator">[</span>i<span class="operator">]=</span><span class="char">'\0'</span><span class="operator">;</span><span class="comment">  // Kennzeichnung Stringende
+</span>   
+    Serial<span class="operator">.</span>println<span class="operator">(</span>inSerial<span class="operator">);</span><span class="comment">  // Befehl über serielle Schnittstelle ausgeben
+</span>    gsm<span class="operator">.</span>SimpleWriteln<span class="operator">(</span>inSerial<span class="operator">);</span><span class="comment">  // Befehl ins GSM-Netz senden
+</span>       
+    inSerial<span class="operator">[</span><span class="int">0</span><span class="operator">]=</span><span class="char">'\0'</span><span class="operator">;</span><span class="comment">  // Befehl löschen
+</span><span class="operator">  }</span><span class="comment">
+  
+  // Empfangene Daten aus dem GSM-Netz lesen (zeichenweise) und über serielle Schnittstelle ausgeben
+</span>  gsm<span class="operator">.</span>SimpleRead<span class="operator">();
+};</span></pre>
+
+
+                <p>&nbsp;</p>
+                <hr>
+                <p>&nbsp;</p>
+				
+				<h3><a name="11">PWM mit ATmega8</a></h3>
+
+				<p>Die Pulsweitenmodulation (kurz PWM) liefert ein Signal, das zwischen zwei Werten wechselt, in unserem Beispiel handelt es sich um eine Spannung. Das Signal entspricht somit einem Rechteckimpuls, moduliert wird hier der Tastgrad, also die Breite des Impulses.</p>
+				
+				<p>Es existieren verschiedene Wege um ein PWM-Signal zu erzeugen, nachfolgend möchte ich dies per Software auf einem ATmega8 demonstrieren, der bereits über PWM-Funktionen verfügt. Anbei der Quellcode:</p>
+
+
+<pre><span class="pre">#include &lt;avr/io.h&gt;
+</span><span class="type">
+int</span><span class="keyword"> main</span><span class="operator">(</span><span class="type">void</span><span class="operator">)
+{</span>
+    DDRB<span class="operator"> |= (</span><span class="int">1</span><span class="operator"> &lt;&lt;</span> DDB3<span class="operator">);</span><span class="comment"> // PB3 auf Ausgang legen
+</span>
+    OCR2<span class="operator"> =</span><span class="int"> 128</span><span class="operator">;</span><span class="comment"> // Pulsbreite auf 50% setzen
+</span>    
+    TCCR2<span class="operator"> |= (</span><span class="int">1</span><span class="operator"> &lt;&lt;</span> COM21<span class="operator">);</span><span class="comment">  // nicht-invertierender Modus
+</span>    TCCR2<span class="operator"> |= (</span><span class="int">1</span><span class="operator"> &lt;&lt;</span> WGM21<span class="operator">) | (</span><span class="int">1</span><span class="operator"> &lt;&lt;</span> WGM20<span class="operator">);</span><span class="comment"> // Fast PWM
+</span>    TCCR2<span class="operator"> |= (</span><span class="int">1</span><span class="operator"> &lt;&lt;</span> CS21<span class="operator">);</span><span class="comment"> // Timer Vorteiler auf 8 setzen
+</span><span class="flow">
+    while</span><span class="operator"> (</span><span class="int">1</span><span class="operator">)
+    {
+	
+    }
+}</span></pre>
+
+				<p>
+					Für die Erzeung des PWM-Signals nutzen wir den 8-Bit-Timer, der von 0x00 bis 0xFF zählt, das Register OCR2 setzen wir auf 128, also genau auf die Mitte, das entspricht einer Pulsbreite von 50%. Über das Register TCCR2 werden weitere Einstellungen vorgenommen, weitere Informationen dazu findent ihr auf <a href="http://www.mikrocontroller.net/articles/AVR-Tutorial:_Timer#TCCR2" target="_blank">Mikrocontroller.net</a>. Das Signal greifen wir mit einem Oszilloskop am Port PB3 ab und erhalten folgendes Bild mit der klar erkennbaren Pulsbreite von 50%:
+				</p>
+
+				<a href="../gfx/PWM.jpg" rel="shadowbox"><img src="../gfx/PWM-300.jpg" alt="" border="0" width="300"></a>
+
+				<p>&nbsp;</p>
+                <hr>
+                <p>&nbsp;</p>
+				
+				<h3><a name="12">Manchester-codiertes Signal auf 868 MHz senden und empfangen, Teil 1</a></h3>
+
+				<p>
+					Im folgenden Beispiel möchte ich euch zeigen wie man mit einem Mikrocontroller ein <strong>manchester-codiertes digitales Signal</strong> über einen 868 MHz Sender wieder empfangen kann. Zur Erzeugung des Signals nutze ich die Mikrocontroller-Plattform Arduino Uno (ATMega328) und die freie Software-Bibliothek <a href="http://mchr3k.github.io/arduino-libs-manchester/" target="_blank">Arduino Manchester Encoding</a>. Als Sende-/Empfangsmodul kommt das bei Conrad erhältliche Funk-Sende-/Empfänger-Set 868 MHz zum Einsatz, es verfügt über eine Leistung von ca. 10 mW und strahlt das Signal amplitudenmoduliert ab.
+				</p>
+
+				<img src="../gfx/Manchester_encoding_both_conventions.jpg" width="330px" height="156" /><br />Quell: wikipedia.org<br /><br />
+
+				<p>
+					Im folgenden Quellcode wird die <strong>16 Bit Zahl transmit_data</strong> über die <strong>Funktion man.transmit()</strong> als manchester-codiertes Signal am vorher definierten Pin 5, siehe die <strong>Funktion man.setupTransmit()</strong>, ausgegeben und über das 868 MHz Sendemodul abgestrahlt. Im ersten Teil wird das empfangene Signal lediglich am Oszilloskop dargestellt, in einem zweiten Teil soll das Signal wieder in eine 16 Bit Zahl umgewandelt und über ein LCD-Display eines zweiten Mikrocontrollers ausgegeben werden.
+				</p>
+
+
+<pre><span class="pre">#include &lt;Manchester.h&gt;
+
+#define TX_PIN 5 // am Pin 5 wird der Sender angeschlossen
+#define LED_PIN 13 // Pin für die blinkende LED
+</span>
+uint8_t moo<span class="operator"> =</span><span class="int"> 1</span><span class="operator">;</span><span class="comment"> // speichert den letzten LED-Status
+</span>uint16_t transmit_data<span class="operator"> =</span><span class="int"> 0</span><span class="operator">;</span><span class="comment"> // 16-Bit Zahl, die wir senden möchten
+</span><span class="type">
+void</span> setup<span class="operator">()
+{</span>
+  pinMode<span class="operator">(</span>LED_PIN<span class="operator">,</span> OUTPUT<span class="operator">);</span>
+  digitalWrite<span class="operator">(</span>LED_PIN<span class="operator">,</span> moo<span class="operator">);</span>
+ 
+  man<span class="operator">.</span>setupTransmit<span class="operator">(</span>TX_PIN<span class="operator">,</span> MAN_1200<span class="operator">);
+}</span><span class="type">
+
+void</span> loop<span class="operator">()
+{</span>
+  man<span class="operator">.</span>transmit<span class="operator">(</span>transmit_data<span class="operator">);</span>
+  transmit_data<span class="operator">++;</span><span class="comment"> // Zahl inkrementieren
+</span>
+  moo<span class="operator"> = ++</span>moo<span class="operator"> %</span><span class="int"> 2</span><span class="operator">;</span>
+  digitalWrite<span class="operator">(</span>LED_PIN<span class="operator">,</span> moo<span class="operator">);
+}</span></pre>
+
+
+<a href="../gfx/IMG_1389.jpg" rel="shadowbox"><img src="../gfx/IMG_1389-300.jpg" alt="" border="0" width="300"></a>
+
+<p>&nbsp;</p>
+                <hr>
+                <p>&nbsp;</p>
+<h3><a name="13">Manchester-codiertes Signal auf 868 MHz senden und empfangen, Teil 2</a></h3>
+
+<p>Im zweiten Teil wird ein zweiter Mikrocontroller (ATMega2560) das manchester-codierte Signal wieder in einen Integer-Werte umwandel und über das LCD-Display ausgeben. Nachfolgend der Quellcode für den Empfänger:</p>
+
+<pre><span class="pre">#include &lt;LiquidCrystal.h&gt;
+#include &lt;Manchester.h&gt;
+
+#define RX_PIN 30 // Signal am Pin 30 abgreifen
+#define LED_PIN 13
+</span>
+uint8_t moo<span class="operator"> =</span><span class="int"> 1</span><span class="operator">;</span><span class="comment">
+
+// LCD intialisieren
+</span>LiquidCrystal lcd<span class="operator">(</span><span class="int"> 8</span><span class="operator">,</span><span class="int"> 9</span><span class="operator">,</span><span class="int"> 4</span><span class="operator">,</span><span class="int"> 5</span><span class="operator">,</span><span class="int"> 6</span><span class="operator">,</span><span class="int"> 7</span><span class="operator"> );</span><span class="type">
+
+void</span> setup<span class="operator">()
+{</span>
+  pinMode<span class="operator">(</span>LED_PIN<span class="operator">,</span> OUTPUT<span class="operator">);</span>  
+  digitalWrite<span class="operator">(</span>LED_PIN<span class="operator">,</span> moo<span class="operator">);</span><span class="comment">
+  
+  // Empfänger einrichten
+</span>  man<span class="operator">.</span>setupReceive<span class="operator">(</span>RX_PIN<span class="operator">,</span> MAN_1200<span class="operator">);</span>
+  man<span class="operator">.</span>beginReceive<span class="operator">();</span><span class="comment">
+  
+  // LCD einrichten, 16 Spalten, 2 Zeilen
+</span>  lcd<span class="operator">.</span>begin<span class="operator">(</span><span class="int">16</span><span class="operator">,</span><span class="int"> 2</span><span class="operator">);
+}</span><span class="type">
+
+void</span> loop<span class="operator">()
+{</span><span class="flow">
+  if</span><span class="operator"> (</span>man<span class="operator">.</span>receiveComplete<span class="operator">())</span><span class="comment"> // auf Daten warten
+</span><span class="operator">  {</span>
+    uint16_t m<span class="operator"> =</span> man<span class="operator">.</span>getMessage<span class="operator">();</span>
+    man<span class="operator">.</span>beginReceive<span class="operator">();</span>
+   
+    moo<span class="operator"> = ++</span>moo<span class="operator"> %</span><span class="int"> 2</span><span class="operator">;</span>
+    digitalWrite<span class="operator">(</span>LED_PIN<span class="operator">,</span> moo<span class="operator">);</span><span class="comment">
+    
+    // Zahl über LCD ausgeben
+</span>    lcd<span class="operator">.</span>clear<span class="operator">();</span>
+    lcd<span class="operator">.</span>setCursor<span class="operator">(</span><span class="int">0</span><span class="operator">,</span><span class="int">0</span><span class="operator">);</span>
+    lcd<span class="operator">.</span>print<span class="operator">(</span>m<span class="operator">);
+  }
+}</span>
+
+
+ </pre>
+
+				<a rel="shadowbox" href="../gfx/IMG_1391.jpg"><img width="300" border="0" alt="" src="../gfx/IMG_1391-300.jpg"></a>
+				<a rel="shadowbox" href="../gfx/IMG_1393.jpg"><img width="300" border="0" alt="" src="../gfx/IMG_1393-300.jpg"></a>
+
+				<p>&nbsp;</p>
+                <hr>
+                <p>&nbsp;</p>
+				
+				<h3><a name="14">Steuern mit USB und AVR ATmega8 / 3-Kanal-Relais Karte</a></h3>
+
+				<p>
+					Beim nächsten Projekt handelt es sich um ein 3-Kanal-Relais Board, das über USB gesteuert wird und von mir in Cadsoft Eagle 7 Light entwickelt wurde. Für den USB-Anschluss nutze ich den sehr bekannten FTDI FT232RL USB/Seriell-Umsetzer IC, der die Kommunikation zwischen PC und dem Mikrocontroller ATmega8 übernimmt, für Windows/Linux gibt es entsprechende Treiber. An Port B des Mikrocontrollers sind drei Relais-Ausgänge angeschlossen, über die man kleinere Lasten wie Schrittmotoren usw. anschließen kann. Die Stromversorgung erfolgt komplett über die USB-Schnittstelle mit 5V/500mA. Bei Gelegenheit schreibe ich auch eine passende Software, sowohl für die Steuerung des Boards via PC als auch die Firmware für den Mikrocontroller.
+				</p>
+				
+				<p>
+					<strong>Hinweis:</strong> Schaltplan/PCB-Layout wurden von mir nicht getestet, es handelt sich lediglich um eine Idee, die von jedermann weiterentwickelt werden kann. Die Projektdateien stelle ich bewusst nicht zur Verfügung, da nur Übung den Meister macht ;-).
+				</p>
+
+				<a rel="shadowbox" href="../gfx/schematics-3-ch-relais.jpg"><img width="300" border="0" alt="" src="../gfx/schematics-3-ch-relais-300.jpg"></a>
+				<a rel="shadowbox" href="../gfx/pcb-3-ch-relais.jpg"><img width="300" border="0" alt="" src="../gfx/pcb-3-ch-relais-300.jpg"></a>
+
+            </div>
+
+        </div>
+    </body>
+</html>

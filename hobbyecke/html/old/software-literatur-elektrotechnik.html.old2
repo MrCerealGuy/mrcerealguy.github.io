@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+		<title>Literatur und Software der Elektrotechnik</title>
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+		
+		<style>
+			table {
+				border-collapse: collapse;
+			}
+
+			table, th, td {
+				border: 1px solid black;
+			}
+		</style>
+
+	</head>
+	<body>
+								<div id="header">
+			<p style="padding-bottom:30 px"> <a href="../index.html">Home</a> | <span style="color:#cc6600">Elektrotechnik</span> | <a href="./index-funktechnik.html">Funktechnik</a> | 
+			<a href="./index-sonstiges.html">Sonstiges</a> | <a href="./imprint.html">Impressum</a></p>
+
+			<img src="../gfx/header.jpg" height="90" width="960">
+		</div>
+		<div id="container">
+
+			<div id="main_content">
+				<h2>Literatur/Software</h2>
+				<p>Hier findet ihr eine Liste von Büchern und Software, die ich
+					selber nutze und von denen ich viel profitiert habe. Die
+					Reihenfolge ist rein zufällig entstanden und stellt keine Wertung dar.
+				</p>
+				<p>&nbsp;</p>
+				<hr />
+				<p>&nbsp;</p>
+				<a name="1">
+					<h3>Literatur</h3>
+				</a>
+				
+				
+				<table width="100%">
+					<thead>
+						<tr>
+							<th>Titel</th><th>Autor/Verlag</th><th align="center" width="50px">www</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>elektor</td><td>Elektor-Verlag GmbH</td><td align="center"><a href="http://www.elektor.de/zeitschrift" target="_blank">www</a></td>
+						</tr>
+						<tr>
+							<td>Von der Schaltung zum Gerät: Die 63 besten Elektronik-Projekte</td><td>Max Perner und Frank Sichla</td><td align="center"><a href="http://www.amazon.de/Von-Schaltung-zum-Ger%C3%A4t-Elektronik-Projekte/dp/388180823X/ref=sr_1_1?ie=UTF8&s=books&qid=1299923708&sr=8-1" target="_blank">www</a></td>
+						</tr>
+						<tr>
+							<td>Taschenbuch der Elektrotechnik. Grundlagen und Elektronik</td><td>Ralf Kories und Heinz Schmidt-Walter</td><td align="center"><a href="http://www.amazon.de/Taschenbuch-Elektrotechnik-Grundlagen-Elektronik-Kories/dp/3817117345/ref=sr_1_3?s=books&ie=UTF8&qid=1299925898&sr=1-3" target="_blank">www</a></td>
+						</tr>
+						<tr>
+							<td>PSPICE. Einführung in die Elektroniksimulation. Mit CD</td><td>Robert Heinemann</td><td align="center"><a href="http://www.amazon.de/PSPICE-Einf%C3%BChrung-die-Elektroniksimulation-Mit/dp/3446415920/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1299926423&amp;sr=1-1" target="_blank">www</a></td>
+						</tr>
+						<tr>
+							<td>Taschenbuch	der Mathematik</td><td>Ilja N. Bronstein, K. A. Semendjajew, Gerhard Musiol und Heiner Muehlig</td><td align="center"><a href="http://www.amazon.de/Taschenbuch-Mathematik-Ilja-N-Bronstein/dp/3817120079/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1299926534&amp;sr=1-1" target="_blank">www</a></td>
+						</tr>
+						<tr>
+							<td>Wie mißt man mit dem Oszilloskop?: Technik, Geräte, Messpraxis mit über 150 Messbeispielen</td><td>Dietmar Benda</td><td align="center"><a href="http://www.amazon.de/Wie-mi%C3%9Ft-man-Oszilloskop-Messbeispielen/dp/3772367666/ref=sr_1_3?ie=UTF8&amp;qid=1299926668&amp;sr=1-3" target="_blank">www</a></td>
+						</tr>
+						<tr>
+							<td>Fachkunde Elektrotechnik</td><td>Klaus Tkotz</td><td align="center"><a href="http://www.amazon.de/Fachkunde-Elektrotechnik-Klaus-Tkotz/dp/3808531894/ref=sr_1_1?ie=UTF8&amp;qid=1336497526&amp;sr=8-1" target="_blank">www</a></td>
+						</tr>
+						<tr>
+							<td>PC-Elektronik Labor Band 1-4</td><td>Herbert Bernstein</td><td align="center">&nbsp;</td>
+						</tr>
+						<tr>
+							<td>Grundgebiete der Elektrotechnik: Band 1: Stationäre Vorgänge</td><td>Arnold Führer, Klaus Heidemann und Wolfgang Nerreter</td><td align="center"><a href="http://www.amazon.de/Grundgebiete-Elektrotechnik-Band-Station%C3%A4re-Vorg%C3%A4nge/dp/3446406689/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1336498378&amp;sr=1-1" target="_blank">www</a></td>
+						</tr>
+						<tr>
+							<td>elektronikJOURNAL</td><td>Hüthig GmbH</td><td align="center"><a href="http://www.elektronikjournal.de/" target="_blank">www</a></td>
+						</tr>
+						<tr>
+							<td>Grundgebiete der Elektrotechnik: Band 2: Zeitabhängige Vorgänge</td><td>Arnold Führer, Klaus Heidemann und Wolfgang Nerreter</td><td align="center"><a href="http://www.amazon.de/Grundgebiete-Elektrotechnik-Band-Zeitabh%C3%A4ngige-Vorg%C3%A4nge/dp/3446430385/ref=pd_bxgy_b_img_y" target="_blank">www</a></td>
+						</tr>
+						<tr>
+							<td>Digitaltechnik: Lehr- und Übungsbuch für Elektrotechniker und Informatiker</td><td>Klaus Fricke</td><td align="center"><a href="http://www.amazon.de/Digitaltechnik-Lehr--%C3%9Cbungsbuch-Elektrotechniker-Informatiker/dp/3834804592/ref=sr_1_1?s=books&ie=UTF8&qid=1360493606&sr=1-1" target="_blank">www</a></td>
+						</tr>
+					</tbody>
+				</table>
+
+
+				<a name="2">
+					<h2>Software</h2>
+				</a>
+				
+				
+				<table width="100%" border="1">
+					<thead>
+						<tr>
+							<th>Software</th><th align="center" width="50px">www</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>LTspice IV</td><td align="center"><a href="http://www.linear.com/designtools/software/#LTspice" target="_blank">www</a></td>
+						</tr>
+						<tr>
+							<td>OrCAD 16.0</td><td align="center"><a href="http://www.cadence.com/products/orcad/pages/default.aspx" target="_blank">www</a></td>
+						</tr>
+						<tr>
+							<td>AutoCAD	Electrical 2012</td><td align="center"><a href="http://www.autodesk.com" target="_blank">www</a></td>
+						</tr>
+						<tr>
+							<td>EPLAN Education</td><td align="center"><a href="http://www.eplan.de" target="_blank">www</a></td>
+						</tr>
+						<tr>
+							<td>CadSoft EAGLE PCB Design Software</td><td align="center"><a href="http://www.cadsoft.de/eagle-pcb-design-software/" target="_blank">www</a></td>
+						</tr>
+						<tr>
+							<td>AVR	Studio 4</td><td align="center"><a href="http://www.atmel.com/dyn/products/tools_card.asp?tool_id=2725" target="_blank">www</a></td>
+						</tr>
+						<tr>
+							<td>LPCXpresso</td><td align="center"><a href="http://www.lpcware.com/lpcxpresso" target="_blank">www</a></td>
+						</tr>
+						<tr>
+							<td>Matlab</td><td align="center"><a href="http://www.mathworks.de/products/matlab/" target="_blank">www</a></td>
+						</tr>
+
+					</tbody>
+				</table>
+				
+				<br /><br />
+
+			</div>
+
+		</div>
+	</body>
+</html>

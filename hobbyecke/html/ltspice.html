@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>Simulation mit LTspice IV</title>
+
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="robots" content="noindex">
+		
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+
+</head>
+<body>
+		<div id="header">
+			<!--<p style="padding-bottom:30 px"> <a href="../index.html">Home</a> | <span style="color:#cc6600">Elektrotechnik</span> | <a href="./index-funktechnik.html">Funktechnik</a> | 
+			<a href="./index-sonstiges.html">Sonstiges</a> | <a href="./imprint.html">Impressum</a></p>-->
+
+			<img src="../gfx/header.jpg" height="90" width="960">
+		</div>
+<div id="container">
+
+
+<div id="main_content">
+<h2>Simulation mit LTspice IV</h2>
+<p>&nbsp;</p>
+<p><a href="#1">RC-Tiefpass</a> | <a href="#2">Bipolarer
+Transistor 2N222</a></p>
+<p>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+<a name="1">
+<h3>RC-Tiefpass</h3>
+</a>
+<p>Zum Einstieg in die Simulation mit LTspice IV untersuchen wir
+das Zeitverhalten von einem einfachen RC-Tiefpass. Der Tiefpass besteht aus
+einem Widerstand R1 = 1kOhm, einer Kapazität C1 = 80nF und einer
+Gleichspannungsquelle, die nach 100µs von 0V auf 10V rechteckförmig
+ansteigt. Die Elemente lassen sich einfach über die Symbole in der
+Toolbar platzieren, die Spannungsquelle findet man über das Symbol
+"Component", hier ist dann aus der Liste "voltage" auszuwählen. Die
+Parameter lassen sich über ein Rechtsklick auf das Bauelement ändern.
+Über das Symbol "Label Net" habe ich die Verbindung zwischen
+Spannungsquelle und Widerstand mit "in" bezeichnet und mit "out" die
+Verbindung zwischen dem Widerstand und der Kapazität.</p>
+<br>
+<img style="width: 185px; height: 230px;" alt="RC-Tiefpass" src="../gfx/ltspice-rc-tiefpass.jpg"><br>
+<br>
+<p>Nach 100µs lädt sich der Kondensator über den Widerstand R1
+bekanntlich nach
+folgender Formel auf:</p>
+<p>
+u<sub>c</sub>=U(1-e<sup>-t/RC</sup>)</p>
+<p>Nachdem die Simulation
+über Simulation-&gt;Run (Transient) gestartet wurde, erscheint ein
+zunächst
+noch
+leerer Plot. Hier müssen wir die Marker in und out aus der Schaltung
+auswählen. Als Ergebnis erhalten wir die Sprungantwort von unserem
+RC-Tiefpass.</p>
+<br>
+<img style="width: 600px; height: 549px;" alt="Simulation RC-Tiefpass" src="../gfx/ltspice-rc-sprungantwort.jpg"><br>
+<br>
+<p>&nbsp;</p>
+<a name="2">
+<h3>Bipolarer Transistor 2N2222</h3>
+</a>
+<p>Als nächstes möchten wir das Ausgangskennlinienfeld eines
+bipolaren Transistors untersuchen, dazu verwenden wir den folgenden
+Simulationsbefehl:</p>
+<p style="font-weight: bold;">.dc V1 0 15 10mV I1 0 100u
+10u</p>
+<p>Der Befehl besagt, dass die Spannungsquelle V1 von 0V in 10mV Schritten auf
+15V ansteigen soll. Die Gleichstromquelle I1 für die Basis steigt von 0A
+in 10µA Schritten auf den Endwert von 100µA. ".dc" steht für
+Gleichstromanalyse.</p>
+<p><img style="width: 600px; height: 308px;" alt="Curvetrace" src="../gfx/ltspice-curvetrace.jpg"></p>
+<p>Quelle(n):<br>
+<br>
+- Wolfgang Puffitsch, Einführung in LTspice, 2010</p>
+<p>- Gunthard Kraus, SPICE-Schaltungs-Simulation mit LTspice IV</p>
+</div>
+
+</div>
+</body></html>

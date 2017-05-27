@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+        <title>E-Mail</title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta name="robots" content="noindex">
+		
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+
+    </head>
+
+    <body>
+					<div id="header">
+			<p style="padding-bottom:30 px"> <a href="../index.html">Home</a> | <a href="./index-elektrotechnik.html">Elektrotechnik</a> | <a href="./index-funktechnik.html">Funktechnik</a> | 
+			<span style="color:#cc6600">Sonstiges</span> | <a href="./imprint.html">Impressum</a></p>
+			<h1>Andreas Zahnleiter</h1>
+			<img src="../gfx/header.jpg" height="90" width="960">
+		</div>
+		
+        <div id="container">		
+
+
+            <div id="main_content">
+                <h2>E-Mail</h2>
+
+                <p><strong>Falls Sie mir eine <u>verschlüsselte E-Mail</u> schicken möchten, können Sie dazu meinen öffentlichen Schlüssel verwenden.</strong></p>
+				
+				<p>Zum Senden einer verschlüsselten E-Mail benötigen Sie dazu ein Programm mit PGP-/OpenPGP-Implementierung. Hierfür kann zum Beispiel <a href="http://www.gnupg.org/" target="_blank">GnuPG (gpg)</a> verwendet werden.</p>
+                <br>
+				
+				<p>Der zu meinem Public Key gehörige Fingerprint lautet:</p>
+
+				<p style="padding-left:20px;"><strong>8040 4058 1CDF E943 72B1 8F19 2824 D829 A483 6AB5</strong></p>
+				<br>
+
+				<p>Die Key ID meines Public Key lautet:</p>
+
+				<p style="padding-left:20px;"><strong>0xA4836AB5</strong></p>
+				<br>
+				
+				<p>Public Key Download:</p>
+				<p>Meinen Public Key können Sie vom folgenden Key-Server herunter laden.</p>
+
+				<p style="padding-left:20px;"><a href="http://pgp.mit.edu/" target="_blank">http://pgp.mit.edu/</a></p>
+				<br>
+				
+				<p>Mit Hilfe des Programms GnuPG (gpg) lautet das Kommando für den Key-Import</p>
+
+				<p style="padding-left:20px;"><strong>gpg --keyserver subkeys.pgp.net --recv-key A4836AB5</strong></p>
+                <br>
+				
+                <p><strong>Falls Sie mir eine <u>unverschlüsselte E-Mail</u> schicken möchten, können Sie meine E-Mail Adresse über den oben genannten Key-Server abfragen, indem Sie im Suchfeld meine Key ID eingeben. Bitte haben Sie Verständnis dafür, dass ich bei einer vertraulichen Antwort nach Ihrem öffentlichen Schlüssel fragen werde.</strong></p>
+				<br>
+				
+				<p>In eigener Sache:</p>
+				<p>
+					Warum ich Wert auf E-Mail Verschlüsselung lege? Weil ich auch keine vertrauliche Nachricht per Postkarte verschicken würde (Sie etwa??), aber leider passiert dies täglich millionenfach im Internet ( = öffentliches Netz)! Das Grundrecht auf informationelle Selbstbestimmung ist eines der wichtigsten Rechte die wir haben, leider ist dies den wenigsten Menschen bewusst, da die öffentliche Selbstentblößung in Zeiten von Facebook und Co. schon Mode geworden. Eine traurige Entwicklung unserer Zeit, umso leichter haben es natürlich Geheimdienste/Regierungen und natürlich auch Konzerne uns zu überwachen bzw. zu manipulieren.
+				</p>
+                
+            </div>
+
+
+        </div>	
+    </body>
+</html>
