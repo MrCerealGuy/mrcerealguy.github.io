@@ -1,0 +1,3 @@
+Options +FollowSymLinks 
+RewriteEngine On
+AddDefaultCharSet utf-8
