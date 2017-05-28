@@ -65,8 +65,8 @@
 				<p><strong>Spezifikation/Manual:</strong></p>
 				
 				<p>
-					<a href="../files/landtiger_v2.0_-_manual__v1_1.pdf">LandTiger Anleitung</a><br>
-					<a href="../files/LPC17xx-User-manual.pdf">LPC17xx Anleitung</a><br>
+					<a href="https://www.dropbox.com/pri/get/mrcerealguy_github_io/hobbyecke/files/landtiger_v2.0_-_manual__v1_1.pdf?_subject_uid=674549965&w=AABErXkhTVyFbLrLnhbzMjMCJPMBUzMSwWZJvb4CYm5j4w">LandTiger Anleitung</a><br>
+					<a href="https://www.dropbox.com/pri/get/mrcerealguy_github_io/hobbyecke/files/LPC17xx-User-manual.pdf?_subject_uid=674549965&w=AAAJlObfDXGHXCUGJP2WU_WCdNrJZi-u1j2TxNoLEak8HQ">LPC17xx Anleitung</a><br>
 					<a href="http://www.lpcware.com/content/nxpfile/mcb1700-sample-code-bundle-lpc17xx-peripherals-using-keils-mdk-arm" target="_blank">Beispielcode (Keil's MDK-ARM)</a>
 					
 					
@@ -140,7 +140,7 @@ int</span><span class="keyword"> main</span><span class="operator">(</span><span
 
                 <h3><a name="2">Textausgabe über UART</a></h3>
 				
-				<p>UART ist eine digtiale serielle Schnittstelle über die man Daten empfangen und senden kann. Gerade bei der Entwicklung eines neuen uC-Programms ist sie sehr nützlich, da man zur Laufzeit Debugging-Informationen senden und am PC darstellen kann. Wie das geht, zeige ich an einem abgewandelten Beispiel aus dem Paket <a href="http://www.lpcware.com/content/nxpfile/lpc175x6x-cmsis-compliant-standard-peripheral-firmware-driver-library-keil-iar-gnu" target="_blank"><strong>LPC175x_6x CMSIS-Compliant Standard Peripheral Firmware Driver Library (Keil, IAR, GNU)</strong></a>. Ich werde an dieser Stelle nur das Hauptprogramm zeigen, das komplette Beispiel könnt ihr <a href="../files/UART-with-LPC1768.zip" target="_blank">hier</a> herunterladen.</p>
+				<p>UART ist eine digtiale serielle Schnittstelle über die man Daten empfangen und senden kann. Gerade bei der Entwicklung eines neuen uC-Programms ist sie sehr nützlich, da man zur Laufzeit Debugging-Informationen senden und am PC darstellen kann. Wie das geht, zeige ich an einem abgewandelten Beispiel aus dem Paket <a href="http://www.lpcware.com/content/nxpfile/lpc175x6x-cmsis-compliant-standard-peripheral-firmware-driver-library-keil-iar-gnu" target="_blank"><strong>LPC175x_6x CMSIS-Compliant Standard Peripheral Firmware Driver Library (Keil, IAR, GNU)</strong></a>. Ich werde an dieser Stelle nur das Hauptprogramm zeigen, das komplette Beispiel könnt ihr <a href="https://www.dropbox.com/pri/get/mrcerealguy_github_io/hobbyecke/files/UART-with-LPC1768.zip?_subject_uid=674549965&w=AABLIivtQzbvwROrR-EYnTWSWv534KDg457qWiQDTOveOQ" target="_blank">hier</a> herunterladen.</p>
 				
 				<p>Die UART-Schnittstelle arbeitet im <strong>Interrupt-Mode</strong>, zum Verständnis des Programms sollte man sich die Interrupt-Handler-Funktionen</p>
 				
@@ -625,7 +625,7 @@ void</span> check_failed<span class="operator">(</span>uint8_t<span class="opera
 <p>&nbsp;</p>
                 <h3><a name="3">Textausgabe über das TFT LCD-Display</a></h3>
 				
-				<p>Im MDK wird eine kleine Garfikbibliothek, bestehend aus den Dateien GLCD.c, HzLib.c und AsciiLib.c, mitgeliefert. Sie ermöglicht einfache Grafikroutinen wie Textausgabe, Linien zeichnen, einzelne Pixel zu setzen und abzufragen. Nachfolgend ein kleines Beispiel, das auch <a href="../files/GLCD.zip">hier</a> heruntergeladen werden kann.</p>
+				<p>Im MDK wird eine kleine Garfikbibliothek, bestehend aus den Dateien GLCD.c, HzLib.c und AsciiLib.c, mitgeliefert. Sie ermöglicht einfache Grafikroutinen wie Textausgabe, Linien zeichnen, einzelne Pixel zu setzen und abzufragen. Nachfolgend ein kleines Beispiel, das auch <a href="https://www.dropbox.com/pri/get/mrcerealguy_github_io/hobbyecke/files/GLCD.zip?_subject_uid=674549965&w=AAC6c28PfKehZqnm1yfrKHQ0IIgy-x5IpA-dM6niAyY9XA">hier</a> heruntergeladen werden kann.</p>
 				
 				<a rel="shadowbox" href="../gfx/IMG_1442.jpg"><img width="300" border="0" alt="" src="../gfx/IMG_1442-300.jpg"></a>
 				
@@ -651,7 +651,7 @@ int</span><span class="keyword"> main</span><span class="operator">(</span><span
 <p>&nbsp;</p>
                 <h3><a name="4">Bild aus SPI-Flash lesen</a></h3>
 				
-				<p>Im nächsten Beispiel lesen wir ein Bitmap aus dem SPI-Flash aus und zeigen es auf dem Display an. Das Bitmap wurde vorher mit Hilfe des Tools <a href="http://www.deadnode.org/sw/bin2h/" target="_blank">Bin2h</a> in ein C-Array BMP_DATA[] umgewandelt, unten findet ihr das Hauptprogramm, den kompletten Beispielcode gibt es <a href="../files/SPI-Flash-Picture.zip">hier</a>.</p>
+				<p>Im nächsten Beispiel lesen wir ein Bitmap aus dem SPI-Flash aus und zeigen es auf dem Display an. Das Bitmap wurde vorher mit Hilfe des Tools <a href="http://www.deadnode.org/sw/bin2h/" target="_blank">Bin2h</a> in ein C-Array BMP_DATA[] umgewandelt, unten findet ihr das Hauptprogramm, den kompletten Beispielcode gibt es <a href="https://www.dropbox.com/pri/get/mrcerealguy_github_io/hobbyecke/files/SPI-Flash-Picture.zip?_subject_uid=674549965&w=AAAqUKQKclkSDLIdddyjNW_AYpFpD5ZFG3X3QxO-DEutrA">hier</a>.</p>
 				
 				<a rel="shadowbox" href="../gfx/spi-flash-1.jpg"><img width="300" border="0" alt="" src="../gfx/spi-flash-1-300.jpg"></a> 
 				<a rel="shadowbox" href="../gfx/spi-flash-2.jpg"><img width="300" border="0" alt="" src="../gfx/spi-flash-2-300.jpg"></a>
